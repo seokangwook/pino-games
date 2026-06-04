@@ -1,0 +1,5 @@
+{
+  "meta": { "title": "피노 게임 🐱", "description": "피노 고양이와 함께 하는 카드 뒤집기 & 마작 솔리테어" },
+  "home": { "tagline": "고양이들과 함께 놀아요 🐾", "cardGame": { "title": "카드 뒤집기", "cta": "시작하기 →" }, "mahjong": { "title": "마작 솔리테어", "cta": "시작하기 →" } },
+  "mode": { "single": "싱글 플레이", "singleDesc": "혼자서 기록 도전", "multi": "1:1 멀티", "multiDesc": "친구와 실시간 대결" }
+}
