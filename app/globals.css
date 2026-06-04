@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pino-cream: #FFF8F0;
+  --color-pino-peach: #FFDAB9;
+  --color-pino-pink: #FFB7C5;
+  --color-pino-brown: #8B5E3C;
+  --color-pino-dark: #2D1B09;
+  --color-pino-gold: #FFD166;
+}
+
+body {
+  background: linear-gradient(160deg, #FFF8F0 0%, #FFE8CC 50%, #FFD4B8 100%);
+  min-height: 100vh;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.bounce-soft {
+  animation: bounce-soft 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
