@@ -5,39 +5,23 @@ import { generateRoomCode, getOrCreateUserId } from '../roomUtils'
 import { createCardDeck, GridSize } from '../cardLogic'
 import { buildBoard } from '../mahjongLayout'
 
-const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
-const SB_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ''
-const supabase = SB_URL && SB_KEY ? createClient(SB_URL, SB_KEY) : null
+const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://yiduavoxineujidorcbx.supabase.co'
+const SB_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpZHVhdm94aW5ldWppZG9yY2J4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NDE4MzAsImV4cCI6MjA5MjExNzgzMH0.lPhnp5DZD_6y0BcSaj_lQhHSVE4kbyuQn7OhngJp71U'
+const supabase = createClient(SB_URL, SB_KEY)
 
 export type GameMode = 'cards' | 'mahjong'
 export type RoomStatus = 'idle' | 'waiting' | 'playing' | 'done'
 export type MultiMode = 'concurrent' | 'turn'
 
-export interface PlayerProgress {
-  matched: number
-  moves: number
-  clearTime: number | null
-}
-
 export interface RoomState {
-  roomId: string | null
-  roomCode: string | null
-  role: 'host' | 'guest' | null
-  userId: string
-  gameType: GameMode | null
-  gridSize: GridSize | null
-  multiMode: MultiMode
-  status: RoomStatus
-  boardState: Record<string, unknown>
-  winnerId: string | null
-  error: string | null
-  channel: RealtimeChannel | null
-  createRoom: (gameType: GameMode, gridSize?: GridSize, multiMode?: MultiMode) => Promise<void>
+  roomId: string | null; roomCode: string | null; role: 'host' | 'guest' | null
+  userId: string; gameType: GameMode | null; gridSize: GridSize | null
+  multiMode: MultiMode; status: RoomStatus; boardState: Record<string, unknown>
+  winnerId: string | null; error: string | null; channel: RealtimeChannel | null
+  createRoom: (g: GameMode, gs?: GridSize, mm?: MultiMode) => Promise<void>
   joinRoom: (code: string) => Promise<boolean>
   pushUpdate: (patch: Record<string, unknown>) => Promise<void>
-  subscribeRoom: () => void
-  leaveRoom: () => void
-  clearError: () => void
+  subscribeRoom: () => void; leaveRoom: () => void; clearError: () => void
 }
 
 export const useRoomStore = create<RoomState>((set, get) => ({
@@ -47,7 +31,6 @@ export const useRoomStore = create<RoomState>((set, get) => ({
   status: 'idle', boardState: {}, winnerId: null, error: null, channel: null,
 
   createRoom: async (gameType, gridSize = '4x4', multiMode = 'concurrent') => {
-    if (!supabase) return set({ error: 'Supabase 미설정' })
     const { userId } = get()
     const code = generateRoomCode()
     const hostCards = gameType === 'cards' ? createCardDeck(gridSize) : []
@@ -60,7 +43,6 @@ export const useRoomStore = create<RoomState>((set, get) => ({
   },
 
   joinRoom: async (code) => {
-    if (!supabase) { set({ error: 'Supabase 미설정' }); return false }
     const { userId } = get()
     const { data: room, error } = await supabase.from('game_rooms').select('*').eq('room_code', code.toUpperCase()).eq('status', 'waiting').single()
     if (error || !room) { set({ error: '방을 찾을 수 없습니다' }); return false }
@@ -76,7 +58,6 @@ export const useRoomStore = create<RoomState>((set, get) => ({
   },
 
   pushUpdate: async (patch) => {
-    if (!supabase) return
     const { roomId, boardState } = get()
     if (!roomId) return
     const newBoard = { ...boardState, ...patch }
@@ -86,14 +67,13 @@ export const useRoomStore = create<RoomState>((set, get) => ({
 
   subscribeRoom: () => {
     const { roomId, channel: existing } = get()
-    if (!supabase || !roomId) return
+    if (!roomId) return
     if (existing) existing.unsubscribe()
     const ch = supabase.channel('room:' + roomId)
       .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'game_rooms', filter: 'id=eq.' + roomId }, (payload) => {
         const row = payload.new as Record<string, unknown>
         set({ status: row.status as RoomStatus, boardState: (row.board_state as Record<string, unknown>) ?? {}, winnerId: (row.winner_id as string) ?? null })
-      })
-      .subscribe()
+      }).subscribe()
     set({ channel: ch })
   },
 
