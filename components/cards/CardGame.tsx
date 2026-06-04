@@ -4,6 +4,7 @@ import { useCardStore } from '@/lib/store/cardStore'
 import { GridSize } from '@/lib/cardLogic'
 import { CardBoard } from './CardBoard'
 import { formatTime } from '@/lib/supabase'
+import { saveScore } from '@/lib/store/authStore'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 import { useAudio } from '@/lib/audio/useAudio'
 import Link from 'next/link'
@@ -17,6 +18,7 @@ const GRID_OPTIONS: { value: GridSize; label: string; desc: string }[] = [
 export function CardGame() {
   const { status, gridSize, moves, matchedCount, startTime, endTime, setGridSize, startGame, resetGame } = useCardStore()
   const [elapsed, setElapsed] = useState(0)
+  const [scoreSaved, setScoreSaved] = useState(false)
   useAudio(status === 'playing' ? 'cards' : status === 'won' ? null : 'main')
 
   useEffect(() => {
@@ -24,6 +26,24 @@ export function CardGame() {
     const id = setInterval(() => setElapsed(Date.now() - startTime), 500)
     return () => clearInterval(id)
   }, [status, startTime])
+
+  // Save score when game is won
+  useEffect(() => {
+    if (status === 'won' && !scoreSaved && startTime && endTime) {
+      setScoreSaved(true)
+      saveScore({
+        gameType: 'cards',
+        gridSize,
+        moves,
+        timeMs: endTime - startTime,
+      })
+    }
+  }, [status, scoreSaved, startTime, endTime, gridSize, moves])
+
+  // Reset score saved flag when new game starts
+  useEffect(() => {
+    if (status === 'playing') setScoreSaved(false)
+  }, [status])
 
   const totalPairs = gridSize === '4x4' ? 8 : gridSize === '4x6' ? 12 : 18
 
@@ -73,10 +93,12 @@ function ResultScreen({ moves, elapsed, onReplay, onMenu }: { moves: number; ela
     <div className="text-center mt-8">
       <div className="text-8xl mb-4 bounce-soft">🎉</div>
       <h2 className="text-3xl font-black text-[#6B4C2A] mb-2">클리어!</h2>
-      <p className="text-[#A0785A] mb-6">{moves}번 만에 · {formatTime(elapsed)}</p>
+      <p className="text-[#A0785A] mb-2">{moves}번 만에 · {formatTime(elapsed)}</p>
+      <p className="text-xs text-green-600 mb-6">✓ 기록 저장됨 (로그인 시)</p>
       <div className="flex flex-col gap-3 max-w-xs mx-auto">
         <button onClick={onReplay} className="bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold py-4 rounded-2xl transition-colors">다시 하기</button>
-        <button onClick={onMenu} className="bg-white/70 hover:bg-white border border-[#FFD4A8] text-[#6B4C2A] font-bold py-4 rounded-2xl transition-colors">메뉴로</button>
+        <a href="/ranking" className="block bg-white/70 hover:bg-white border border-[#FFD4A8] text-[#6B4C2A] font-bold py-4 rounded-2xl transition-colors text-center">🏆 랭킹 보기</a>
+        <button onClick={onMenu} className="text-[#A0785A] underline text-sm">메뉴로</button>
       </div>
     </div>
   )
