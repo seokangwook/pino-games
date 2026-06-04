@@ -1,10 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { AdSlot } from '@/components/ads/AdSlot'
+import { LoginButton } from '@/components/auth/LoginButton'
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center px-4 py-10">
+      <div className="w-full max-w-2xl flex justify-end mb-2 gap-4">
+        <Link href="/ranking" className="text-sm text-[#A0785A] hover:text-[#6B4C2A] font-semibold">🏆 랭킹</Link>
+        <LoginButton />
+      </div>
       <div className="text-center mb-10">
         <div className="relative w-32 h-32 mx-auto mb-4 bounce-soft">
           <Image src="/cats/pino_danbi.png" alt="피노&단비" fill className="object-contain drop-shadow-lg" priority />
