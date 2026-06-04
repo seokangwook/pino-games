@@ -1,0 +1,5 @@
+{
+  "meta": { "title": "Pino Games 🐱", "description": "Memory match & Mahjong solitaire with Pino the cat" },
+  "home": { "tagline": "Play with the cats 🐾", "cardGame": { "title": "Memory Match", "cta": "Play →" }, "mahjong": { "title": "Mahjong Solitaire", "cta": "Play →" } },
+  "mode": { "single": "Single Player", "singleDesc": "Beat your own record", "multi": "1v1 Multiplayer", "multiDesc": "Compete with a friend live" }
+}
