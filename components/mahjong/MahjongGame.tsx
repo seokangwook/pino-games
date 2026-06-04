@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useMahjongStore } from '@/lib/store/mahjongStore'
 import { MahjongBoard } from './MahjongBoard'
 import { formatTime } from '@/lib/supabase'
+import { saveScore } from '@/lib/store/authStore'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 import { useAudio } from '@/lib/audio/useAudio'
 import Link from 'next/link'
@@ -10,6 +11,7 @@ import Link from 'next/link'
 export function MahjongGame() {
   const { status, moves, tiles, startTime, endTime, startGame, resetGame, showHint, reshuffle } = useMahjongStore()
   const [elapsed, setElapsed] = useState(0)
+  const [scoreSaved, setScoreSaved] = useState(false)
   useAudio(status === 'playing' ? 'mahjong' : 'main')
 
   useEffect(() => {
@@ -17,6 +19,15 @@ export function MahjongGame() {
     const id = setInterval(() => setElapsed(Date.now() - startTime), 500)
     return () => clearInterval(id)
   }, [status, startTime])
+
+  useEffect(() => {
+    if (status === 'won' && !scoreSaved && startTime && endTime) {
+      setScoreSaved(true)
+      saveScore({ gameType: 'mahjong', moves, timeMs: endTime - startTime })
+    }
+  }, [status, scoreSaved, startTime, endTime, moves])
+
+  useEffect(() => { if (status === 'playing') setScoreSaved(false) }, [status])
 
   const remaining = tiles.filter(t => !t.isMatched).length
   const total = tiles.length
@@ -40,10 +51,12 @@ export function MahjongGame() {
         <div className="text-center mt-8">
           <div className="text-8xl mb-4 bounce-soft">🎊</div>
           <h2 className="text-3xl font-black text-[#6B4C2A] mb-2">완전 클리어!</h2>
-          <p className="text-[#A0785A] mb-6">{moves}번 이동 · {formatTime(endTime && startTime ? endTime - startTime : 0)}</p>
+          <p className="text-[#A0785A] mb-2">{moves}번 이동 · {formatTime(endTime && startTime ? endTime - startTime : 0)}</p>
+          <p className="text-xs text-green-600 mb-6">✓ 기록 저장됨 (로그인 시)</p>
           <div className="flex flex-col gap-3 max-w-xs mx-auto">
             <button onClick={startGame} className="bg-[#B7D4FF] hover:bg-[#8AB8FF] text-[#1A4080] font-bold py-4 rounded-2xl transition-colors">다시 하기</button>
-            <button onClick={resetGame} className="bg-white/70 hover:bg-white border border-[#FFD4A8] text-[#6B4C2A] font-bold py-4 rounded-2xl transition-colors">메뉴로</button>
+            <a href="/ranking" className="block bg-white/70 hover:bg-white border border-[#FFD4A8] text-[#6B4C2A] font-bold py-4 rounded-2xl transition-colors text-center">🏆 랭킹 보기</a>
+            <button onClick={resetGame} className="text-[#A0785A] underline text-sm">메뉴로</button>
           </div>
         </div>
       ) : status === 'stuck' ? (
