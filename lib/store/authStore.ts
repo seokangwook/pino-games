@@ -9,28 +9,57 @@ export const supabase = createClient(SB_URL, SB_KEY)
 
 interface AuthStore {
   user: User | null
+  nickname: string | null
+  needsNickname: boolean
   loading: boolean
   init: () => Promise<void>
   signInWithGoogle: () => Promise<void>
   signOut: () => Promise<void>
+  saveNickname: (nick: string) => Promise<string | null>
+}
+
+async function fetchNickname(userId: string): Promise<string | null> {
+  const { data } = await supabase.from('profiles').select('nickname').eq('id', userId).single()
+  return data?.nickname ?? null
 }
 
 export const useAuthStore = create<AuthStore>((set) => ({
-  user: null, loading: true,
+  user: null, nickname: null, needsNickname: false, loading: true,
+
   init: async () => {
     const { data } = await supabase.auth.getUser()
-    set({ user: data.user, loading: false })
-    supabase.auth.onAuthStateChange((_, session) => { set({ user: session?.user ?? null }) })
-  },
-  signInWithGoogle: async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: window.location.origin + '/auth/callback' }
+    if (data.user) {
+      const nick = await fetchNickname(data.user.id)
+      set({ user: data.user, nickname: nick, needsNickname: !nick, loading: false })
+    } else {
+      set({ loading: false })
+    }
+    supabase.auth.onAuthStateChange(async (_, session) => {
+      if (session?.user) {
+        const nick = await fetchNickname(session.user.id)
+        set({ user: session.user, nickname: nick, needsNickname: !nick })
+      } else {
+        set({ user: null, nickname: null, needsNickname: false })
+      }
     })
   },
+
+  signInWithGoogle: async () => {
+    await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin + '/auth/callback' } })
+  },
+
   signOut: async () => {
     await supabase.auth.signOut()
-    set({ user: null })
+    set({ user: null, nickname: null, needsNickname: false })
+  },
+
+  saveNickname: async (nick) => {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return '로그인 필요'
+    const { error } = await supabase.from('profiles').upsert({ id: user.id, user_id: user.id, nickname: nick }, { onConflict: 'id' })
+    if (error) return error.code === '23505' ? '이미 사용 중인 닉네임입니다' : (error.message || '저장 실패')
+    set({ nickname: nick, needsNickname: false })
+    return null
   },
 }))
 
@@ -41,8 +70,18 @@ export async function saveScore(params: { gameType: 'cards' | 'mahjong'; gridSiz
 }
 
 export async function fetchRanking(gameType: 'cards' | 'mahjong', gridSize?: string) {
-  let q = supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', gameType).order('time_ms', { ascending: true }).limit(20)
+  let q = supabase
+    .from('game_scores')
+    .select('user_id, moves, time_ms, created_at, profiles!game_scores_user_id_fkey(nickname)')
+    .eq('game_type', gameType)
+    .order('time_ms', { ascending: true })
+    .limit(20)
   if (gridSize) q = q.eq('grid_size', gridSize)
-  const { data } = await q
+  const { data, error } = await q
+  if (error) {
+    // Fallback without JOIN
+    const { data: d2 } = await supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', gameType).order('time_ms', {ascending: true}).limit(20)
+    return (d2 ?? [])
+  }
   return data ?? []
 }
