@@ -2,11 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { AdSlot } from '@/components/ads/AdSlot'
 import { LoginButton } from '@/components/auth/LoginButton'
+import { AudioToggle } from '@/components/ui/AudioToggle'
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center px-4 py-10">
-      <div className="w-full max-w-2xl flex justify-end mb-2 gap-4">
+      <div className="w-full max-w-2xl flex justify-end items-center mb-2 gap-3">
+        <AudioToggle bgmKey="main" />
         <Link href="/ranking" className="text-sm text-[#A0785A] hover:text-[#6B4C2A] font-semibold">🏆 랭킹</Link>
         <LoginButton />
       </div>
