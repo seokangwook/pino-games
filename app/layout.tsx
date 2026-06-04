@@ -1,20 +1,28 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 
+const ADSENSE_PUB = 'ca-pub-4128588337803742'
+
 export const metadata: Metadata = {
-  title: '피노 미니게임 🐱',
+  title: '피노 게임 🐱',
   description: '피노 고양이와 함께 하는 카드 뒤집기 & 마작 솔리테어',
   keywords: '피노,고양이,게임,카드,마작,솔리테어',
   openGraph: {
-    title: '피노 미니게임 🐱',
+    title: '피노 게임 🐱',
     description: '피노 고양이와 함께 하는 카드 뒤집기 & 마작 솔리테어',
     type: 'website',
+    url: 'https://pino-games.revely.company',
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
+      <head>
+        <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUB}`}
+          crossOrigin="anonymous" strategy="lazyOnload" />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   )
