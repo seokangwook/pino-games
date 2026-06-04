@@ -1,0 +1,5 @@
+{
+  "meta": { "title": "ピノゲーム 🐱", "description": "ピノ猫のメモリーマッチ & 麻雀ソリティア" },
+  "home": { "tagline": "猫たちと遊ぼう 🐾", "cardGame": { "title": "神経衰弱", "cta": "スタート →" }, "mahjong": { "title": "麻雀ソリティア", "cta": "スタート →" } },
+  "mode": { "single": "シングル", "singleDesc": "一人で記録に挑戦", "multi": "1:1マルチ", "multiDesc": "リアルタイム対戦" }
+}
