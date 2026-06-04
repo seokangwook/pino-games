@@ -8,13 +8,8 @@ const SB_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiI
 export const supabase = createClient(SB_URL, SB_KEY)
 
 interface AuthStore {
-  user: User | null
-  nickname: string | null
-  needsNickname: boolean
-  loading: boolean
-  init: () => Promise<void>
-  signInWithGoogle: () => Promise<void>
-  signOut: () => Promise<void>
+  user: User | null; nickname: string | null; needsNickname: boolean; loading: boolean
+  init: () => Promise<void>; signInWithGoogle: () => Promise<void>; signOut: () => Promise<void>
   saveNickname: (nick: string) => Promise<string | null>
 }
 
@@ -70,18 +65,14 @@ export async function saveScore(params: { gameType: 'cards' | 'mahjong'; gridSiz
 }
 
 export async function fetchRanking(gameType: 'cards' | 'mahjong', gridSize?: string) {
-  let q = supabase
-    .from('game_scores')
-    .select('user_id, moves, time_ms, created_at, profiles!game_scores_user_id_fkey(nickname)')
-    .eq('game_type', gameType)
-    .order('time_ms', { ascending: true })
-    .limit(20)
+  // Step 1: get scores
+  let q = supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', gameType).order('time_ms', { ascending: true }).limit(20)
   if (gridSize) q = q.eq('grid_size', gridSize)
-  const { data, error } = await q
-  if (error) {
-    // Fallback without JOIN
-    const { data: d2 } = await supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', gameType).order('time_ms', {ascending: true}).limit(20)
-    return (d2 ?? [])
-  }
-  return data ?? []
+  const { data: scores } = await q
+  if (!scores?.length) return []
+  // Step 2: get nicknames
+  const ids = [...new Set(scores.map(s => s.user_id))]
+  const { data: profiles } = await supabase.from('profiles').select('id, nickname').in('id', ids)
+  const nickMap = new Map((profiles ?? []).map(p => [p.id, p.nickname]))
+  return scores.map(s => ({ ...s, nickname: nickMap.get(s.user_id) ?? null }))
 }
