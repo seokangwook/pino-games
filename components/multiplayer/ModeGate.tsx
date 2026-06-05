@@ -16,7 +16,7 @@ export function ModeGate({ gameType, singleContent, multiContent }: ModeGateProp
   if (mode === 'multi') {
     return (
       <div className="min-h-screen flex flex-col items-center px-4 py-8">
-        <div className="w-full max-w-sm mb-6 flex items-center gap-3">
+        <div className="w-full max-w-2xl mb-6 flex items-center gap-3">
           <button onClick={() => { useRoomStore.getState().leaveRoom(); setMode(null) }} className="text-[#A0785A] text-2xl">←</button>
           <h1 className="text-2xl font-black text-[#6B4C2A]">{gameType === 'cards' ? '카드 뒤집기' : '마작 솔리테어'} · 멀티</h1>
         </div>

@@ -29,7 +29,7 @@ export function RoomLobby({ gameType, onStart }: RoomLobbyProps) {
 
   if (status === 'waiting' && role === 'host') {
     return (
-      <div className="text-center max-w-sm mx-auto">
+      <div className="text-center w-full max-w-2xl mx-auto">
         <div className="text-6xl mb-4">🎮</div>
         <h2 className="text-2xl font-bold text-[#6B4C2A] mb-2">방 생성됨</h2>
         <p className="text-[#A0785A] text-sm mb-6">친구에게 이 코드를 알려주세요</p>
@@ -47,7 +47,7 @@ export function RoomLobby({ gameType, onStart }: RoomLobbyProps) {
   }
 
   return (
-    <div className="max-w-sm mx-auto">
+    <div className="w-full max-w-2xl mx-auto">
       <div className="flex rounded-2xl overflow-hidden border border-[#FFD4A8]/50 mb-6">
         {(['create', 'join'] as const).map(t => (
           <button key={t} onClick={() => setTab(t)}
