@@ -6,27 +6,33 @@ const VOLUME_KEY = 'pino_bgm_volume'
 const MUTED_KEY = 'pino_bgm_muted'
 let globalAudio: HTMLAudioElement | null = null
 let currentKey: string | null = null
-let audioStarted = false  // 사용자가 명시적으로 시작
+let audioStarted = false
 
 export function useAudio(bgmKey: BgmKey | null) {
   const [volume, setVolumeState] = useState<number>(() => typeof window==='undefined' ? 0.4 : parseFloat(localStorage.getItem(VOLUME_KEY) ?? '0.4'))
   const [muted, setMutedState] = useState<boolean>(() => typeof window==='undefined' ? false : localStorage.getItem(MUTED_KEY) === 'true')
   const [started, setStarted] = useState(false)
 
-  // Set up audio element and change track when bgmKey changes
   useEffect(() => {
     if (typeof window === 'undefined' || !bgmKey) return
     const url = BGM_URLS[bgmKey]; if (!url) return
-    if (!globalAudio) { globalAudio = new Audio(); globalAudio.loop = true; globalAudio.preload = 'none' }
+    if (!globalAudio) {
+      globalAudio = new Audio()
+      globalAudio.loop = true
+      // iOS Safari fix: preload='auto' ensures readyState >= 1 before play()
+      // preload='none' + readyState=0 causes NotAllowedError even on real user gestures (WebKit bug)
+      globalAudio.preload = 'auto'
+    }
     const wasPlaying = audioStarted && !muted
     if (currentKey !== bgmKey) {
       globalAudio.pause()
       globalAudio.src = url
+      globalAudio.load()  // explicit load — iOS Safari needs this to start buffering
       currentKey = bgmKey
     }
     globalAudio.volume = muted ? 0 : volume
     if (wasPlaying) {
-      globalAudio.play().catch(() => {})
+      globalAudio.play().catch(e => console.warn('[BGM] track-change play failed:', e.name))
     }
   }, [bgmKey])
 
@@ -42,15 +48,16 @@ export function useAudio(bgmKey: BgmKey | null) {
 
   function toggleMute() {
     if (!audioStarted) {
-      // 처음 클릭 = 재생 시작
       audioStarted = true
       setStarted(true)
       setMutedState(false)
       localStorage.setItem(MUTED_KEY, 'false')
       if (globalAudio) {
         globalAudio.volume = volume
-        globalAudio.play().catch(() => {
-          // If play still blocked, set muted
+        // iOS Safari belt-and-suspenders: if still not loaded, trigger load now
+        if (globalAudio.readyState === 0) globalAudio.load()
+        globalAudio.play().catch(e => {
+          console.error('[BGM] play failed:', e.name, e.message)
           audioStarted = false
           setStarted(false)
         })
@@ -61,7 +68,7 @@ export function useAudio(bgmKey: BgmKey | null) {
       localStorage.setItem(MUTED_KEY, String(n))
       if (globalAudio) {
         globalAudio.volume = n ? 0 : volume
-        if (!n) globalAudio.play().catch(() => {})
+        if (!n) globalAudio.play().catch(e => console.warn('[BGM] unmute play failed:', e.name))
       }
     }
   }
