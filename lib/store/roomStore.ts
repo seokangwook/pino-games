@@ -18,6 +18,7 @@ export interface RoomState {
   createRoom: (g: GameMode, gs?: GridSize, mm?: MultiMode) => Promise<void>
   joinRoom: (code: string) => Promise<boolean>
   pushUpdate: (patch: Record<string, unknown>) => Promise<void>
+  finishRoom: (winnerId: string) => Promise<void>
   subscribeRoom: () => void; leaveRoom: () => void; clearError: () => void
 }
 
@@ -60,6 +61,13 @@ export const useRoomStore = create<RoomState>((set, get) => ({
     const newBoard = { ...boardState, ...patch }
     set({ boardState: newBoard })
     await supabase.from('game_rooms').update({ board_state: newBoard }).eq('id', roomId)
+  },
+
+  finishRoom: async (winnerId) => {
+    const { roomId } = get()
+    if (!roomId) return
+    await supabase.from('game_rooms').update({ status: 'done', winner_id: winnerId }).eq('id', roomId)
+    set({ status: 'done', winnerId })
   },
 
   subscribeRoom: () => {
