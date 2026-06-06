@@ -7,10 +7,11 @@ interface ModeGateProps {
   gameType: GameMode
   singleContent: React.ReactNode
   multiContent: React.ReactNode
+  initialCode?: string
 }
 
-export function ModeGate({ gameType, singleContent, multiContent }: ModeGateProps) {
-  const [mode, setMode] = useState<'single' | 'multi' | null>(null)
+export function ModeGate({ gameType, singleContent, multiContent, initialCode }: ModeGateProps) {
+  const [mode, setMode] = useState<'single' | 'multi' | null>(initialCode ? 'multi' : null)
   const { status } = useRoomStore()
   if (mode === 'multi' && status === 'playing') return <>{multiContent}</>
   if (mode === 'multi') {
@@ -20,7 +21,7 @@ export function ModeGate({ gameType, singleContent, multiContent }: ModeGateProp
           <button onClick={() => { useRoomStore.getState().leaveRoom(); setMode(null) }} className="text-[#A0785A] text-2xl">←</button>
           <h1 className="text-2xl font-black text-[#6B4C2A]">카드 뒤집기 · 멀티</h1>
         </div>
-        <RoomLobby gameType={gameType} onStart={() => {}} />
+        <RoomLobby gameType={gameType} onStart={() => {}} initialJoinCode={initialCode} />
       </div>
     )
   }
