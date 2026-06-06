@@ -56,7 +56,7 @@ export function RoomLobby({ gameType, onStart, initialJoinCode }: RoomLobbyProps
       try {
         await navigator.share({
           title: '피노 게임 카드 뒤집기',
-          text: `같이 한판? 링크 클릭하면 바로 입장돼!`,
+          text: `같이 한판? 링크 클릭하면 바로 입장돼!\n${url}`,
           url,
         })
         return
