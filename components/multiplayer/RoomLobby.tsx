@@ -4,6 +4,7 @@ import { useRoomStore, GameMode, MultiMode } from '@/lib/store/roomStore'
 import { GridSize } from '@/lib/cardLogic'
 
 const GAME_ORIGIN = 'https://pino-games.revely.company'
+const joinUrl = (code: string) => `${GAME_ORIGIN}/cards/multi/join?code=${code}`
 
 interface RoomLobbyProps {
   gameType: GameMode
@@ -50,13 +51,13 @@ export function RoomLobby({ gameType, onStart, initialJoinCode }: RoomLobbyProps
   }
 
   async function handleShare() {
-    const joinUrl = `${GAME_ORIGIN}/cards?join=${roomCode}`
+    const url = joinUrl(roomCode ?? '')
     if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
           title: '피노 게임 카드 뒤집기',
-          text: `같이 한판? 방 코드: ${roomCode}`,
-          url: joinUrl,
+          text: `같이 한판? 링크 클릭하면 바로 입장돼!`,
+          url,
         })
         return
       } catch {
@@ -64,7 +65,7 @@ export function RoomLobby({ gameType, onStart, initialJoinCode }: RoomLobbyProps
       }
     }
     try {
-      await navigator.clipboard.writeText(`피노 게임 카드 뒤집기\n방 코드: ${roomCode}\n${joinUrl}`)
+      await navigator.clipboard.writeText(url)
     } catch { /* ignore clipboard error */ }
     showToast('링크 복사됨')
   }

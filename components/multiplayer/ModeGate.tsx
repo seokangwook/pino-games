@@ -13,7 +13,8 @@ interface ModeGateProps {
 export function ModeGate({ gameType, singleContent, multiContent, initialCode }: ModeGateProps) {
   const [mode, setMode] = useState<'single' | 'multi' | null>(initialCode ? 'multi' : null)
   const { status } = useRoomStore()
-  if (mode === 'multi' && status === 'playing') return <>{multiContent}</>
+  // 이미 활성 세션 있으면 즉시 게임 화면 (join 링크 경유 포함)
+  if (status === 'playing') return <>{multiContent}</>
   if (mode === 'multi') {
     return (
       <div className="min-h-screen flex flex-col items-center px-4 py-8">
