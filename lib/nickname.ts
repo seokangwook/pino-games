@@ -19,7 +19,9 @@ const BANNED_ALL: string[] = [
 
 // 브랜드 단어 = owner만 허용
 const BANNED_BRAND: string[] = [
-  'revely','레블리','피노','pino','모이','moi','운명연구소','나어때','꿈자루',
+  'revely','레블리','레브','피노','pino','모이','moi',
+  '운명연구소','나어때','꿈자루','kkumjaru',
+  'sidereus','hueli','pastlife','zenmind','voicemirror',
 ]
 
 const NR: Record<string, string> = {
