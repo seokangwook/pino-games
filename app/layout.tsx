@@ -6,11 +6,11 @@ const ADSENSE_PUB = 'ca-pub-4128588337803742'
 
 export const metadata: Metadata = {
   title: '피노 게임 🐱',
-  description: '피노 고양이와 함께 하는 카드 뒤집기 & 마작 솔리테어',
-  keywords: '피노,고양이,게임,카드,마작,솔리테어',
+  description: '피노 고양이와 함께 하는 카드 뒤집기',
+  keywords: '피노,고양이,게임,카드',
   openGraph: {
     title: '피노 게임 🐱',
-    description: '피노 고양이와 함께 하는 카드 뒤집기 & 마작 솔리테어',
+    description: '피노 고양이와 함께 하는 카드 뒤집기',
     type: 'website',
     url: 'https://pino-games.revely.company',
   },

@@ -58,17 +58,21 @@ export function RoomLobby({ gameType, onStart, initialJoinCode }: RoomLobbyProps
           text: `같이 한판? 방 코드: ${roomCode}`,
           url: joinUrl,
         })
+        return
       } catch {
-        // 사용자가 취소한 경우 무시
+        // 사용자가 취소하거나 share 실패 → fallback
       }
-    } else {
-      await navigator.clipboard.writeText(`피노 게임 카드 뒤집기\n방 코드: ${roomCode}\n${joinUrl}`)
-      showToast('링크 복사됨')
     }
+    try {
+      await navigator.clipboard.writeText(`피노 게임 카드 뒤집기\n방 코드: ${roomCode}\n${joinUrl}`)
+    } catch { /* ignore clipboard error */ }
+    showToast('링크 복사됨')
   }
 
   async function handleCopyCode() {
-    await navigator.clipboard.writeText(roomCode ?? '')
+    try {
+      await navigator.clipboard.writeText(roomCode ?? '')
+    } catch { /* ignore clipboard error */ }
     showToast('코드 복사됨')
   }
 
