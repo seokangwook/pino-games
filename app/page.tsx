@@ -19,13 +19,21 @@ export default function Home() {
         <h1 className="text-4xl font-black text-[#6B4C2A] tracking-tight">피노 게임</h1>
         <p className="text-[#A0785A] mt-2 text-lg">고양이들과 함께 놀아요 🐾</p>
       </div>
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-2xl flex flex-col gap-4">
         <Link href="/cards" className="group">
           <div className="bg-white/80 backdrop-blur rounded-3xl p-8 shadow-lg border border-[#FFD4A8]/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 text-center">
             <div className="text-6xl mb-4">🃏</div>
             <h2 className="text-2xl font-bold text-[#6B4C2A] mb-2">카드 뒤집기</h2>
             <p className="text-[#A0785A] text-sm leading-relaxed">같은 고양이 카드 2장을 찾아요<br />4×4 / 4×6 / 6×6 그리드 · 1:1 멀티 지원</p>
             <div className="mt-5 inline-block bg-[#FFB7C5] text-white font-bold px-6 py-2.5 rounded-full group-hover:bg-[#FF8FA8] transition-colors">시작하기 →</div>
+          </div>
+        </Link>
+        <Link href="/find" className="group">
+          <div className="bg-white/80 backdrop-blur rounded-3xl p-8 shadow-lg border border-[#FFD4A8]/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 text-center">
+            <div className="text-6xl mb-4">🔍</div>
+            <h2 className="text-2xl font-bold text-[#6B4C2A] mb-2">숨은 피노 찾기</h2>
+            <p className="text-[#A0785A] text-sm leading-relaxed">한국 전통 시장에 숨어 있는 고양이 5마리 발견<br />타임어택 · 공유 기능</p>
+            <div className="mt-5 inline-block bg-[#FFD166] text-[#6B4C2A] font-bold px-6 py-2.5 rounded-full group-hover:bg-[#FFC233] transition-colors">시작하기 →</div>
           </div>
         </Link>
       </div>
