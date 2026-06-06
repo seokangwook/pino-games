@@ -60,14 +60,14 @@ export const useAuthStore = create<AuthStore>((set) => ({
   },
 }))
 
-export async function saveScore(params: { gameType: 'cards' | 'mahjong'; gridSize?: string; moves: number; timeMs: number }) {
+export async function saveScore(params: { gameType: 'cards'; gridSize?: string; moves: number; timeMs: number }) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return
   await supabase.from('game_scores').insert({ user_id: user.id, game_type: params.gameType, grid_size: params.gridSize ?? null, moves: params.moves, time_ms: params.timeMs })
 }
 
-export async function fetchRanking(gameType: 'cards' | 'mahjong', gridSize?: string) {
-  let q = supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', gameType).order('time_ms', { ascending: true }).limit(20)
+export async function fetchRanking(gridSize?: string) {
+  let q = supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', 'cards').order('time_ms', { ascending: true }).limit(20)
   if (gridSize) q = q.eq('grid_size', gridSize)
   const { data: scores } = await q
   if (!scores?.length) return []

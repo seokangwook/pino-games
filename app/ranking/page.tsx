@@ -4,13 +4,12 @@ import { RankingBoard } from '@/components/ranking/RankingBoard'
 import { LoginButton } from '@/components/auth/LoginButton'
 import Link from 'next/link'
 
-type Tab = 'cards-4x4' | 'cards-4x6' | 'cards-6x6' | 'mahjong'
-const TABS = [{ key: 'cards-4x4', label: '카드 4×4' }, { key: 'cards-4x6', label: '카드 4×6' }, { key: 'cards-6x6', label: '카드 6×6' }, { key: 'mahjong', label: '마작' }] as const
+type Tab = 'cards-4x4' | 'cards-4x6' | 'cards-6x6'
+const TABS = [{ key: 'cards-4x4', label: '카드 4×4' }, { key: 'cards-4x6', label: '카드 4×6' }, { key: 'cards-6x6', label: '카드 6×6' }] as const
 
 export default function RankingPage() {
   const [tab, setTab] = useState<Tab>('cards-4x4')
-  const gameType = tab.startsWith('cards') ? 'cards' : 'mahjong'
-  const gridSize = tab.startsWith('cards') ? tab.replace('cards-', '') : undefined
+  const gridSize = tab.replace('cards-', '')
   return (
     <div className="min-h-screen flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-lg flex items-center justify-between mb-6">
@@ -20,7 +19,7 @@ export default function RankingPage() {
         </div>
         <LoginButton />
       </div>
-      <div className="w-full max-w-lg grid grid-cols-4 gap-1 mb-6 bg-white/60 backdrop-blur rounded-2xl p-1 border border-[#FFD4A8]/50">
+      <div className="w-full max-w-lg grid grid-cols-3 gap-1 mb-6 bg-white/60 backdrop-blur rounded-2xl p-1 border border-[#FFD4A8]/50">
         {TABS.map(t => (
           <button key={t.key} onClick={() => setTab(t.key as Tab)}
             className={`py-2 rounded-xl text-xs font-bold transition-colors ${tab === t.key ? 'bg-[#FFB7C5] text-white' : 'text-[#A0785A] hover:text-[#6B4C2A]'}`}>
@@ -29,7 +28,7 @@ export default function RankingPage() {
         ))}
       </div>
       <div className="w-full max-w-lg bg-white/80 backdrop-blur rounded-3xl p-6 shadow-md border border-[#FFD4A8]/50">
-        <RankingBoard gameType={gameType} gridSize={gridSize} />
+        <RankingBoard gridSize={gridSize} />
       </div>
       <p className="mt-6 text-[#C0A88A] text-xs text-center">기록은 Google 로그인 후 자동 저장됩니다</p>
     </div>

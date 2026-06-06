@@ -5,12 +5,12 @@ import { formatTime } from '@/lib/supabase'
 
 type Row = { user_id: string; moves: number; time_ms: number; nickname?: string | null }
 
-export function RankingBoard({ gameType, gridSize }: { gameType: 'cards' | 'mahjong'; gridSize?: string }) {
+export function RankingBoard({ gridSize }: { gridSize?: string }) {
   const [rows, setRows] = useState<Row[]>([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    fetchRanking(gameType, gridSize).then(d => { setRows(d as Row[]); setLoading(false) })
-  }, [gameType, gridSize])
+    fetchRanking(gridSize).then(d => { setRows(d as Row[]); setLoading(false) })
+  }, [gridSize])
 
   if (loading) return <div className="text-center text-[#A0785A] py-8">불러오는 중...</div>
   if (!rows.length) return <div className="text-center text-[#A0785A] py-8"><p className="text-4xl mb-2">🏆</p><p>첫 번째 기록을 남겨보세요!</p></div>

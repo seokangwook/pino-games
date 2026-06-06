@@ -38,13 +38,6 @@ export function GameResultModal({
             : '아쉽다냥... 다음엔 더 빨리 매칭해보세요!'}
         </p>
 
-        {isVictory && (
-          <div className="flex items-center gap-2 bg-yellow-100 border border-yellow-300 rounded-2xl px-4 py-2">
-            <span className="text-lg">🐟</span>
-            <span className="text-sm font-black text-yellow-700">+10 츄르 획득!</span>
-          </div>
-        )}
-
         <div className="w-full bg-white/70 rounded-2xl px-5 py-4 flex flex-col gap-2 text-sm">
           <div className="flex justify-between">
             <span className="text-[#A0785A] font-semibold">내 매칭</span>

@@ -18,7 +18,7 @@ export function ModeGate({ gameType, singleContent, multiContent }: ModeGateProp
       <div className="min-h-screen flex flex-col items-center px-4 py-8">
         <div className="w-full max-w-2xl mb-6 flex items-center gap-3">
           <button onClick={() => { useRoomStore.getState().leaveRoom(); setMode(null) }} className="text-[#A0785A] text-2xl">←</button>
-          <h1 className="text-2xl font-black text-[#6B4C2A]">{gameType === 'cards' ? '카드 뒤집기' : '마작 솔리테어'} · 멀티</h1>
+          <h1 className="text-2xl font-black text-[#6B4C2A]">카드 뒤집기 · 멀티</h1>
         </div>
         <RoomLobby gameType={gameType} onStart={() => {}} />
       </div>
@@ -28,8 +28,8 @@ export function ModeGate({ gameType, singleContent, multiContent }: ModeGateProp
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
       <div className="text-center mb-10">
-        <div className="text-6xl mb-3">{gameType === 'cards' ? '🃏' : '🀄'}</div>
-        <h1 className="text-3xl font-black text-[#6B4C2A]">{gameType === 'cards' ? '카드 뒤집기' : '마작 솔리테어'}</h1>
+        <div className="text-6xl mb-3">🃏</div>
+        <h1 className="text-3xl font-black text-[#6B4C2A]">카드 뒤집기</h1>
         <p className="text-[#A0785A] mt-2">모드를 선택하세요</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
