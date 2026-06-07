@@ -65,13 +65,16 @@ export const useAuthStore = create<AuthStore>((set) => ({
 }))
 
 export async function saveScore(params: { gameType: 'cards'; gridSize?: string; moves: number; timeMs: number }) {
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) return
   try {
     const res = await fetch('/api/ranking', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId: user.id, gameType: params.gameType, gridSize: params.gridSize, moves: params.moves, timeMs: params.timeMs }),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`,
+      },
+      body: JSON.stringify({ gameType: params.gameType, gridSize: params.gridSize, moves: params.moves, timeMs: params.timeMs }),
     })
     if (!res.ok) {
       const d = await res.json().catch(() => ({}))

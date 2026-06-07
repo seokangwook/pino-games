@@ -8,16 +8,25 @@ export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null)
   if (!body) return NextResponse.json({ error: 'bad request' }, { status: 400 })
 
-  const { userId, gameType, gridSize, moves, timeMs } = body
-  if (!userId || !gameType || moves == null || timeMs == null) {
+  const { gameType, gridSize, moves, timeMs } = body
+  if (!gameType || moves == null || timeMs == null) {
     return NextResponse.json({ error: 'missing params' }, { status: 400 })
   }
 
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY ?? SB_ANON
-  const supabase = createClient(SB_URL, key, { auth: { persistSession: false } })
+  const token = req.headers.get('authorization')?.replace('Bearer ', '')
+  if (!token) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
+
+  // Use user JWT so RLS auth.uid() = user_id is satisfied without service role key
+  const supabase = createClient(SB_URL, SB_ANON, {
+    auth: { persistSession: false },
+    global: { headers: { Authorization: `Bearer ${token}` } },
+  })
+
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
 
   const { error } = await supabase.from('game_scores').insert({
-    user_id: userId,
+    user_id: user.id,
     game_type: gameType,
     grid_size: gridSize ?? null,
     moves,
