@@ -56,6 +56,16 @@
 <rect x="0" y="740" width="1920" height="10" fill="#90A880"/>
 
 <!-- Rocks / volcanic rocks (현무암) -->
+<!-- CAT C1 hiding among sea rocks -->
+<ellipse cx="1444" cy="596" rx="20" ry="14" fill="#4A4848"/>
+<circle cx="1444" cy="578" r="15" fill="#4A4848"/>
+<polygon points="1433,567 1439,554 1445,566" fill="#4A4848"/>
+<polygon points="1445,566 1451,554 1457,567" fill="#4A4848"/>
+<polygon points="1434,568 1439,558 1443,567" fill="#6A6858"/>
+<polygon points="1447,567 1451,558 1456,568" fill="#6A6858"/>
+<ellipse cx="1438" cy="577" rx="2.5" ry="3.5" fill="#0A0818"/>
+<ellipse cx="1450" cy="577" rx="2.5" ry="3.5" fill="#0A0818"/>
+<ellipse cx="1444" cy="582" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Large rock cluster right - C1 cat at (1444,594) hides among rocks in sea -->
 <ellipse cx="1460" cy="560" rx="95" ry="45" fill="url(#s4rock)"/>
 <ellipse cx="1390" cy="575" rx="70" ry="38" fill="#4A4848"/>
@@ -68,6 +78,16 @@
 <!-- Sea foam around rocks -->
 <ellipse cx="1460" cy="580" rx="110" ry="18" fill="white" opacity="0.35"/>
 
+<!-- CAT C2 hiding on sea rock -->
+<ellipse cx="822" cy="456" rx="18" ry="13" fill="#383838"/>
+<circle cx="822" cy="438" r="14" fill="#383838"/>
+<polygon points="811,427 817,415 823,427" fill="#383838"/>
+<polygon points="823,427 829,415 835,428" fill="#383838"/>
+<polygon points="812,428 817,419 821,428" fill="#585858"/>
+<polygon points="825,428 829,419 834,429" fill="#585858"/>
+<ellipse cx="817" cy="437" rx="2.5" ry="3" fill="#080808"/>
+<ellipse cx="827" cy="437" rx="2.5" ry="3" fill="#080808"/>
+<ellipse cx="822" cy="442" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Rock cluster center sea - C2 cat at (822,454) hides on rock -->
 <ellipse cx="820" cy="430" rx="80" ry="40" fill="url(#s4rock)"/>
 <ellipse cx="760" cy="445" rx="55" ry="30" fill="#4A4848"/>
@@ -82,6 +102,16 @@
 <path d="M 680 472 Q 700 488 720 472" fill="#2A5070"/>
 
 <!-- DOLHAREUBANG (돌하르방) statues - Jeju stone figures -->
+<!-- CAT C4 peeking beside dolhareubang -->
+<ellipse cx="269" cy="412" rx="18" ry="13" fill="#D87030"/>
+<circle cx="269" cy="394" r="14" fill="#D87030"/>
+<polygon points="258,383 264,371 270,383" fill="#D87030"/>
+<polygon points="270,383 276,371 282,384" fill="#D87030"/>
+<polygon points="259,384 264,375 268,384" fill="#F09050"/>
+<polygon points="272,384 276,375 281,385" fill="#F09050"/>
+<ellipse cx="264" cy="393" rx="2.5" ry="3" fill="#1A0808"/>
+<ellipse cx="274" cy="393" rx="2.5" ry="3" fill="#1A0808"/>
+<ellipse cx="269" cy="398" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Left dolhareubang - C4 cat at (269,410) hides behind/beside it -->
 <rect x="248" y="480" width="44" height="120" fill="#4A4848"/>
 <ellipse cx="270" cy="480" rx="38" ry="50" fill="#5A5858"/>
@@ -112,6 +142,16 @@
 <rect x="1637" y="598" width="50" height="22" fill="#3A3838"/>
 
 <!-- Stone walls (돌담) - basalt stone walls typical of Jeju -->
+<!-- CAT C0 hiding in stone wall crevice -->
+<ellipse cx="476" cy="758" rx="20" ry="14" fill="#5A5848"/>
+<circle cx="476" cy="740" r="15" fill="#5A5848"/>
+<polygon points="465,729 471,716 477,728" fill="#5A5848"/>
+<polygon points="477,728 483,716 489,729" fill="#5A5848"/>
+<polygon points="466,730 471,720 475,729" fill="#7A7868"/>
+<polygon points="479,729 483,720 488,730" fill="#7A7868"/>
+<ellipse cx="470" cy="739" rx="2.5" ry="3.5" fill="#1A1818"/>
+<ellipse cx="482" cy="739" rx="2.5" ry="3.5" fill="#1A1818"/>
+<ellipse cx="476" cy="744" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Left stone wall C0 cat at (476,756) hides along wall -->
 <rect x="0" y="720" width="560" height="120" fill="url(#s4wall)"/>
 <rect x="0" y="718" width="560" height="10" fill="#8A8078"/>
@@ -146,6 +186,16 @@
 <ellipse cx="1796" cy="730" rx="32" ry="19" fill="#6A6058" opacity="0.7"/>
 <ellipse cx="1860" cy="726" rx="35" ry="20" fill="#7A7068" opacity="0.7"/>
 
+<!-- CAT C3 hiding under fishing nets -->
+<ellipse cx="1098" cy="866" rx="20" ry="14" fill="#988860"/>
+<circle cx="1098" cy="848" r="15" fill="#988860"/>
+<polygon points="1087,837 1093,824 1099,836" fill="#988860"/>
+<polygon points="1099,836 1105,824 1111,837" fill="#988860"/>
+<polygon points="1088,838 1093,828 1097,837" fill="#B8A878"/>
+<polygon points="1101,837 1105,828 1110,838" fill="#B8A878"/>
+<ellipse cx="1092" cy="847" rx="2.5" ry="3.5" fill="#1A1808"/>
+<ellipse cx="1104" cy="847" rx="2.5" ry="3.5" fill="#1A1808"/>
+<ellipse cx="1098" cy="852" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Fishing nets spread on shore (C3 cat at 1098,864 hides under nets) -->
 <!-- Net structure -->
 <path d="M 950 840 L 1250 840 L 1280 900 L 920 900 Z" fill="#8A8060" opacity="0.5"/>

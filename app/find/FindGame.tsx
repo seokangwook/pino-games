@@ -255,38 +255,20 @@ function GamePlay({ stageIdx, onBack }: { stageIdx: number; onBack: () => void }
           sizes="(max-width: 768px) 100vw, 768px"
         />
 
-        {/* 고양이들 (숨겨진 상태 = 낮은 opacity) */}
-        {targets.map(t => (
+        {/* 발견 레이블 (찾은 후에만 표시 — 고양이는 SVG 배경에 직접 그려짐) */}
+        {targets.filter(t => found.has(t.id)).map(t => (
           <div
             key={t.id}
-            className="absolute transition-all duration-300 pointer-events-none"
+            className="absolute pointer-events-none z-20"
             style={{
               left: `${t.x}%`,
               top: `${t.y}%`,
-              transform: 'translate(-50%, -50%)',
-              width: '8%',
-              opacity: found.has(t.id) ? 1 : 0.25,
-              filter: hit === t.id
-                ? 'drop-shadow(0 0 14px #FFD166) brightness(1.3)'
-                : found.has(t.id)
-                ? 'drop-shadow(0 0 8px #FFB7C5)'
-                : 'brightness(0.7) saturate(0.6)',
-              zIndex: found.has(t.id) ? 20 : 10,
+              transform: 'translate(-50%, -200%)',
             }}
           >
-            <Image
-              src={t.img}
-              alt={t.label}
-              width={80}
-              height={80}
-              className="w-full h-auto select-none"
-              draggable={false}
-            />
-            {found.has(t.id) && (
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#FFB7C5] text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap animate-bounce">
-                {t.label} 발견!
-              </div>
-            )}
+            <div className="bg-[#FFB7C5] text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap animate-bounce">
+              {t.label} 발견!
+            </div>
           </div>
         ))}
 

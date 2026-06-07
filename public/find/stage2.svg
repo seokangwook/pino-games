@@ -118,6 +118,16 @@
 <!-- Counter -->
 <rect x="60" y="570" width="360" height="300" fill="#2A1818" rx="4"/>
 <rect x="60" y="565" width="360" height="18" fill="#3A2828" rx="3"/>
+<!-- CAT C0 crouching near tteokbokki pot -->
+<ellipse cx="234" cy="595" rx="20" ry="14" fill="#504048"/>
+<circle cx="234" cy="577" r="15" fill="#504048"/>
+<polygon points="223,566 229,553 235,565" fill="#504048"/>
+<polygon points="235,565 241,553 247,566" fill="#504048"/>
+<polygon points="224,567 229,557 233,566" fill="#7A6068"/>
+<polygon points="237,566 241,557 246,567" fill="#7A6068"/>
+<ellipse cx="228" cy="576" rx="2.5" ry="3.5" fill="#0A0808"/>
+<ellipse cx="240" cy="576" rx="2.5" ry="3.5" fill="#0A0808"/>
+<ellipse cx="234" cy="581" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Tteokbokki pot - main hot pot, C0 area (234,594) -->
 <ellipse cx="195" cy="562" rx="80" ry="22" fill="#CC2010"/>
 <rect x="115" y="562" width="160" height="80" fill="url(#s2pot)"/>
@@ -158,6 +168,16 @@
 <ellipse cx="790" cy="402" rx="22" ry="8" fill="#D8C090"/>
 <line x1="826" y1="318" x2="826" y2="395" stroke="#8B6040" stroke-width="3"/>
 <ellipse cx="826" cy="385" rx="22" ry="8" fill="#E8C898"/>
+<!-- CAT C2 hiding among oden skewers -->
+<ellipse cx="856" cy="380" rx="18" ry="13" fill="#B8A890"/>
+<circle cx="856" cy="362" r="14" fill="#B8A890"/>
+<polygon points="845,351 851,339 857,351" fill="#B8A890"/>
+<polygon points="857,351 863,339 869,352" fill="#B8A890"/>
+<polygon points="846,352 851,343 855,352" fill="#D8C8A8"/>
+<polygon points="859,352 863,343 868,353" fill="#D8C8A8"/>
+<ellipse cx="851" cy="361" rx="2.5" ry="3" fill="#1A1810"/>
+<ellipse cx="861" cy="361" rx="2.5" ry="3" fill="#1A1810"/>
+<ellipse cx="856" cy="366" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C2 cat position at (856,378) - center of skewer rack -->
 <line x1="856" y1="318" x2="856" y2="398" stroke="#8B6040" stroke-width="3"/>
 <ellipse cx="856" cy="388" rx="24" ry="9" fill="#F0D8A8"/>
@@ -222,6 +242,16 @@
 <!-- Knife -->
 <rect x="598" y="730" width="58" height="8" fill="#C0C0C0" rx="2"/>
 <rect x="598" y="734" width="18" height="20" fill="#5A3820"/>
+<!-- CAT C3 hiding in shadow under counter -->
+<ellipse cx="476" cy="866" rx="20" ry="14" fill="#302828"/>
+<circle cx="476" cy="848" r="15" fill="#302828"/>
+<polygon points="465,837 471,824 477,836" fill="#302828"/>
+<polygon points="477,836 483,824 489,837" fill="#302828"/>
+<polygon points="466,838 471,828 475,837" fill="#504040"/>
+<polygon points="479,837 483,828 488,838" fill="#504040"/>
+<ellipse cx="470" cy="847" rx="2.5" ry="3.5" fill="#080808"/>
+<ellipse cx="482" cy="847" rx="2.5" ry="3.5" fill="#080808"/>
+<ellipse cx="476" cy="852" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C3 cat at (476,864) - behind cutting board + under counter shadow -->
 <ellipse cx="480" cy="865" rx="80" ry="20" fill="#1A0808" opacity="0.5"/>
 <!-- Under-counter area (dark shadow) -->
@@ -243,6 +273,16 @@
 <rect x="1340" y="595" width="5" height="60" fill="#9A6A30" transform="rotate(15 1340 595)"/>
 <rect x="1347" y="595" width="5" height="60" fill="#8A5A28" transform="rotate(18 1347 595)"/>
 
+<!-- CAT C1 hiding near ramen bowl -->
+<ellipse cx="1392" cy="736" rx="20" ry="14" fill="#C87030"/>
+<circle cx="1392" cy="718" r="15" fill="#C87030"/>
+<polygon points="1381,707 1387,694 1393,706" fill="#C87030"/>
+<polygon points="1393,706 1399,694 1405,707" fill="#C87030"/>
+<polygon points="1382,708 1387,698 1391,707" fill="#E89050"/>
+<polygon points="1395,707 1399,698 1404,708" fill="#E89050"/>
+<ellipse cx="1386" cy="717" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="1398" cy="717" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="1392" cy="722" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Second ramen bowl (C1 area 1392,734) -->
 <ellipse cx="1392" cy="700" rx="55" ry="17" fill="#8B5A18"/>
 <rect x="1337" y="700" width="110" height="75" fill="#7A5010"/>
@@ -272,6 +312,16 @@
 <ellipse cx="1570" cy="445" rx="14" ry="6" fill="#6A4020"/>
 <line x1="1615" y1="313" x2="1615" y2="440" stroke="#5A3820" stroke-width="3"/>
 <ellipse cx="1615" cy="445" rx="18" ry="33" fill="#5A3015"/>
+<!-- CAT C4 hiding among hanging sausages -->
+<ellipse cx="1651" cy="456" rx="18" ry="13" fill="#6A4030"/>
+<circle cx="1651" cy="438" r="14" fill="#6A4030"/>
+<polygon points="1640,427 1646,415 1652,427" fill="#6A4030"/>
+<polygon points="1652,427 1658,415 1664,428" fill="#6A4030"/>
+<polygon points="1641,428 1646,419 1650,428" fill="#8A6048"/>
+<polygon points="1654,428 1658,419 1663,429" fill="#8A6048"/>
+<ellipse cx="1645" cy="437" rx="2.5" ry="3" fill="#1A1010"/>
+<ellipse cx="1657" cy="437" rx="2.5" ry="3" fill="#1A1010"/>
+<ellipse cx="1651" cy="442" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C4 cluster at (1651,454) -->
 <line x1="1651" y1="313" x2="1651" y2="447" stroke="#5A3820" stroke-width="3"/>
 <ellipse cx="1651" cy="453" rx="20" ry="36" fill="#663520"/>

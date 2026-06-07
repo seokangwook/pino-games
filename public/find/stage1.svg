@@ -160,6 +160,16 @@
 <circle cx="395" cy="657" r="21" fill="#C09060" stroke="#A07840" stroke-width="2"/>
 <circle cx="440" cy="655" r="25" fill="#C8A060" stroke="#A08040" stroke-width="2"/>
 
+<!-- CAT C0 hiding near pottery jars -->
+<ellipse cx="303" cy="780" rx="20" ry="14" fill="#7A5030"/>
+<circle cx="303" cy="762" r="15" fill="#7A5030"/>
+<polygon points="292,751 298,738 304,750" fill="#7A5030"/>
+<polygon points="304,750 310,738 316,751" fill="#7A5030"/>
+<polygon points="293,752 298,742 302,751" fill="#B07850"/>
+<polygon points="305,751 310,742 315,752" fill="#B07850"/>
+<ellipse cx="297" cy="761" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="309" cy="761" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="303" cy="767" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- JARS (항아리) - C0 cat hides at (303,778) in this area -->
 <ellipse cx="220" cy="800" rx="36" ry="50" fill="url(#s1jar)"/>
 <ellipse cx="220" cy="750" rx="30" ry="11" fill="#9A6030"/>
@@ -235,6 +245,16 @@
 <line x1="695" y1="285" x2="695" y2="455" stroke="#5A3820" stroke-width="3"/>
 <ellipse cx="695" cy="455" rx="22" ry="9" fill="#D8D0C8"/>
 <path d="M 675 455 Q 695 445 715 455 Q 695 478 675 455" fill="#C0C0B8"/>
+<!-- CAT C2 hiding among hanging fish -->
+<ellipse cx="753" cy="440" rx="18" ry="13" fill="#9A9888"/>
+<circle cx="753" cy="422" r="14" fill="#9A9888"/>
+<polygon points="742,411 748,399 754,411" fill="#9A9888"/>
+<polygon points="754,411 760,399 764,412" fill="#9A9888"/>
+<polygon points="743,412 748,403 752,412" fill="#BCB8A8"/>
+<polygon points="756,412 760,403 763,413" fill="#BCB8A8"/>
+<ellipse cx="748" cy="421" rx="2.5" ry="3" fill="#1A1810"/>
+<ellipse cx="758" cy="421" rx="2.5" ry="3" fill="#1A1810"/>
+<ellipse cx="753" cy="426" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Cat2 hiding area: fish cluster at (753,432) -->
 <line x1="750" y1="285" x2="750" y2="443" stroke="#5A3820" stroke-width="3"/>
 <ellipse cx="750" cy="443" rx="26" ry="10" fill="#D0C8C0"/>
@@ -282,6 +302,16 @@
 <!-- Stall counter -->
 <rect x="836" y="660" width="330" height="162" fill="#6A5030" rx="4"/>
 <rect x="836" y="654" width="330" height="18" fill="#8A7050" rx="3"/>
+<!-- CAT C4 hiding behind goods boxes -->
+<ellipse cx="995" cy="628" rx="20" ry="14" fill="#B09060"/>
+<circle cx="995" cy="610" r="15" fill="#B09060"/>
+<polygon points="984,599 990,586 996,598" fill="#B09060"/>
+<polygon points="996,598 1002,586 1008,599" fill="#B09060"/>
+<polygon points="985,600 990,590 994,599" fill="#D4B480"/>
+<polygon points="998,599 1002,590 1007,600" fill="#D4B480"/>
+<ellipse cx="989" cy="609" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="1001" cy="609" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="995" cy="614" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Goods at C4 position (995,626) - stacked boxes and baskets -->
 <rect x="920" y="590" width="70" height="68" fill="#C09860" rx="3"/>
 <rect x="900" y="558" width="55" height="35" fill="#B08850" rx="2"/>
@@ -326,6 +356,16 @@
 <!-- Counter -->
 <rect x="1160" y="660" width="348" height="162" fill="#3A6820" rx="4"/>
 <rect x="1160" y="654" width="348" height="18" fill="#5A8840" rx="3"/>
+<!-- CAT C3 hiding in vegetable pile -->
+<ellipse cx="1167" cy="844" rx="20" ry="14" fill="#607040"/>
+<circle cx="1167" cy="826" r="15" fill="#607040"/>
+<polygon points="1156,815 1162,802 1168,814" fill="#607040"/>
+<polygon points="1168,814 1174,802 1180,815" fill="#607040"/>
+<polygon points="1157,816 1162,806 1166,815" fill="#88A060"/>
+<polygon points="1170,815 1174,806 1179,816" fill="#88A060"/>
+<ellipse cx="1161" cy="825" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="1173" cy="825" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="1167" cy="830" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Vegetables pile at C3 (1167,842) -->
 <!-- Cabbages (배추) -->
 <ellipse cx="1168" cy="830" rx="38" ry="30" fill="#6AB840"/>
@@ -390,6 +430,16 @@
 <rect x="1530" y="448" width="28" height="210" fill="#E040A0" opacity="0.8"/>
 <rect x="1572" y="448" width="28" height="200" fill="#4080E0" opacity="0.8"/>
 <rect x="1612" y="448" width="30" height="215" fill="#F0B040" opacity="0.8"/>
+<!-- CAT C1 hiding among fabric strips -->
+<ellipse cx="1617" cy="596" rx="20" ry="14" fill="#C86028"/>
+<circle cx="1617" cy="578" r="15" fill="#C86028"/>
+<polygon points="1606,567 1612,554 1618,566" fill="#C86028"/>
+<polygon points="1618,566 1624,554 1630,567" fill="#C86028"/>
+<polygon points="1607,568 1612,558 1616,567" fill="#E88050"/>
+<polygon points="1620,567 1624,558 1629,568" fill="#E88050"/>
+<ellipse cx="1611" cy="577" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="1623" cy="577" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="1617" cy="582" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Main cat hiding fabric cluster at (1617,594) -->
 <rect x="1594" y="445" width="24" height="195" fill="#CC3090" opacity="0.9"/>
 <rect x="1622" y="445" width="24" height="200" fill="#3060C8" opacity="0.9"/>

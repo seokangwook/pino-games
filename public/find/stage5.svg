@@ -144,6 +144,16 @@
 <ellipse cx="320" cy="460" rx="90" ry="78" fill="#E05010" opacity="0.85"/>
 <ellipse cx="395" cy="470" rx="95" ry="80" fill="#D84010" opacity="0.85"/>
 <ellipse cx="355" cy="425" rx="70" ry="60" fill="#F06020" opacity="0.8"/>
+<!-- CAT C0 hiding in autumn leaf pile -->
+<ellipse cx="355" cy="736" rx="20" ry="14" fill="#CC4010"/>
+<circle cx="355" cy="718" r="15" fill="#CC4010"/>
+<polygon points="344,707 350,694 356,706" fill="#CC4010"/>
+<polygon points="356,706 362,694 368,707" fill="#CC4010"/>
+<polygon points="345,708 350,698 354,707" fill="#E87030"/>
+<polygon points="358,707 362,698 367,708" fill="#E87030"/>
+<ellipse cx="349" cy="717" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="361" cy="717" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="355" cy="722" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- LEAF PILE at base (C0 hiding spot 355,734) -->
 <ellipse cx="355" cy="740" rx="90" ry="28" fill="#CC3008" opacity="0.75"/>
 <ellipse cx="330" cy="748" rx="70" ry="22" fill="#E05010" opacity="0.7"/>
@@ -159,6 +169,16 @@
 <ellipse cx="1530" cy="455" rx="90" ry="78" fill="#E05010" opacity="0.85"/>
 <ellipse cx="1605" cy="465" rx="95" ry="80" fill="#D84010" opacity="0.85"/>
 <ellipse cx="1566" cy="418" rx="75" ry="62" fill="#F06020" opacity="0.8"/>
+<!-- CAT C1 hiding behind maple trunk -->
+<ellipse cx="1565" cy="564" rx="18" ry="13" fill="#4A2818"/>
+<circle cx="1565" cy="546" r="14" fill="#4A2818"/>
+<polygon points="1554,535 1560,523 1566,535" fill="#4A2818"/>
+<polygon points="1566,535 1572,523 1578,536" fill="#4A2818"/>
+<polygon points="1555,536 1560,527 1564,536" fill="#6A4830"/>
+<polygon points="1568,536 1572,527 1577,537" fill="#6A4830"/>
+<ellipse cx="1559" cy="545" rx="2.5" ry="3" fill="#1A0810"/>
+<ellipse cx="1571" cy="545" rx="2.5" ry="3" fill="#1A0810"/>
+<ellipse cx="1565" cy="550" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C1 cat at (1565,562) hides behind/in right maple trunk area -->
 <ellipse cx="1565" cy="575" rx="50" ry="80" fill="#4A2818" opacity="0.9"/>
 <ellipse cx="1565" cy="575" rx="35" ry="55" fill="#3A1808" opacity="0.7"/>
@@ -187,6 +207,16 @@
 <!-- Spire on top -->
 <rect x="610" y="652" width="8" height="22" fill="#7A7260"/>
 <ellipse cx="614" cy="652" rx="10" ry="6" fill="#8A8270"/>
+<!-- CAT C3 hiding behind stone pagoda -->
+<ellipse cx="614" cy="844" rx="20" ry="14" fill="#7A7260"/>
+<circle cx="614" cy="826" r="15" fill="#7A7260"/>
+<polygon points="603,815 609,802 615,814" fill="#7A7260"/>
+<polygon points="615,814 621,802 627,815" fill="#7A7260"/>
+<polygon points="604,816 609,806 613,815" fill="#9A9280"/>
+<polygon points="617,815 621,806 626,816" fill="#9A9280"/>
+<ellipse cx="608" cy="825" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="620" cy="825" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="614" cy="830" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C3 cat shadow behind pagoda (614,842) -->
 <ellipse cx="614" cy="852" rx="50" ry="16" fill="#2A1808" opacity="0.5"/>
 <!-- Leaf pile near pagoda -->
@@ -214,6 +244,16 @@
 <rect x="1272" y="826" width="62" height="10" fill="#7A7260" rx="2"/>
 <!-- Lantern glow effect -->
 <ellipse cx="1303" cy="650" rx="35" ry="22" fill="url(#s5lantern)" opacity="0.4"/>
+<!-- CAT C4 hiding near stone lantern -->
+<ellipse cx="1306" cy="672" rx="20" ry="14" fill="#7A7060"/>
+<circle cx="1306" cy="654" r="15" fill="#7A7060"/>
+<polygon points="1295,643 1301,630 1307,642" fill="#7A7060"/>
+<polygon points="1307,642 1313,630 1319,643" fill="#7A7060"/>
+<polygon points="1296,644 1301,634 1305,643" fill="#A09880"/>
+<polygon points="1309,643 1313,634 1318,644" fill="#A09880"/>
+<ellipse cx="1300" cy="653" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="1312" cy="653" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="1306" cy="658" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C4 cat hides in lantern shadow area -->
 <ellipse cx="1306" cy="682" rx="35" ry="50" fill="#3A2010" opacity="0.4"/>
 
@@ -239,6 +279,16 @@
 <ellipse cx="200" cy="340" rx="12" ry="5" fill="#D04010" opacity="0.7" transform="rotate(-22 200 340)"/>
 <ellipse cx="1780" cy="345" rx="13" ry="6" fill="#CC3010" opacity="0.7" transform="rotate(28 1780 345)"/>
 
+<!-- CAT C2 hiding on roof ridge -->
+<ellipse cx="960" cy="412" rx="18" ry="12" fill="#1A2030"/>
+<circle cx="960" cy="394" r="14" fill="#1A2030"/>
+<polygon points="949,383 955,371 961,383" fill="#1A2030"/>
+<polygon points="961,383 967,371 973,384" fill="#1A2030"/>
+<polygon points="950,384 955,375 959,384" fill="#3A4050"/>
+<polygon points="963,384 967,375 972,385" fill="#3A4050"/>
+<ellipse cx="955" cy="393" rx="2.5" ry="3" fill="#050810"/>
+<ellipse cx="965" cy="393" rx="2.5" ry="3" fill="#050810"/>
+<ellipse cx="960" cy="398" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C2 cat at (960,410) - on roof ridge, dark shadow of ridge tile -->
 <ellipse cx="960" cy="395" rx="60" ry="18" fill="#1A2030" opacity="0.7"/>
 

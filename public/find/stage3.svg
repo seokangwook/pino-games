@@ -113,6 +113,16 @@
 <rect x="350" y="702" width="320" height="28" fill="#9A9080"/>
 <!-- Shadow on step edge -->
 <rect x="200" y="808" width="500" height="4" fill="#6A6050"/>
+<!-- CAT C0 hiding on stone steps -->
+<ellipse cx="407" cy="704" rx="20" ry="14" fill="#8A8070"/>
+<circle cx="407" cy="686" r="15" fill="#8A8070"/>
+<polygon points="396,675 402,662 408,674" fill="#8A8070"/>
+<polygon points="408,674 414,662 420,675" fill="#8A8070"/>
+<polygon points="397,676 402,666 406,675" fill="#ACA090"/>
+<polygon points="410,675 414,666 419,676" fill="#ACA090"/>
+<ellipse cx="401" cy="685" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="413" cy="685" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="407" cy="690" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C0 cat at (407,702) - shadow/crack on step side -->
 <rect x="370" y="700" width="80" height="60" fill="#7A6850" opacity="0.7"/>
 <ellipse cx="407" cy="720" rx="40" ry="15" fill="#5A5040" opacity="0.5"/>
@@ -166,6 +176,16 @@
 <rect x="530" y="808" width="52" height="10" fill="#8A8070" rx="2"/>
 <rect x="520" y="816" width="72" height="10" fill="#7A7060" rx="2"/>
 
+<!-- CAT C4 hiding near stone lantern -->
+<ellipse cx="1219" cy="650" rx="20" ry="14" fill="#7A7060"/>
+<circle cx="1219" cy="632" r="15" fill="#7A7060"/>
+<polygon points="1208,621 1214,608 1220,620" fill="#7A7060"/>
+<polygon points="1220,620 1226,608 1232,621" fill="#7A7060"/>
+<polygon points="1209,622 1214,612 1218,621" fill="#9A9080"/>
+<polygon points="1222,621 1226,612 1231,622" fill="#9A9080"/>
+<ellipse cx="1213" cy="631" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="1225" cy="631" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="1219" cy="636" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- Right lantern (C4 cat 1219,648) -->
 <rect x="1205" y="680" width="22" height="120" fill="#8A8070"/>
 <rect x="1192" y="678" width="52" height="15" fill="#9A9080" rx="3"/>
@@ -177,6 +197,16 @@
 <!-- Lantern glow -->
 <ellipse cx="1218" cy="660" rx="28" ry="18" fill="#FFE080" opacity="0.2"/>
 
+<!-- CAT C1 hiding behind pavilion pillar -->
+<ellipse cx="1513" cy="520" rx="20" ry="14" fill="#A83A10"/>
+<circle cx="1513" cy="502" r="15" fill="#A83A10"/>
+<polygon points="1502,491 1508,478 1514,490" fill="#A83A10"/>
+<polygon points="1514,490 1520,478 1526,491" fill="#A83A10"/>
+<polygon points="1503,492 1508,482 1512,491" fill="#C85A28"/>
+<polygon points="1516,491 1520,482 1525,492" fill="#C85A28"/>
+<ellipse cx="1507" cy="501" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="1519" cy="501" rx="2.5" ry="3.5" fill="#1A1010"/>
+<ellipse cx="1513" cy="506" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C1 cat at (1513,518) - right side pavilion wall + tree area -->
 <!-- Small pavilion right side -->
 <rect x="1450" y="450" width="180" height="120" fill="#CC4010"/>
@@ -209,11 +239,31 @@
 <line x1="1640" y1="745" x2="1920" y2="745" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
 <line x1="1640" y1="790" x2="1920" y2="790" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
 
+<!-- CAT C3 hiding in bushes near stone wall -->
+<ellipse cx="701" cy="812" rx="20" ry="14" fill="#3A5828"/>
+<circle cx="701" cy="794" r="15" fill="#3A5828"/>
+<polygon points="690,783 696,770 702,782" fill="#3A5828"/>
+<polygon points="702,782 708,770 714,783" fill="#3A5828"/>
+<polygon points="691,784 696,774 700,783" fill="#5A7840"/>
+<polygon points="704,783 708,774 713,784" fill="#5A7840"/>
+<ellipse cx="695" cy="793" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="707" cy="793" rx="2.5" ry="3.5" fill="#1A1810"/>
+<ellipse cx="701" cy="798" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C3 cat at (701,810) - near left stone wall lower area, bushes -->
 <ellipse cx="650" cy="818" rx="80" ry="30" fill="#2A5820" opacity="0.8"/>
 <ellipse cx="720" cy="812" rx="70" ry="28" fill="#2A6820" opacity="0.8"/>
 <ellipse cx="690" cy="800" rx="50" ry="22" fill="#1A5010" opacity="0.9"/>
 
+<!-- CAT C2 hiding on roof ridge -->
+<ellipse cx="926" cy="326" rx="18" ry="13" fill="#2A3848"/>
+<circle cx="926" cy="308" r="14" fill="#2A3848"/>
+<polygon points="915,297 921,285 927,297" fill="#2A3848"/>
+<polygon points="927,297 933,285 939,298" fill="#2A3848"/>
+<polygon points="916,298 921,289 925,298" fill="#4A5868"/>
+<polygon points="929,298 933,289 938,299" fill="#4A5868"/>
+<ellipse cx="921" cy="307" rx="2.5" ry="3" fill="#080818"/>
+<ellipse cx="931" cy="307" rx="2.5" ry="3" fill="#080818"/>
+<ellipse cx="926" cy="312" rx="2" ry="1.5" fill="#FF9090"/>
 <!-- C2 cat at (926,324) - on roof ridge area -->
 <!-- Decorative roof finial / ridge end -->
 <ellipse cx="920" cy="285" rx="55" ry="20" fill="#1A2838" opacity="0.9"/>
