@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { RankingBoard } from '@/components/ranking/RankingBoard'
 import { LoginButton } from '@/components/auth/LoginButton'
+import { AdSlot } from '@/components/ads/AdSlot'
 import Link from 'next/link'
 
 type Tab = 'cards-4x4' | 'cards-4x6' | 'cards-6x6'
@@ -30,7 +31,10 @@ export default function RankingPage() {
       <div className="w-full max-w-lg bg-white/80 backdrop-blur rounded-3xl p-6 shadow-md border border-[#FFD4A8]/50">
         <RankingBoard gridSize={gridSize} />
       </div>
-      <p className="mt-6 text-[#C0A88A] text-xs text-center">기록은 Google 로그인 후 자동 저장됩니다</p>
+      <div className="w-full max-w-lg mt-6">
+        <AdSlot slot="6394256326" format="auto" />
+      </div>
+      <p className="mt-4 text-[#C0A88A] text-xs text-center">기록은 Google 로그인 후 자동 저장됩니다</p>
     </div>
   )
 }

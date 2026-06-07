@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { AdSlot } from '@/components/ads/AdSlot'
 import { LoginButton } from '@/components/auth/LoginButton'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 
@@ -38,9 +37,6 @@ export default function Home() {
             </div>
           </Link>
         )}
-      </div>
-      <div className="w-full max-w-2xl mt-10">
-        <AdSlot slot="6394256326" format="horizontal" />
       </div>
       <p className="mt-6 text-[#C0A88A] text-sm">© 우당탕탕 공방 · <a href="https://revely.company" className="underline">revely.company</a></p>
     </main>

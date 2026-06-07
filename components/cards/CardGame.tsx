@@ -8,6 +8,8 @@ import { saveScore } from '@/lib/store/authStore'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 import { useAudio } from '@/lib/audio/useAudio'
 import Link from 'next/link'
+import { InterstitialAd } from '@/components/InterstitialAd'
+import { AdSlot } from '@/components/ads/AdSlot'
 
 const GRID_OPTIONS: { value: GridSize; label: string; desc: string }[] = [
   { value: '4x4', label: '4×4', desc: '쉬움 · 16장' },
@@ -19,6 +21,7 @@ export function CardGame() {
   const { status, gridSize, moves, matchedCount, startTime, endTime, setGridSize, startGame, resetGame } = useCardStore()
   const [elapsed, setElapsed] = useState(0)
   const [scoreSaved, setScoreSaved] = useState(false)
+  const [showAdGate, setShowAdGate] = useState(false)
   useAudio(status === 'playing' ? 'cards' : status === 'won' ? null : 'main')
 
   useEffect(() => {
@@ -67,9 +70,12 @@ export function CardGame() {
               </button>
             ))}
           </div>
-          <button onClick={startGame} className="w-full mt-6 bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold text-lg py-4 rounded-2xl transition-colors shadow-md">
+          <button onClick={() => setShowAdGate(true)} className="w-full mt-6 bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold text-lg py-4 rounded-2xl transition-colors shadow-md">
             게임 시작 🐱
           </button>
+          {showAdGate && (
+            <InterstitialAd onSkip={() => { setShowAdGate(false); startGame(); }} />
+          )}
         </div>
       ) : status === 'won' ? (
         <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} />
@@ -90,15 +96,18 @@ export function CardGame() {
 
 function ResultScreen({ moves, elapsed, onReplay, onMenu }: { moves: number; elapsed: number; onReplay: () => void; onMenu: () => void }) {
   return (
-    <div className="text-center mt-8">
+    <div className="text-center mt-8 w-full max-w-xs mx-auto">
       <div className="text-8xl mb-4 bounce-soft">🎉</div>
       <h2 className="text-3xl font-black text-[#6B4C2A] mb-2">클리어!</h2>
       <p className="text-[#A0785A] mb-2">{moves}번 만에 · {formatTime(elapsed)}</p>
       <p className="text-xs text-green-600 mb-6">✓ 기록 저장됨 (로그인 시)</p>
-      <div className="flex flex-col gap-3 max-w-xs mx-auto">
+      <div className="flex flex-col gap-3">
         <button onClick={onReplay} className="bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold py-4 rounded-2xl transition-colors">다시 하기</button>
         <a href="/ranking" className="block bg-white/70 hover:bg-white border border-[#FFD4A8] text-[#6B4C2A] font-bold py-4 rounded-2xl transition-colors text-center">🏆 랭킹 보기</a>
         <button onClick={onMenu} className="text-[#A0785A] underline text-sm">메뉴로</button>
+      </div>
+      <div className="mt-6">
+        <AdSlot slot="6394256326" format="auto" />
       </div>
     </div>
   )
