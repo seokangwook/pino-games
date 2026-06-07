@@ -6,6 +6,7 @@ import { FlipCard } from './FlipCard'
 import { OpponentStatus } from '../multiplayer/OpponentStatus'
 import { GameResultModal } from '../multiplayer/GameResultModal'
 import { formatTime } from '@/lib/supabase'
+import { saveScore } from '@/lib/store/authStore'
 
 export function CardGameMulti() {
   const { boardState, role, gridSize, gameType, multiMode, pushUpdate, finishRoom, leaveRoom, roomCode, userId } = useRoomStore()
@@ -75,7 +76,9 @@ export function CardGameMulti() {
         setLocalCards(matched); setMatchedCount(newMC); setFlippedIds([]); setIsChecking(false)
         if (newMC >= totalPairs) {
           setWon(true)
-          await pushUpdate({ [progKey]: { matched: newMC, moves: newMoves, clearTime: Date.now() } })
+          const clearTime = Date.now()
+          saveScore({ gameType: 'cards', gridSize: gridSize ?? undefined, moves: newMoves, timeMs: clearTime - startTime.current })
+          await pushUpdate({ [progKey]: { matched: newMC, moves: newMoves, clearTime } })
           await finishRoom(userId)
         } else {
           pushUpdate({ [progKey]: { matched: newMC, moves: newMoves, clearTime: null } })

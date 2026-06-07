@@ -24,6 +24,12 @@ export function CardGame() {
   const [showAdGate, setShowAdGate] = useState(false)
   useAudio(status === 'playing' ? 'cards' : status === 'won' ? null : 'main')
 
+  // 이전 게임 상태가 남아 있으면 리셋하여 난이도 선택 화면 표시
+  useEffect(() => {
+    if (useCardStore.getState().status !== 'idle') resetGame()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   useEffect(() => {
     if (status !== 'playing' || !startTime) return
     const id = setInterval(() => setElapsed(Date.now() - startTime), 500)

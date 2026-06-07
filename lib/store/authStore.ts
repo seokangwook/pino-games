@@ -8,6 +8,8 @@ const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://yiduavoxineujido
 const SB_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpZHVhdm94aW5ldWppZG9yY2J4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NDE4MzAsImV4cCI6MjA5MjExNzgzMH0.lPhnp5DZD_6y0BcSaj_lQhHSVE4kbyuQn7OhngJp71U'
 export const supabase = createClient(SB_URL, SB_KEY)
 
+let _authInitialized = false
+
 interface AuthStore {
   user: User | null; nickname: string | null; role: UserRole
   needsNickname: boolean; loading: boolean
@@ -24,6 +26,8 @@ export const useAuthStore = create<AuthStore>((set) => ({
   user: null, nickname: null, role: 'user', needsNickname: false, loading: true,
 
   init: async () => {
+    if (_authInitialized) return
+    _authInitialized = true
     const { data } = await supabase.auth.getUser()
     if (data.user) {
       const { nickname, role } = await fetchProfile(data.user.id)
@@ -63,16 +67,29 @@ export const useAuthStore = create<AuthStore>((set) => ({
 export async function saveScore(params: { gameType: 'cards'; gridSize?: string; moves: number; timeMs: number }) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return
-  await supabase.from('game_scores').insert({ user_id: user.id, game_type: params.gameType, grid_size: params.gridSize ?? null, moves: params.moves, time_ms: params.timeMs })
+  try {
+    const res = await fetch('/api/ranking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId: user.id, gameType: params.gameType, gridSize: params.gridSize, moves: params.moves, timeMs: params.timeMs }),
+    })
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}))
+      console.error('[saveScore] failed:', d.error)
+    }
+  } catch (e) {
+    console.error('[saveScore] error:', e)
+  }
 }
 
 export async function fetchRanking(gridSize?: string) {
-  let q = supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', 'cards').order('time_ms', { ascending: true }).limit(20)
-  if (gridSize) q = q.eq('grid_size', gridSize)
-  const { data: scores } = await q
-  if (!scores?.length) return []
-  const ids = [...new Set(scores.map(s => s.user_id))]
-  const { data: profiles } = await supabase.from('profiles').select('id, nickname').in('id', ids)
-  const nickMap = new Map((profiles ?? []).map(p => [p.id, p.nickname]))
-  return scores.map(s => ({ ...s, nickname: nickMap.get(s.user_id) ?? null }))
+  const params = new URLSearchParams()
+  if (gridSize) params.set('gridSize', gridSize)
+  try {
+    const res = await fetch(`/api/ranking?${params.toString()}`, { cache: 'no-store' })
+    if (!res.ok) return []
+    return res.json()
+  } catch {
+    return []
+  }
 }
