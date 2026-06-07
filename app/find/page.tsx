@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { redirect } from 'next/navigation'
 import { FindGame } from './FindGame'
 
 export const metadata: Metadata = {
@@ -14,5 +15,8 @@ export const metadata: Metadata = {
 }
 
 export default function FindPage() {
+  if (process.env.VERCEL_ENV === 'production') {
+    redirect('/')
+  }
   return <FindGame />
 }
