@@ -8,7 +8,6 @@ import { saveScore } from '@/lib/store/authStore'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 import { useAudio } from '@/lib/audio/useAudio'
 import Link from 'next/link'
-import { InterstitialAd } from '@/components/InterstitialAd'
 import { AdSlot } from '@/components/ads/AdSlot'
 
 const GRID_OPTIONS: { value: GridSize; label: string; desc: string }[] = [
@@ -21,10 +20,9 @@ export function CardGame() {
   const { status, gridSize, moves, matchedCount, startTime, endTime, setGridSize, startGame, resetGame } = useCardStore()
   const [elapsed, setElapsed] = useState(0)
   const [scoreSaved, setScoreSaved] = useState(false)
-  const [showAdGate, setShowAdGate] = useState(false)
+  const [showRankCheck, setShowRankCheck] = useState(false)
   useAudio(status === 'playing' ? 'cards' : status === 'won' ? null : 'main')
 
-  // 이전 게임 상태가 남아 있으면 리셋하여 난이도 선택 화면 표시
   useEffect(() => {
     if (useCardStore.getState().status !== 'idle') resetGame()
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,22 +34,21 @@ export function CardGame() {
     return () => clearInterval(id)
   }, [status, startTime])
 
-  // Save score when game is won
   useEffect(() => {
     if (status === 'won' && !scoreSaved && startTime && endTime) {
       setScoreSaved(true)
-      saveScore({
-        gameType: 'cards',
-        gridSize,
-        moves,
-        timeMs: endTime - startTime,
-      })
+      saveScore({ gameType: 'cards', gridSize, moves, timeMs: endTime - startTime })
     }
   }, [status, scoreSaved, startTime, endTime, gridSize, moves])
 
-  // Reset score saved flag when new game starts
   useEffect(() => {
     if (status === 'playing') setScoreSaved(false)
+  }, [status])
+
+  // 게임 클리어 시 순위 체크 모달 표시
+  useEffect(() => {
+    if (status === 'won') setShowRankCheck(true)
+    else setShowRankCheck(false)
   }, [status])
 
   const totalPairs = gridSize === '4x4' ? 8 : gridSize === '4x6' ? 12 : 18
@@ -76,15 +73,17 @@ export function CardGame() {
               </button>
             ))}
           </div>
-          <button onClick={() => setShowAdGate(true)} className="w-full mt-6 bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold text-lg py-4 rounded-2xl transition-colors shadow-md">
+          <button onClick={startGame} className="w-full mt-6 bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold text-lg py-4 rounded-2xl transition-colors shadow-md">
             게임 시작 🐱
           </button>
-          {showAdGate && (
-            <InterstitialAd onSkip={() => { setShowAdGate(false); startGame(); }} />
-          )}
         </div>
-      ) : status === 'won' ? (
+      ) : status === 'won' && !showRankCheck ? (
         <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} />
+      ) : status === 'won' && showRankCheck ? (
+        <>
+          <RankCheckModal onDone={() => setShowRankCheck(false)} />
+          <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} />
+        </>
       ) : (
         <>
           <div className="w-full max-w-2xl flex items-center justify-between mb-5 bg-white/70 backdrop-blur rounded-2xl px-5 py-3 shadow-sm border border-[#FFD4A8]/50">
@@ -100,6 +99,53 @@ export function CardGame() {
   )
 }
 
+function RankCheckModal({ onDone }: { onDone: () => void }) {
+  const [remaining, setRemaining] = useState(5)
+
+  useEffect(() => {
+    const t = setTimeout(onDone, 5000)
+    return () => clearTimeout(t)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (remaining <= 0) return
+    const t = setTimeout(() => setRemaining(r => r - 1), 1000)
+    return () => clearTimeout(t)
+  }, [remaining])
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm">
+      <div className="mx-4 w-full max-w-sm rounded-2xl bg-white shadow-2xl overflow-hidden">
+        <div className="flex items-center justify-center gap-2 px-4 py-3 border-b border-gray-100">
+          <span>🏆</span>
+          <span className="text-sm font-semibold text-[#6B4C2A]">순위 체크 중입니다...</span>
+          <div className="w-4 h-4 border-2 border-[#FFB7C5] border-t-transparent rounded-full animate-spin" />
+        </div>
+        <div className="p-2 min-h-[280px] flex items-center justify-center">
+          {process.env.NODE_ENV === 'development' ? (
+            <div className="flex items-center justify-center w-full h-[280px] border border-dashed border-gray-200 rounded-xl text-sm text-gray-400">
+              광고 자리
+            </div>
+          ) : (
+            <AdSlot slot="6394256326" format="auto" className="w-full" />
+          )}
+        </div>
+        <div className="px-4 py-3 border-t border-gray-100">
+          <div className="flex items-center justify-between text-xs text-gray-400 mb-1.5">
+            <span>잠시 후 결과가 표시됩니다</span>
+            <span className="font-mono font-bold text-gray-600">{remaining}초</span>
+          </div>
+          <div className="w-full bg-gray-100 rounded-full h-1.5">
+            <div className="bg-[#FFB7C5] h-1.5 rounded-full transition-all duration-1000"
+              style={{ width: `${(remaining / 5) * 100}%` }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function ResultScreen({ moves, elapsed, onReplay, onMenu }: { moves: number; elapsed: number; onReplay: () => void; onMenu: () => void }) {
   return (
     <div className="text-center mt-8 w-full max-w-xs mx-auto">
@@ -111,9 +157,6 @@ function ResultScreen({ moves, elapsed, onReplay, onMenu }: { moves: number; ela
         <button onClick={onReplay} className="bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold py-4 rounded-2xl transition-colors">다시 하기</button>
         <a href="/ranking" className="block bg-white/70 hover:bg-white border border-[#FFD4A8] text-[#6B4C2A] font-bold py-4 rounded-2xl transition-colors text-center">🏆 랭킹 보기</a>
         <button onClick={onMenu} className="text-[#A0785A] underline text-sm">메뉴로</button>
-      </div>
-      <div className="mt-6">
-        <AdSlot slot="6394256326" format="auto" />
       </div>
     </div>
   )
