@@ -18,7 +18,7 @@ const STAGES = [
     id: 'stage1',
     title: '전통 시장',
     subtitle: '한국 전통 시장',
-    bg: '/find/stage1.jpg',
+    bg: '/find/stage1.svg',
     emoji: '🏪',
     targets: [
       { catIdx: 0, x: 12, y: 72, r: 5.5 },
@@ -32,7 +32,7 @@ const STAGES = [
     id: 'stage2',
     title: '분식 골목',
     subtitle: '분주한 떡볶이 거리',
-    bg: '/find/stage2.jpg',
+    bg: '/find/stage2.svg',
     emoji: '🍢',
     targets: [
       { catIdx: 0, x: 8,  y: 55, r: 5.5 },
@@ -46,7 +46,7 @@ const STAGES = [
     id: 'stage3',
     title: '경복궁',
     subtitle: '조선 왕궁 뒤뜰',
-    bg: '/find/stage3.jpg',
+    bg: '/find/stage3.svg',
     emoji: '🏯',
     targets: [
       { catIdx: 0, x: 18, y: 65, r: 5.5 },
@@ -60,7 +60,7 @@ const STAGES = [
     id: 'stage4',
     title: '제주 해녀마을',
     subtitle: '파란 바다 돌담길',
-    bg: '/find/stage4.jpg',
+    bg: '/find/stage4.svg',
     emoji: '🌊',
     targets: [
       { catIdx: 0, x: 22, y: 70, r: 5.5 },
@@ -74,7 +74,7 @@ const STAGES = [
     id: 'stage5',
     title: '가을 산사',
     subtitle: '단풍 물든 사찰',
-    bg: '/find/stage5.jpg',
+    bg: '/find/stage5.svg',
     emoji: '🍁',
     targets: [
       { catIdx: 0, x: 15, y: 68, r: 5.5 },
@@ -113,6 +113,7 @@ function StageSelect({ onSelect }: { onSelect: (idx: number) => void }) {
               src={stage.bg}
               alt={stage.title}
               fill
+              unoptimized
               className="object-cover"
               sizes="(max-width: 640px) 100vw, 50vw"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
@@ -247,6 +248,7 @@ function GamePlay({ stageIdx, onBack }: { stageIdx: number; onBack: () => void }
           src={stage.bg}
           alt={stage.title}
           fill
+          unoptimized
           className="object-cover select-none"
           draggable={false}
           priority

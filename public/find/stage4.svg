@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="s4sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1A7AB8"/>
+    <stop offset="50%" stop-color="#40A8D8"/>
+    <stop offset="100%" stop-color="#80C8E8"/>
+  </linearGradient>
+  <linearGradient id="s4sea" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1A7090"/>
+    <stop offset="50%" stop-color="#0E5870"/>
+    <stop offset="100%" stop-color="#0A3A50"/>
+  </linearGradient>
+  <linearGradient id="s4shore" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#B0C8A0"/>
+    <stop offset="100%" stop-color="#7A9870"/>
+  </linearGradient>
+  <linearGradient id="s4wall" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#7A7068"/>
+    <stop offset="100%" stop-color="#5A5050"/>
+  </linearGradient>
+  <linearGradient id="s4rock" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#5A5860"/>
+    <stop offset="100%" stop-color="#3A3840"/>
+  </linearGradient>
+</defs>
+
+<!-- Sky -->
+<rect width="1920" height="1080" fill="url(#s4sky)"/>
+
+<!-- White clouds -->
+<ellipse cx="250" cy="110" rx="170" ry="55" fill="white" opacity="0.75"/>
+<ellipse cx="370" cy="85" rx="120" ry="45" fill="white" opacity="0.75"/>
+<ellipse cx="150" cy="125" rx="90" ry="38" fill="white" opacity="0.65"/>
+<ellipse cx="900" cy="95" rx="200" ry="62" fill="white" opacity="0.7"/>
+<ellipse cx="1050" cy="70" rx="140" ry="48" fill="white" opacity="0.7"/>
+<ellipse cx="1600" cy="100" rx="160" ry="52" fill="white" opacity="0.65"/>
+<ellipse cx="1750" cy="75" rx="110" ry="42" fill="white" opacity="0.6"/>
+
+<!-- Sea / Ocean (wide horizontal) -->
+<rect x="0" y="380" width="1920" height="480" fill="url(#s4sea)"/>
+
+<!-- Wave lines on sea -->
+<path d="M 0 420 Q 120 410 240 420 Q 360 430 480 420 Q 600 410 720 420 Q 840 430 960 420 Q 1080 410 1200 420 Q 1320 430 1440 420 Q 1560 410 1680 420 Q 1800 430 1920 420" stroke="#3A90B0" stroke-width="3" fill="none" opacity="0.5"/>
+<path d="M 0 460 Q 140 448 280 460 Q 420 472 560 460 Q 700 448 840 460 Q 980 472 1120 460 Q 1260 448 1400 460 Q 1540 472 1680 460 Q 1800 450 1920 460" stroke="#2A8090" stroke-width="3" fill="none" opacity="0.5"/>
+<path d="M 0 500 Q 150 488 300 500 Q 450 512 600 500 Q 750 488 900 500 Q 1050 512 1200 500 Q 1350 488 1500 500 Q 1650 512 1800 500 Q 1870 495 1920 500" stroke="#3A90B0" stroke-width="2" fill="none" opacity="0.4"/>
+
+<!-- Sun reflection on water -->
+<ellipse cx="1750" cy="450" rx="80" ry="20" fill="#FFD060" opacity="0.25"/>
+<ellipse cx="1750" cy="480" rx="50" ry="12" fill="#FFD060" opacity="0.15"/>
+
+<!-- Sea foamy shore -->
+<ellipse cx="960" cy="380" rx="960" ry="50" fill="#80B8C8" opacity="0.4"/>
+
+<!-- Coastal land / shore area -->
+<rect x="0" y="740" width="1920" height="340" fill="url(#s4shore)"/>
+<rect x="0" y="740" width="1920" height="10" fill="#90A880"/>
+
+<!-- Rocks / volcanic rocks (현무암) -->
+<!-- Large rock cluster right - C1 cat at (1444,594) hides among rocks in sea -->
+<ellipse cx="1460" cy="560" rx="95" ry="45" fill="url(#s4rock)"/>
+<ellipse cx="1390" cy="575" rx="70" ry="38" fill="#4A4848"/>
+<ellipse cx="1530" cy="570" rx="65" ry="35" fill="#3A3838"/>
+<ellipse cx="1455" cy="538" rx="55" ry="25" fill="#5A5858"/>
+<ellipse cx="1460" cy="595" rx="90" ry="20" fill="#2A2828" opacity="0.5"/>
+<!-- Rock texture marks -->
+<path d="M 1400 560 Q 1430 550 1460 558" stroke="#2A2828" stroke-width="2" fill="none" opacity="0.6"/>
+<path d="M 1470 552 Q 1500 545 1525 555" stroke="#2A2828" stroke-width="2" fill="none" opacity="0.6"/>
+<!-- Sea foam around rocks -->
+<ellipse cx="1460" cy="580" rx="110" ry="18" fill="white" opacity="0.35"/>
+
+<!-- Rock cluster center sea - C2 cat at (822,454) hides on rock -->
+<ellipse cx="820" cy="430" rx="80" ry="40" fill="url(#s4rock)"/>
+<ellipse cx="760" cy="445" rx="55" ry="30" fill="#4A4848"/>
+<ellipse cx="880" cy="440" rx="60" ry="32" fill="#3A3838"/>
+<ellipse cx="822" cy="410" rx="45" ry="20" fill="#5A5858"/>
+<!-- Sea foam -->
+<ellipse cx="822" cy="460" rx="100" ry="16" fill="white" opacity="0.3"/>
+
+<!-- Haenyeo diver in water (C2 area) -->
+<ellipse cx="700" cy="470" rx="20" ry="8" fill="#2A5070"/>
+<ellipse cx="700" cy="464" rx="18" ry="12" fill="#F0C8A0"/>
+<path d="M 680 472 Q 700 488 720 472" fill="#2A5070"/>
+
+<!-- DOLHAREUBANG (돌하르방) statues - Jeju stone figures -->
+<!-- Left dolhareubang - C4 cat at (269,410) hides behind/beside it -->
+<rect x="248" y="480" width="44" height="120" fill="#4A4848"/>
+<ellipse cx="270" cy="480" rx="38" ry="50" fill="#5A5858"/>
+<ellipse cx="270" cy="450" rx="30" ry="28" fill="#6A6868"/>
+<!-- Eyes of dolhareubang -->
+<ellipse cx="258" cy="445" rx="10" ry="6" fill="#3A3838"/>
+<ellipse cx="282" cy="445" rx="10" ry="6" fill="#3A3838"/>
+<!-- Nose -->
+<ellipse cx="270" cy="460" rx="8" ry="5" fill="#585858"/>
+<!-- Hat (갓) -->
+<ellipse cx="270" cy="428" rx="35" ry="12" fill="#3A3838"/>
+<rect x="255" y="416" width="30" height="15" fill="#3A3838" rx="2"/>
+<!-- C4 shadow at (269,410) -->
+<ellipse cx="270" cy="430" rx="50" ry="15" fill="#2A2828" opacity="0.4"/>
+<!-- Base -->
+<rect x="245" y="598" width="50" height="25" fill="#3A3838"/>
+<ellipse cx="270" cy="598" rx="45" ry="10" fill="#4A4848"/>
+
+<!-- Second dolhareubang (right side) -->
+<rect x="1640" y="490" width="44" height="110" fill="#4A4848"/>
+<ellipse cx="1662" cy="490" rx="38" ry="48" fill="#5A5858"/>
+<ellipse cx="1662" cy="462" rx="30" ry="26" fill="#6A6868"/>
+<ellipse cx="1650" cy="457" rx="10" ry="6" fill="#3A3838"/>
+<ellipse cx="1674" cy="457" rx="10" ry="6" fill="#3A3838"/>
+<ellipse cx="1662" cy="472" rx="8" ry="5" fill="#585858"/>
+<ellipse cx="1662" cy="440" rx="35" ry="11" fill="#3A3838"/>
+<rect x="1647" y="430" width="30" height="12" fill="#3A3838" rx="2"/>
+<rect x="1637" y="598" width="50" height="22" fill="#3A3838"/>
+
+<!-- Stone walls (돌담) - basalt stone walls typical of Jeju -->
+<!-- Left stone wall C0 cat at (476,756) hides along wall -->
+<rect x="0" y="720" width="560" height="120" fill="url(#s4wall)"/>
+<rect x="0" y="718" width="560" height="10" fill="#8A8078"/>
+<!-- Stone pattern on wall -->
+<ellipse cx="50" cy="730" rx="30" ry="18" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="110" cy="725" rx="35" ry="20" fill="#7A7068" opacity="0.7"/>
+<ellipse cx="175" cy="732" rx="32" ry="19" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="240" cy="728" rx="38" ry="21" fill="#7A7068" opacity="0.7"/>
+<ellipse cx="310" cy="732" rx="34" ry="20" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="378" cy="726" rx="36" ry="21" fill="#7A7068" opacity="0.7"/>
+<ellipse cx="445" cy="730" rx="32" ry="19" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="510" cy="726" rx="35" ry="20" fill="#7A7068" opacity="0.7"/>
+<ellipse cx="60" cy="762" rx="32" ry="18" fill="#6A6058" opacity="0.6"/>
+<ellipse cx="130" cy="758" rx="36" ry="20" fill="#7A7068" opacity="0.6"/>
+<ellipse cx="200" cy="764" rx="30" ry="18" fill="#6A6058" opacity="0.6"/>
+<ellipse cx="270" cy="760" rx="35" ry="20" fill="#7A7068" opacity="0.6"/>
+<ellipse cx="340" cy="765" rx="32" ry="18" fill="#6A6058" opacity="0.6"/>
+<ellipse cx="412" cy="759" rx="34" ry="20" fill="#7A7068" opacity="0.6"/>
+<ellipse cx="482" cy="763" rx="30" ry="18" fill="#6A6058" opacity="0.6"/>
+<!-- C0 cat area (476,756) - shadow in wall stones -->
+<ellipse cx="476" cy="768" rx="55" ry="18" fill="#3A3028" opacity="0.4"/>
+
+<!-- Right stone wall -->
+<rect x="1360" y="720" width="560" height="120" fill="url(#s4wall)"/>
+<rect x="1360" y="718" width="560" height="10" fill="#8A8078"/>
+<ellipse cx="1400" cy="730" rx="30" ry="18" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="1460" cy="725" rx="35" ry="20" fill="#7A7068" opacity="0.7"/>
+<ellipse cx="1525" cy="732" rx="32" ry="19" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="1590" cy="728" rx="38" ry="21" fill="#7A7068" opacity="0.7"/>
+<ellipse cx="1660" cy="732" rx="34" ry="20" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="1728" cy="726" rx="36" ry="21" fill="#7A7068" opacity="0.7"/>
+<ellipse cx="1796" cy="730" rx="32" ry="19" fill="#6A6058" opacity="0.7"/>
+<ellipse cx="1860" cy="726" rx="35" ry="20" fill="#7A7068" opacity="0.7"/>
+
+<!-- Fishing nets spread on shore (C3 cat at 1098,864 hides under nets) -->
+<!-- Net structure -->
+<path d="M 950 840 L 1250 840 L 1280 900 L 920 900 Z" fill="#8A8060" opacity="0.5"/>
+<!-- Net grid pattern -->
+<line x1="950" y1="840" x2="920" y2="900" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="1000" y1="840" x2="970" y2="900" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="1050" y1="840" x2="1020" y2="900" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="1100" y1="840" x2="1070" y2="900" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="1150" y1="840" x2="1120" y2="900" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="1200" y1="840" x2="1170" y2="900" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="1250" y1="840" x2="1220" y2="900" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="930" y1="860" x2="1265" y2="860" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<line x1="920" y1="880" x2="1275" y2="880" stroke="#6A6040" stroke-width="2" opacity="0.6"/>
+<!-- Net floats/buoys -->
+<circle cx="955" cy="843" r="6" fill="#E04020"/>
+<circle cx="1000" cy="843" r="6" fill="#F0C020"/>
+<circle cx="1050" cy="843" r="6" fill="#E04020"/>
+<circle cx="1100" cy="843" r="6" fill="#F0C020"/>
+<circle cx="1150" cy="843" r="6" fill="#E04020"/>
+<circle cx="1200" cy="843" r="6" fill="#F0C020"/>
+<circle cx="1248" cy="843" r="6" fill="#E04020"/>
+<!-- Net mounds (shadow for cat to hide at 1098,864) -->
+<ellipse cx="1098" cy="872" rx="80" ry="22" fill="#5A5830" opacity="0.5"/>
+
+<!-- Coastal grass / haenyeo plants -->
+<ellipse cx="580" cy="785" rx="60" ry="22" fill="#4A7830"/>
+<ellipse cx="640" cy="778" rx="50" ry="18" fill="#3A6820"/>
+<ellipse cx="560" cy="792" rx="40" ry="15" fill="#4A7830"/>
+<rect x="575" y="760" width="8" height="30" fill="#5A7830" transform="rotate(-10 575 760)"/>
+<rect x="600" y="755" width="8" height="35" fill="#4A6820" transform="rotate(5 600 755)"/>
+<rect x="620" y="758" width="8" height="32" fill="#5A7830" transform="rotate(-5 620 758)"/>
+<!-- More grass on right -->
+<ellipse cx="1320" cy="785" rx="55" ry="20" fill="#4A7830"/>
+<ellipse cx="1350" cy="778" rx="45" ry="16" fill="#3A6820"/>
+<rect x="1310" y="762" width="8" height="28" fill="#5A7830" transform="rotate(8 1310 762)"/>
+<rect x="1340" y="756" width="8" height="33" fill="#4A6820" transform="rotate(-6 1340 756)"/>
+
+<!-- Haenyeo woman figures diving -->
+<!-- Near surface figure -->
+<ellipse cx="540" cy="500" rx="22" ry="8" fill="#1A506A"/>
+<circle cx="540" cy="492" r="12" fill="#D4B090"/>
+<path d="M 520 506 Q 540 520 560 506" fill="#1A506A"/>
+<!-- Wave splash around diver -->
+<ellipse cx="540" cy="504" rx="40" ry="8" fill="white" opacity="0.4"/>
+
+<!-- Sun in sky -->
+<circle cx="1780" cy="130" r="70" fill="#FFD060" opacity="0.9"/>
+<circle cx="1780" cy="130" r="88" fill="#FFD060" opacity="0.2"/>
+
+<!-- Title plate -->
+<rect x="680" y="32" width="560" height="56" fill="#0A3050" rx="10" opacity="0.88"/>
+<text x="960" y="71" font-family="serif" font-size="34" fill="#80E0FF" text-anchor="middle" font-weight="bold">제주 해녀마을</text>
+</svg>

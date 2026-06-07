@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="s3sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#2A6CB5"/>
+    <stop offset="55%" stop-color="#5A9AD8"/>
+    <stop offset="100%" stop-color="#A8C8E8"/>
+  </linearGradient>
+  <linearGradient id="s3gnd" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#8C9870"/>
+    <stop offset="100%" stop-color="#5A6840"/>
+  </linearGradient>
+  <linearGradient id="s3wall" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#9A8A70"/>
+    <stop offset="100%" stop-color="#6A5840"/>
+  </linearGradient>
+  <linearGradient id="s3pond" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#3A8090"/>
+    <stop offset="100%" stop-color="#2A6070"/>
+  </linearGradient>
+  <linearGradient id="s3roof" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#2A3A5A"/>
+    <stop offset="100%" stop-color="#1A2840"/>
+  </linearGradient>
+</defs>
+
+<!-- Sky -->
+<rect width="1920" height="1080" fill="url(#s3sky)"/>
+
+<!-- Clouds -->
+<ellipse cx="300" cy="120" rx="180" ry="55" fill="white" opacity="0.75"/>
+<ellipse cx="420" cy="95" rx="130" ry="48" fill="white" opacity="0.75"/>
+<ellipse cx="180" cy="135" rx="110" ry="42" fill="white" opacity="0.65"/>
+<ellipse cx="1100" cy="100" rx="190" ry="58" fill="white" opacity="0.7"/>
+<ellipse cx="1250" cy="75" rx="140" ry="50" fill="white" opacity="0.7"/>
+<ellipse cx="1600" cy="110" rx="155" ry="52" fill="white" opacity="0.65"/>
+<ellipse cx="1720" cy="85" rx="100" ry="40" fill="white" opacity="0.6"/>
+
+<!-- Distant mountains / hills -->
+<ellipse cx="960" cy="350" rx="960" ry="200" fill="#5A7860" opacity="0.5"/>
+<ellipse cx="400" cy="380" rx="450" ry="220" fill="#4A6850" opacity="0.45"/>
+<ellipse cx="1550" cy="370" rx="420" ry="200" fill="#4A6850" opacity="0.45"/>
+
+<!-- Ground / courtyard (stone paving) -->
+<rect x="0" y="810" width="1920" height="270" fill="url(#s3gnd)"/>
+<rect x="0" y="810" width="1920" height="8" fill="#6A7850"/>
+
+<!-- Gyeongbokgung main gate building (Gwanghwamun-style) -->
+<!-- Stone base platform -->
+<rect x="400" y="580" width="1120" height="230" fill="url(#s3wall)"/>
+<rect x="400" y="576" width="1120" height="12" fill="#8A7860"/>
+<!-- Gate arch -->
+<rect x="680" y="580" width="200" height="200" fill="#3A2808"/>
+<path d="M 680 780 Q 680 700 780 680 Q 880 700 880 780" fill="#3A2808"/>
+<!-- Gate tunnel -->
+<rect x="700" y="700" width="160" height="80" fill="#1A1008"/>
+<path d="M 700 780 Q 700 730 780 720 Q 860 730 860 780" fill="#1A1008"/>
+<!-- Second arch -->
+<rect x="1040" y="580" width="200" height="200" fill="#3A2808"/>
+<path d="M 1040 780 Q 1040 700 1140 680 Q 1240 700 1240 780" fill="#3A2808"/>
+<rect x="1060" y="700" width="160" height="80" fill="#1A1008"/>
+<path d="M 1060 780 Q 1060 730 1140 720 Q 1220 730 1220 780" fill="#1A1008"/>
+
+<!-- Gate building on top of platform -->
+<!-- Main hall building -->
+<rect x="380" y="380" width="1160" height="200" fill="#CC4010"/>
+<!-- Red pillars -->
+<rect x="395" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="490" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="600" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="720" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="850" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="980" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="1100" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="1220" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="1350" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="1465" y="380" width="28" height="200" fill="#B83A08"/>
+<rect x="1510" y="380" width="28" height="200" fill="#B83A08"/>
+
+<!-- Windows on building facade -->
+<rect x="540" y="410" width="70" height="100" fill="#1A2A08" rx="2"/>
+<rect x="660" y="410" width="70" height="100" fill="#1A2A08" rx="2"/>
+<rect x="790" y="410" width="70" height="100" fill="#1A2A08" rx="2"/>
+<rect x="920" y="410" width="70" height="100" fill="#1A2A08" rx="2"/>
+<rect x="1050" y="410" width="70" height="100" fill="#1A2A08" rx="2"/>
+<rect x="1180" y="410" width="70" height="100" fill="#1A2A08" rx="2"/>
+<rect x="1310" y="410" width="70" height="100" fill="#1A2A08" rx="2"/>
+<!-- Dancheong patterns on lintel -->
+<rect x="380" y="375" width="1160" height="12" fill="#88A030"/>
+<rect x="380" y="363" width="1160" height="14" fill="#E84010"/>
+<rect x="380" y="352" width="1160" height="12" fill="#3080C0"/>
+
+<!-- TILED ROOF (기와) - main gate -->
+<polygon points="320,350 960,280 1600,350" fill="url(#s3roof)"/>
+<polygon points="380,356 960,288 1540,356 1540,380 380,380" fill="#233A58"/>
+<!-- Roof ridge -->
+<rect x="840" y="276" width="240" height="18" fill="#1A2838"/>
+<ellipse cx="840" cy="278" rx="22" ry="12" fill="#2A3848"/>
+<ellipse cx="1080" cy="278" rx="22" ry="12" fill="#2A3848"/>
+<!-- Tile curve lines on roof -->
+<line x1="450" y1="352" x2="620" y2="295" stroke="#1A2838" stroke-width="2" opacity="0.5"/>
+<line x1="600" y1="352" x2="750" y2="293" stroke="#1A2838" stroke-width="2" opacity="0.5"/>
+<line x1="750" y1="352" x2="880" y2="290" stroke="#1A2838" stroke-width="2" opacity="0.5"/>
+<line x1="1170" y1="352" x2="1040" y2="290" stroke="#1A2838" stroke-width="2" opacity="0.5"/>
+<line x1="1320" y1="352" x2="1180" y2="293" stroke="#1A2838" stroke-width="2" opacity="0.5"/>
+<line x1="1470" y1="352" x2="1300" y2="295" stroke="#1A2838" stroke-width="2" opacity="0.5"/>
+<!-- Roof eave tiles -->
+<ellipse cx="960" cy="350" rx="550" ry="12" fill="#1A2838" opacity="0.5"/>
+
+<!-- Stone steps leading to gate (C0 cat at 407,702 hides on side steps) -->
+<rect x="200" y="780" width="500" height="30" fill="#8A8070"/>
+<rect x="250" y="754" width="440" height="28" fill="#9A9080"/>
+<rect x="300" y="728" width="380" height="28" fill="#8A8070"/>
+<rect x="350" y="702" width="320" height="28" fill="#9A9080"/>
+<!-- Shadow on step edge -->
+<rect x="200" y="808" width="500" height="4" fill="#6A6050"/>
+<!-- C0 cat at (407,702) - shadow/crack on step side -->
+<rect x="370" y="700" width="80" height="60" fill="#7A6850" opacity="0.7"/>
+<ellipse cx="407" cy="720" rx="40" ry="15" fill="#5A5040" opacity="0.5"/>
+
+<!-- Right side steps -->
+<rect x="1220" y="780" width="500" height="30" fill="#8A8070"/>
+<rect x="1230" y="754" width="460" height="28" fill="#9A9080"/>
+<rect x="1240" y="728" width="440" height="28" fill="#8A8070"/>
+
+<!-- Pine trees (소나무) -->
+<!-- Left tree -->
+<rect x="70" y="550" width="30" height="260" fill="#5A3820"/>
+<ellipse cx="85" cy="560" rx="75" ry="90" fill="#2A6820"/>
+<ellipse cx="75" cy="490" rx="55" ry="70" fill="#206018"/>
+<ellipse cx="90" cy="440" rx="40" ry="55" fill="#1A5515"/>
+<!-- Left tree 2 -->
+<rect x="180" y="580" width="25" height="230" fill="#5A3820"/>
+<ellipse cx="193" cy="590" rx="60" ry="75" fill="#2A6820"/>
+<ellipse cx="185" cy="530" rx="45" ry="60" fill="#206018"/>
+<!-- Right tree -->
+<rect x="1800" y="540" width="30" height="270" fill="#5A3820"/>
+<ellipse cx="1815" cy="550" rx="75" ry="90" fill="#2A6820"/>
+<ellipse cx="1820" cy="480" rx="55" ry="70" fill="#206018"/>
+<ellipse cx="1812" cy="425" rx="40" ry="55" fill="#1A5515"/>
+<!-- Right tree 2 -->
+<rect x="1700" y="570" width="25" height="240" fill="#5A3820"/>
+<ellipse cx="1712" cy="580" rx="60" ry="78" fill="#2A6820"/>
+<ellipse cx="1705" cy="515" rx="45" ry="62" fill="#206018"/>
+
+<!-- POND (연못) left side - C1 cat at (1513,518) hides near right pavilion -->
+<ellipse cx="260" cy="830" rx="200" ry="60" fill="url(#s3pond)"/>
+<ellipse cx="260" cy="830" rx="185" ry="50" fill="#3A8090" opacity="0.7"/>
+<!-- Lotus leaves on pond -->
+<ellipse cx="210" cy="820" rx="28" ry="18" fill="#3A8020" opacity="0.8"/>
+<ellipse cx="290" cy="835" rx="32" ry="20" fill="#3A8020" opacity="0.8"/>
+<ellipse cx="240" cy="848" rx="24" ry="15" fill="#3A8020" opacity="0.8"/>
+<!-- Lotus flower -->
+<circle cx="215" cy="818" r="10" fill="#FF90B0"/>
+<ellipse cx="215" cy="818" rx="6" ry="10" fill="#FF70A0" transform="rotate(-30 215 818)"/>
+<ellipse cx="215" cy="818" rx="6" ry="10" fill="#FF70A0" transform="rotate(30 215 818)"/>
+
+<!-- Traditional stone lanterns (석등) -->
+<!-- C4 cat at (1219,648) hides near right lantern -->
+<!-- Left lantern -->
+<rect x="545" y="700" width="22" height="110" fill="#8A8070"/>
+<rect x="530" y="698" width="52" height="15" fill="#9A9080" rx="3"/>
+<rect x="530" y="700" width="52" height="15" fill="#9A9080" rx="2"/>
+<polygon points="530,700 556,660 582,700" fill="#808070"/>
+<rect x="538" y="665" width="36" height="36" fill="#7A7060"/>
+<circle cx="556" cy="683" r="10" fill="#FFE0A0" opacity="0.8"/>
+<rect x="530" y="808" width="52" height="10" fill="#8A8070" rx="2"/>
+<rect x="520" y="816" width="72" height="10" fill="#7A7060" rx="2"/>
+
+<!-- Right lantern (C4 cat 1219,648) -->
+<rect x="1205" y="680" width="22" height="120" fill="#8A8070"/>
+<rect x="1192" y="678" width="52" height="15" fill="#9A9080" rx="3"/>
+<polygon points="1192,680 1218,638 1244,680" fill="#808070"/>
+<rect x="1200" y="643" width="36" height="38" fill="#7A7060"/>
+<circle cx="1218" cy="662" r="10" fill="#FFE0A0" opacity="0.9"/>
+<rect x="1192" y="798" width="52" height="10" fill="#8A8070" rx="2"/>
+<rect x="1182" y="806" width="72" height="10" fill="#7A7060" rx="2"/>
+<!-- Lantern glow -->
+<ellipse cx="1218" cy="660" rx="28" ry="18" fill="#FFE080" opacity="0.2"/>
+
+<!-- C1 cat at (1513,518) - right side pavilion wall + tree area -->
+<!-- Small pavilion right side -->
+<rect x="1450" y="450" width="180" height="120" fill="#CC4010"/>
+<rect x="1440" y="445" width="200" height="15" fill="#3A5080"/>
+<polygon points="1420,445 1540,400 1660,445" fill="url(#s3roof)"/>
+<rect x="1460" y="450" width="22" height="120" fill="#B83A08"/>
+<rect x="1598" y="450" width="22" height="120" fill="#B83A08"/>
+<!-- Pavilion steps -->
+<rect x="1455" y="570" width="170" height="20" fill="#8A8070"/>
+<rect x="1465" y="554" width="150" height="18" fill="#9A9080"/>
+<!-- C1 hiding behind pavilion pillar (1513,518) -->
+<ellipse cx="1513" cy="540" rx="30" ry="50" fill="#8A3808" opacity="0.7"/>
+
+<!-- Stone wall segments (돌담) -->
+<rect x="0" y="700" width="380" height="130" fill="#8A7858"/>
+<rect x="0" y="700" width="380" height="8" fill="#9A8868"/>
+<!-- Wall stone pattern -->
+<line x1="80" y1="700" x2="80" y2="830" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="160" y1="700" x2="160" y2="830" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="240" y1="700" x2="240" y2="830" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="320" y1="700" x2="320" y2="830" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="0" y1="745" x2="380" y2="745" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="0" y1="790" x2="380" y2="790" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+
+<!-- Right wall -->
+<rect x="1640" y="700" width="280" height="130" fill="#8A7858"/>
+<rect x="1640" y="700" width="280" height="8" fill="#9A8868"/>
+<line x1="1720" y1="700" x2="1720" y2="830" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="1800" y1="700" x2="1800" y2="830" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="1640" y1="745" x2="1920" y2="745" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+<line x1="1640" y1="790" x2="1920" y2="790" stroke="#6A5840" stroke-width="2" opacity="0.4"/>
+
+<!-- C3 cat at (701,810) - near left stone wall lower area, bushes -->
+<ellipse cx="650" cy="818" rx="80" ry="30" fill="#2A5820" opacity="0.8"/>
+<ellipse cx="720" cy="812" rx="70" ry="28" fill="#2A6820" opacity="0.8"/>
+<ellipse cx="690" cy="800" rx="50" ry="22" fill="#1A5010" opacity="0.9"/>
+
+<!-- C2 cat at (926,324) - on roof ridge area -->
+<!-- Decorative roof finial / ridge end -->
+<ellipse cx="920" cy="285" rx="55" ry="20" fill="#1A2838" opacity="0.9"/>
+<ellipse cx="920" cy="282" rx="40" ry="13" fill="#2A3848" opacity="0.8"/>
+<!-- Ridge tiles -->
+<ellipse cx="960" cy="280" rx="25" ry="10" fill="#1A2838"/>
+<ellipse cx="870" cy="285" rx="20" ry="8" fill="#1A2838"/>
+<ellipse cx="1000" cy="284" rx="22" ry="9" fill="#1A2838"/>
+
+<!-- Decorative flying birds -->
+<path d="M 600 180 Q 620 170 640 180" stroke="#1A1828" stroke-width="3" fill="none"/>
+<path d="M 620 170 Q 640 155 665 165" stroke="#1A1828" stroke-width="3" fill="none"/>
+<path d="M 1300 160 Q 1320 150 1340 160" stroke="#1A1828" stroke-width="3" fill="none"/>
+<path d="M 1320 150 Q 1340 135 1365 145" stroke="#1A1828" stroke-width="3" fill="none"/>
+
+<!-- People/visitors (silhouettes) -->
+<ellipse cx="900" cy="845" rx="18" ry="42" fill="#1A1408" opacity="0.6"/>
+<circle cx="900" cy="796" r="15" fill="#1A1408" opacity="0.6"/>
+<ellipse cx="1050" cy="842" rx="18" ry="40" fill="#1A1408" opacity="0.55"/>
+<circle cx="1050" cy="795" r="15" fill="#1A1408" opacity="0.55"/>
+
+<!-- Title plate -->
+<rect x="730" y="32" width="460" height="56" fill="#1A2840" rx="10" opacity="0.88"/>
+<text x="960" y="71" font-family="serif" font-size="34" fill="#FFD080" text-anchor="middle" font-weight="bold">경복궁</text>
+</svg>

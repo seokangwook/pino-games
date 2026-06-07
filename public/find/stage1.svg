@@ -1,0 +1,440 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="s1sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#4A7AAF"/>
+    <stop offset="55%" stop-color="#8EC5E8"/>
+    <stop offset="100%" stop-color="#F5E8C0"/>
+  </linearGradient>
+  <linearGradient id="s1gnd" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#BEA070"/>
+    <stop offset="100%" stop-color="#8B6040"/>
+  </linearGradient>
+  <linearGradient id="s1jar" x1="0" y1="0" x2="0.5" y2="1">
+    <stop offset="0%" stop-color="#B87840"/>
+    <stop offset="40%" stop-color="#A06030"/>
+    <stop offset="100%" stop-color="#784020"/>
+  </linearGradient>
+  <linearGradient id="s1bldg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#9A6840"/>
+    <stop offset="100%" stop-color="#C0946A"/>
+  </linearGradient>
+</defs>
+
+<!-- Sky -->
+<rect width="1920" height="1080" fill="url(#s1sky)"/>
+
+<!-- Sun -->
+<circle cx="1750" cy="110" r="70" fill="#FFD060" opacity="0.85"/>
+<circle cx="1750" cy="110" r="88" fill="#FFD060" opacity="0.25"/>
+
+<!-- Clouds -->
+<ellipse cx="280" cy="130" rx="130" ry="48" fill="white" opacity="0.75"/>
+<ellipse cx="360" cy="110" rx="95" ry="40" fill="white" opacity="0.75"/>
+<ellipse cx="180" cy="140" rx="85" ry="35" fill="white" opacity="0.65"/>
+<ellipse cx="820" cy="90" rx="155" ry="55" fill="white" opacity="0.65"/>
+<ellipse cx="930" cy="68" rx="105" ry="42" fill="white" opacity="0.65"/>
+<ellipse cx="1460" cy="105" rx="125" ry="46" fill="white" opacity="0.6"/>
+<ellipse cx="1560" cy="82" rx="90" ry="36" fill="white" opacity="0.6"/>
+
+<!-- Background building facade -->
+<rect x="0" y="175" width="1920" height="645" fill="url(#s1bldg)"/>
+<!-- Roof line -->
+<rect x="0" y="175" width="1920" height="28" fill="#6A3A18"/>
+<!-- Roof tiles -->
+<rect x="0" y="168" width="1920" height="12" fill="#5A3010"/>
+<!-- Tile bumps -->
+<ellipse cx="60" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="130" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="200" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="270" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="340" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="410" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="480" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="550" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="620" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="690" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="760" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="830" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="900" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="970" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1040" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1110" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1180" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1250" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1320" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1390" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1460" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1530" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1600" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1670" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1740" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1810" cy="170" rx="35" ry="10" fill="#4A2808"/>
+<ellipse cx="1880" cy="170" rx="35" ry="10" fill="#4A2808"/>
+
+<!-- Building windows -->
+<rect x="55" y="240" width="75" height="90" fill="#7A4A20" rx="2"/>
+<rect x="175" y="250" width="70" height="85" fill="#7A4A20" rx="2"/>
+<rect x="360" y="235" width="110" height="110" fill="#6A3A18" rx="3"/>
+<rect x="510" y="245" width="80" height="95" fill="#7A4A20" rx="2"/>
+<rect x="660" y="238" width="95" height="108" fill="#6A3A18" rx="2"/>
+<rect x="820" y="248" width="80" height="92" fill="#7A4A20" rx="2"/>
+<rect x="970" y="232" width="110" height="112" fill="#6A3A18" rx="3"/>
+<rect x="1160" y="246" width="82" height="96" fill="#7A4A20" rx="2"/>
+<rect x="1315" y="238" width="95" height="105" fill="#6A3A18" rx="2"/>
+<rect x="1475" y="247" width="80" height="93" fill="#7A4A20" rx="2"/>
+<rect x="1640" y="232" width="110" height="112" fill="#6A3A18" rx="3"/>
+<rect x="1820" y="248" width="80" height="92" fill="#7A4A20" rx="2"/>
+
+<!-- Ground / lane floor -->
+<rect x="0" y="820" width="1920" height="260" fill="url(#s1gnd)"/>
+<!-- Stone tile pattern -->
+<rect x="0" y="820" width="1920" height="6" fill="#A08060"/>
+<line x1="0" y1="870" x2="1920" y2="870" stroke="#9A7850" stroke-width="2" opacity="0.5"/>
+<line x1="0" y1="920" x2="1920" y2="920" stroke="#9A7850" stroke-width="2" opacity="0.5"/>
+<line x1="0" y1="970" x2="1920" y2="970" stroke="#9A7850" stroke-width="2" opacity="0.5"/>
+<line x1="0" y1="1020" x2="1920" y2="1020" stroke="#9A7850" stroke-width="2" opacity="0.5"/>
+<line x1="96" y1="820" x2="96" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="192" y1="820" x2="192" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="288" y1="820" x2="288" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="384" y1="820" x2="384" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="480" y1="820" x2="480" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="576" y1="820" x2="576" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="672" y1="820" x2="672" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="768" y1="820" x2="768" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="864" y1="820" x2="864" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="960" y1="820" x2="960" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1056" y1="820" x2="1056" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1152" y1="820" x2="1152" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1248" y1="820" x2="1248" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1344" y1="820" x2="1344" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1440" y1="820" x2="1440" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1536" y1="820" x2="1536" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1632" y1="820" x2="1632" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1728" y1="820" x2="1728" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+<line x1="1824" y1="820" x2="1824" y2="1080" stroke="#9A7850" stroke-width="2" opacity="0.4"/>
+
+<!-- === STALL POLES === -->
+<rect x="105" y="285" width="14" height="540" fill="#4A2808"/>
+<rect x="482" y="265" width="14" height="558" fill="#4A2808"/>
+<rect x="838" y="285" width="14" height="540" fill="#4A2808"/>
+<rect x="1162" y="265" width="14" height="558" fill="#4A2808"/>
+<rect x="1500" y="285" width="14" height="540" fill="#4A2808"/>
+<rect x="1828" y="265" width="14" height="558" fill="#4A2808"/>
+
+<!-- === STALL 1: 그릇·도자기 (x=105~482) === -->
+<!-- Awning (red/white stripe) - C2 cat hides on awning of stall2 not stall1 -->
+<polygon points="95,310 496,290 496,445 95,465" fill="#CC2222"/>
+<polygon points="140,312 166,311 166,466 140,467" fill="white" opacity="0.5"/>
+<polygon points="205,310 231,309 231,465 205,466" fill="white" opacity="0.5"/>
+<polygon points="270,309 296,308 296,464 270,465" fill="white" opacity="0.5"/>
+<polygon points="335,308 361,307 361,462 335,463" fill="white" opacity="0.5"/>
+<polygon points="400,307 426,306 426,461 400,462" fill="white" opacity="0.5"/>
+<polygon points="453,306 479,305 479,460 453,461" fill="white" opacity="0.5"/>
+<!-- Awning fringe -->
+<polygon points="95,465 108,490 122,465" fill="#AA1111"/>
+<polygon points="122,464 135,489 149,464" fill="#AA1111"/>
+<polygon points="149,463 162,488 176,463" fill="#AA1111"/>
+<polygon points="176,462 189,487 203,462" fill="#AA1111"/>
+<polygon points="203,461 216,486 230,461" fill="#AA1111"/>
+<polygon points="230,460 243,485 257,460" fill="#AA1111"/>
+<polygon points="257,459 270,484 284,459" fill="#AA1111"/>
+<polygon points="284,458 297,483 311,458" fill="#AA1111"/>
+<polygon points="311,457 324,482 338,457" fill="#AA1111"/>
+<polygon points="338,456 351,481 365,456" fill="#AA1111"/>
+<polygon points="365,455 378,480 392,455" fill="#AA1111"/>
+<polygon points="392,454 405,479 419,454" fill="#AA1111"/>
+<polygon points="419,453 432,478 446,453" fill="#AA1111"/>
+<polygon points="446,452 459,477 473,452" fill="#AA1111"/>
+<polygon points="473,451 486,476 496,451" fill="#AA1111"/>
+<!-- Sign -->
+<rect x="140" y="215" width="200" height="52" fill="#8B0000" rx="5"/>
+<text x="240" y="250" font-family="serif" font-size="30" fill="#FFD0A0" text-anchor="middle" font-weight="bold">그릇 · 도자기</text>
+<!-- Stall counter -->
+<rect x="110" y="660" width="362" height="162" fill="#7A5530" rx="4"/>
+<rect x="110" y="654" width="362" height="18" fill="#9A7550" rx="3"/>
+<!-- Items on counter - bowls, plates -->
+<circle cx="180" cy="660" r="20" fill="#C8A060" stroke="#A07840" stroke-width="2"/>
+<circle cx="230" cy="658" r="22" fill="#C0985A" stroke="#A07040" stroke-width="2"/>
+<circle cx="285" cy="656" r="24" fill="#CA9A50" stroke="#A87030" stroke-width="2"/>
+<circle cx="345" cy="659" r="19" fill="#B89060" stroke="#9A6840" stroke-width="2"/>
+<circle cx="395" cy="657" r="21" fill="#C09060" stroke="#A07840" stroke-width="2"/>
+<circle cx="440" cy="655" r="25" fill="#C8A060" stroke="#A08040" stroke-width="2"/>
+
+<!-- JARS (항아리) - C0 cat hides at (303,778) in this area -->
+<ellipse cx="220" cy="800" rx="36" ry="50" fill="url(#s1jar)"/>
+<ellipse cx="220" cy="750" rx="30" ry="11" fill="#9A6030"/>
+<ellipse cx="220" cy="850" rx="36" ry="7" fill="#503010" opacity="0.6"/>
+<path d="M 188 790 Q 220 770 252 790" stroke="#704020" stroke-width="2" fill="none"/>
+<path d="M 185 808 Q 220 795 255 808" stroke="#704020" stroke-width="2" fill="none"/>
+
+<ellipse cx="296" cy="790" rx="44" ry="60" fill="#B87848"/>
+<ellipse cx="296" cy="730" rx="36" ry="13" fill="#A06838"/>
+<ellipse cx="296" cy="850" rx="44" ry="9" fill="#503010" opacity="0.6"/>
+<path d="M 257 778 Q 296 758 335 778" stroke="#704020" stroke-width="2" fill="none"/>
+<path d="M 254 800 Q 296 785 338 800" stroke="#704020" stroke-width="2" fill="none"/>
+<ellipse cx="296" cy="730" rx="20" ry="7" fill="#7A5020"/>
+
+<ellipse cx="370" cy="800" rx="38" ry="52" fill="#A87040"/>
+<ellipse cx="370" cy="748" rx="32" ry="11" fill="#906030"/>
+<ellipse cx="370" cy="852" rx="38" ry="8" fill="#503010" opacity="0.5"/>
+<path d="M 336 790 Q 370 772 404 790" stroke="#704020" stroke-width="2" fill="none"/>
+
+<ellipse cx="430" cy="810" rx="30" ry="42" fill="#B07848"/>
+<ellipse cx="430" cy="768" rx="25" ry="9" fill="#906038"/>
+
+<!-- Baskets on ground -->
+<ellipse cx="150" cy="838" rx="32" ry="18" fill="#D4A860"/>
+<rect x="118" y="820" width="64" height="18" fill="#C09850" rx="3"/>
+<line x1="118" y1="825" x2="182" y2="825" stroke="#A07840" stroke-width="2" opacity="0.6"/>
+<line x1="118" y1="832" x2="182" y2="832" stroke="#A07840" stroke-width="2" opacity="0.6"/>
+<line x1="150" y1="820" x2="150" y2="838" stroke="#A07840" stroke-width="2" opacity="0.6"/>
+<line x1="134" y1="820" x2="134" y2="838" stroke="#A07840" stroke-width="2" opacity="0.5"/>
+<line x1="166" y1="820" x2="166" y2="838" stroke="#A07840" stroke-width="2" opacity="0.5"/>
+
+<!-- Shadow behind jars (adds depth for cat to hide) -->
+<ellipse cx="295" cy="820" rx="90" ry="20" fill="#3A2010" opacity="0.3"/>
+
+<!-- === STALL 2: 생선 (x=482~838) C2 cat hides at (753,432) === -->
+<polygon points="472,285 852,285 852,420 472,442" fill="#1A5080"/>
+<polygon points="510,285 535,285 535,442 510,443" fill="white" opacity="0.45"/>
+<polygon points="565,285 590,285 590,441 565,442" fill="white" opacity="0.45"/>
+<polygon points="620,285 645,285 645,440 620,441" fill="white" opacity="0.45"/>
+<polygon points="675,285 700,285 700,440 675,441" fill="white" opacity="0.45"/>
+<polygon points="730,285 755,285 755,439 730,440" fill="white" opacity="0.45"/>
+<polygon points="785,285 810,285 810,439 785,440" fill="white" opacity="0.45"/>
+<polygon points="820,285 845,285 845,439 820,440" fill="white" opacity="0.45"/>
+<!-- Fringe -->
+<polygon points="472,442 485,468 498,442" fill="#0E3A60"/>
+<polygon points="498,441 511,467 524,441" fill="#0E3A60"/>
+<polygon points="524,440 537,466 550,440" fill="#0E3A60"/>
+<polygon points="550,439 563,465 576,439" fill="#0E3A60"/>
+<polygon points="576,438 589,464 602,438" fill="#0E3A60"/>
+<polygon points="602,437 615,463 628,437" fill="#0E3A60"/>
+<polygon points="628,436 641,462 654,436" fill="#0E3A60"/>
+<polygon points="654,435 667,461 680,435" fill="#0E3A60"/>
+<polygon points="680,434 693,460 706,434" fill="#0E3A60"/>
+<polygon points="706,433 719,459 732,433" fill="#0E3A60"/>
+<polygon points="732,432 745,458 758,432" fill="#0E3A60"/>
+<polygon points="758,431 771,457 784,431" fill="#0E3A60"/>
+<polygon points="784,430 797,456 810,430" fill="#0E3A60"/>
+<polygon points="810,429 823,455 836,429" fill="#0E3A60"/>
+<polygon points="836,428 849,454 852,429" fill="#0E3A60"/>
+<!-- Sign -->
+<rect x="510" y="210" width="175" height="52" fill="#0A3060" rx="5"/>
+<text x="597" y="245" font-family="serif" font-size="30" fill="#90E0FF" text-anchor="middle" font-weight="bold">신선 생선</text>
+<!-- HANGING FISH - C2 cat hides among these at (753,432) -->
+<line x1="530" y1="285" x2="530" y2="462" stroke="#5A3820" stroke-width="3"/>
+<ellipse cx="530" cy="462" rx="16" ry="6" fill="#C0B8B0"/>
+<path d="M 516 462 Q 530 455 544 462 Q 530 478 516 462" fill="#A8B0A8"/>
+<line x1="580" y1="285" x2="580" y2="455" stroke="#5A3820" stroke-width="3"/>
+<ellipse cx="580" cy="455" rx="18" ry="7" fill="#D0C8C0"/>
+<path d="M 564 455 Q 580 447 596 455 Q 580 474 564 455" fill="#B8B8B0"/>
+<line x1="635" y1="285" x2="635" y2="468" stroke="#5A3820" stroke-width="3"/>
+<ellipse cx="635" cy="468" rx="20" ry="8" fill="#C8C0B8"/>
+<path d="M 617 468 Q 635 459 653 468 Q 635 488 617 468" fill="#B0B0A8"/>
+<line x1="695" y1="285" x2="695" y2="455" stroke="#5A3820" stroke-width="3"/>
+<ellipse cx="695" cy="455" rx="22" ry="9" fill="#D8D0C8"/>
+<path d="M 675 455 Q 695 445 715 455 Q 695 478 675 455" fill="#C0C0B8"/>
+<!-- Cat2 hiding area: fish cluster at (753,432) -->
+<line x1="750" y1="285" x2="750" y2="443" stroke="#5A3820" stroke-width="3"/>
+<ellipse cx="750" cy="443" rx="26" ry="10" fill="#D0C8C0"/>
+<path d="M 726 443 Q 750 432 774 443 Q 750 467 726 443" fill="#B8B8B0"/>
+<ellipse cx="758" cy="420" rx="18" ry="7" fill="#E0D8D0" opacity="0.8"/>
+<line x1="808" y1="285" x2="808" y2="452" stroke="#5A3820" stroke-width="3"/>
+<ellipse cx="808" cy="452" rx="19" ry="8" fill="#C8C0B8"/>
+<path d="M 791 452 Q 808 444 825 452 Q 808 470 791 452" fill="#B0B0A8"/>
+<!-- Fish stall counter (blue-ish, like ice display) -->
+<rect x="480" y="660" width="352" height="162" fill="#2A5880" rx="4"/>
+<rect x="480" y="654" width="352" height="18" fill="#4A78A0" rx="3"/>
+<!-- Fish on ice -->
+<ellipse cx="560" cy="680" rx="50" ry="14" fill="#B0D8E8"/>
+<path d="M 515 680 Q 560 668 605 680 Q 560 698 515 680" fill="#90C8D8" opacity="0.8"/>
+<ellipse cx="680" cy="675" rx="55" ry="15" fill="#A8D0E0"/>
+<path d="M 628 675 Q 680 662 732 675 Q 680 695 628 675" fill="#88C0D0" opacity="0.8"/>
+<ellipse cx="780" cy="680" rx="48" ry="13" fill="#B0D8E8"/>
+<path d="M 736 680 Q 780 669 824 680 Q 780 697 736 680" fill="#90C8D8" opacity="0.8"/>
+
+<!-- === STALL 3: 잡화 (x=838~1162) C4 cat hides at (995,626) === -->
+<polygon points="828,305 1176,285 1176,435 828,458" fill="#E08020"/>
+<polygon points="868,307 893,306 893,459 868,460" fill="white" opacity="0.45"/>
+<polygon points="928,305 953,304 953,457 928,458" fill="white" opacity="0.45"/>
+<polygon points="988,303 1013,302 1013,456 988,457" fill="white" opacity="0.45"/>
+<polygon points="1048,301 1073,300 1073,455 1048,456" fill="white" opacity="0.45"/>
+<polygon points="1108,299 1133,298 1133,453 1108,454" fill="white" opacity="0.45"/>
+<polygon points="1140,298 1165,297 1165,452 1140,453" fill="white" opacity="0.45"/>
+<!-- Fringe -->
+<polygon points="828,458 842,484 856,458" fill="#B05A10"/>
+<polygon points="856,457 870,483 884,457" fill="#B05A10"/>
+<polygon points="884,456 898,482 912,456" fill="#B05A10"/>
+<polygon points="912,455 926,481 940,455" fill="#B05A10"/>
+<polygon points="940,454 954,480 968,454" fill="#B05A10"/>
+<polygon points="968,453 982,479 996,453" fill="#B05A10"/>
+<polygon points="996,452 1010,478 1024,452" fill="#B05A10"/>
+<polygon points="1024,451 1038,477 1052,451" fill="#B05A10"/>
+<polygon points="1052,450 1066,476 1080,450" fill="#B05A10"/>
+<polygon points="1080,449 1094,475 1108,449" fill="#B05A10"/>
+<polygon points="1108,448 1122,474 1136,448" fill="#B05A10"/>
+<polygon points="1136,447 1150,473 1164,447" fill="#B05A10"/>
+<polygon points="1164,446 1176,472 1176,446" fill="#B05A10"/>
+<!-- Sign -->
+<rect x="875" y="210" width="160" height="52" fill="#8B4500" rx="5"/>
+<text x="955" y="245" font-family="serif" font-size="30" fill="#FFE0A0" text-anchor="middle" font-weight="bold">잡화 · 생활</text>
+<!-- Stall counter -->
+<rect x="836" y="660" width="330" height="162" fill="#6A5030" rx="4"/>
+<rect x="836" y="654" width="330" height="18" fill="#8A7050" rx="3"/>
+<!-- Goods at C4 position (995,626) - stacked boxes and baskets -->
+<rect x="920" y="590" width="70" height="68" fill="#C09860" rx="3"/>
+<rect x="900" y="558" width="55" height="35" fill="#B08850" rx="2"/>
+<rect x="960" y="565" width="48" height="28" fill="#D0A870" rx="2"/>
+<rect x="1005" y="580" width="60" height="50" fill="#BA9460" rx="3"/>
+<rect x="1050" y="595" width="45" height="35" fill="#C0A070" rx="2"/>
+<!-- Baskets with goods -->
+<ellipse cx="870" cy="668" rx="38" ry="22" fill="#D4A860"/>
+<rect x="832" y="648" width="76" height="20" fill="#C09850" rx="3"/>
+<ellipse cx="960" cy="665" rx="42" ry="24" fill="#DEB870"/>
+<rect x="918" y="643" width="84" height="22" fill="#C8A858" rx="3"/>
+<ellipse cx="1060" cy="668" rx="36" ry="20" fill="#D4A060"/>
+<rect x="1024" y="650" width="72" height="18" fill="#C09050" rx="3"/>
+<!-- Shadow for depth -->
+<ellipse cx="985" cy="650" rx="80" ry="18" fill="#3A2810" opacity="0.3"/>
+
+<!-- === STALL 4: 채소·과일 (x=1162~1500) C3 cat hides at (1167,842) === -->
+<polygon points="1152,290 1514,290 1514,430 1152,452" fill="#228030"/>
+<polygon points="1192,290 1218,290 1218,452 1192,453" fill="white" opacity="0.45"/>
+<polygon points="1252,290 1278,290 1278,451 1252,452" fill="white" opacity="0.45"/>
+<polygon points="1312,290 1338,290 1338,450 1312,451" fill="white" opacity="0.45"/>
+<polygon points="1372,290 1398,290 1398,449 1372,450" fill="white" opacity="0.45"/>
+<polygon points="1432,290 1458,290 1458,448 1432,449" fill="white" opacity="0.45"/>
+<polygon points="1476,290 1502,290 1502,447 1476,448" fill="white" opacity="0.45"/>
+<!-- Fringe -->
+<polygon points="1152,452 1166,478 1180,452" fill="#156020"/>
+<polygon points="1180,451 1194,477 1208,451" fill="#156020"/>
+<polygon points="1208,450 1222,476 1236,450" fill="#156020"/>
+<polygon points="1236,449 1250,475 1264,449" fill="#156020"/>
+<polygon points="1264,448 1278,474 1292,448" fill="#156020"/>
+<polygon points="1292,447 1306,473 1320,447" fill="#156020"/>
+<polygon points="1320,446 1334,472 1348,446" fill="#156020"/>
+<polygon points="1348,445 1362,471 1376,445" fill="#156020"/>
+<polygon points="1376,444 1390,470 1404,444" fill="#156020"/>
+<polygon points="1404,443 1418,469 1432,443" fill="#156020"/>
+<polygon points="1432,442 1446,468 1460,442" fill="#156020"/>
+<polygon points="1460,441 1474,467 1488,441" fill="#156020"/>
+<polygon points="1488,440 1502,466 1514,441" fill="#156020"/>
+<!-- Sign -->
+<rect x="1195" y="213" width="190" height="52" fill="#0D5015" rx="5"/>
+<text x="1290" y="248" font-family="serif" font-size="30" fill="#90FF90" text-anchor="middle" font-weight="bold">채소 · 과일</text>
+<!-- Counter -->
+<rect x="1160" y="660" width="348" height="162" fill="#3A6820" rx="4"/>
+<rect x="1160" y="654" width="348" height="18" fill="#5A8840" rx="3"/>
+<!-- Vegetables pile at C3 (1167,842) -->
+<!-- Cabbages (배추) -->
+<ellipse cx="1168" cy="830" rx="38" ry="30" fill="#6AB840"/>
+<ellipse cx="1168" cy="810" rx="28" ry="18" fill="#88C850"/>
+<ellipse cx="1210" cy="835" rx="35" ry="28" fill="#72C045"/>
+<ellipse cx="1210" cy="815" rx="25" ry="16" fill="#90D055"/>
+<ellipse cx="1145" cy="838" rx="32" ry="24" fill="#68B03C"/>
+<!-- Radishes (무) -->
+<ellipse cx="1255" cy="825" rx="22" ry="36" fill="#F0F0E8"/>
+<ellipse cx="1255" cy="795" rx="16" ry="10" fill="#80C060"/>
+<ellipse cx="1285" cy="830" rx="20" ry="33" fill="#F4F4EC"/>
+<ellipse cx="1285" cy="800" rx="14" ry="9" fill="#78B858"/>
+<!-- Peppers (고추) -->
+<ellipse cx="1310" cy="820" rx="10" ry="28" fill="#CC2222" transform="rotate(-15 1310 820)"/>
+<ellipse cx="1328" cy="815" rx="10" ry="26" fill="#DD2222" transform="rotate(10 1328 815)"/>
+<!-- Pumpkins (호박) -->
+<ellipse cx="1360" cy="838" rx="32" ry="24" fill="#E08020"/>
+<path d="M 1332 830 Q 1360 818 1388 830 Q 1360 850 1332 830" fill="#C06818" opacity="0.5"/>
+<path d="M 1345 835 Q 1360 825 1375 835" stroke="#A05010" stroke-width="2" fill="none"/>
+<!-- Fruit display: oranges and apples -->
+<circle cx="1410" cy="835" r="18" fill="#FF8020"/>
+<circle cx="1445" cy="832" r="19" fill="#FF7010"/>
+<circle cx="1430" cy="818" r="17" fill="#FF9030"/>
+<circle cx="1475" cy="838" r="16" fill="#CC2020"/>
+<circle cx="1460" cy="823" r="18" fill="#DD2020"/>
+<!-- Green onion bundles -->
+<rect x="1200" y="855" width="80" height="15" fill="#70A030" rx="5"/>
+<rect x="1295" y="850" width="75" height="14" fill="#68982A" rx="5"/>
+<!-- Shadow -->
+<ellipse cx="1270" cy="858" rx="100" ry="16" fill="#1A3010" opacity="0.3"/>
+
+<!-- === STALL 5: 옷감·의류 (x=1500~1828) C1 cat hides at (1617,594) === -->
+<polygon points="1490,300 1842,280 1842,428 1490,448" fill="#6820A0"/>
+<polygon points="1528,302 1554,301 1554,449 1528,450" fill="white" opacity="0.4"/>
+<polygon points="1590,300 1616,299 1616,447 1590,448" fill="white" opacity="0.4"/>
+<polygon points="1652,298 1678,297 1678,446 1652,447" fill="white" opacity="0.4"/>
+<polygon points="1714,296 1740,295 1740,444 1714,445" fill="white" opacity="0.4"/>
+<polygon points="1776,294 1802,293 1802,443 1776,444" fill="white" opacity="0.4"/>
+<polygon points="1808,293 1834,292 1834,442 1808,443" fill="white" opacity="0.4"/>
+<!-- Fringe -->
+<polygon points="1490,448 1504,474 1518,448" fill="#4A1070"/>
+<polygon points="1518,447 1532,473 1546,447" fill="#4A1070"/>
+<polygon points="1546,446 1560,472 1574,446" fill="#4A1070"/>
+<polygon points="1574,445 1588,471 1602,445" fill="#4A1070"/>
+<polygon points="1602,444 1616,470 1630,444" fill="#4A1070"/>
+<polygon points="1630,443 1644,469 1658,443" fill="#4A1070"/>
+<polygon points="1658,442 1672,468 1686,442" fill="#4A1070"/>
+<polygon points="1686,441 1700,467 1714,441" fill="#4A1070"/>
+<polygon points="1714,440 1728,466 1742,440" fill="#4A1070"/>
+<polygon points="1742,439 1756,465 1770,439" fill="#4A1070"/>
+<polygon points="1770,438 1784,464 1798,438" fill="#4A1070"/>
+<polygon points="1798,437 1812,463 1826,437" fill="#4A1070"/>
+<polygon points="1826,436 1840,462 1842,436" fill="#4A1070"/>
+<!-- Sign -->
+<rect x="1530" y="208" width="200" height="52" fill="#400E70" rx="5"/>
+<text x="1630" y="243" font-family="serif" font-size="30" fill="#E0C0FF" text-anchor="middle" font-weight="bold">옷감 · 의류</text>
+<!-- Stall counter -->
+<rect x="1498" y="660" width="338" height="162" fill="#5A3A80" rx="4"/>
+<rect x="1498" y="654" width="338" height="18" fill="#7A5AA0" rx="3"/>
+<!-- HANGING FABRIC - C1 cat hides among fabric at (1617,594) -->
+<!-- Fabric strips hanging from awning -->
+<rect x="1530" y="448" width="28" height="210" fill="#E040A0" opacity="0.8"/>
+<rect x="1572" y="448" width="28" height="200" fill="#4080E0" opacity="0.8"/>
+<rect x="1612" y="448" width="30" height="215" fill="#F0B040" opacity="0.8"/>
+<!-- Main cat hiding fabric cluster at (1617,594) -->
+<rect x="1594" y="445" width="24" height="195" fill="#CC3090" opacity="0.9"/>
+<rect x="1622" y="445" width="24" height="200" fill="#3060C8" opacity="0.9"/>
+<rect x="1650" y="448" width="22" height="188" fill="#E8A030" opacity="0.8"/>
+<rect x="1678" y="445" width="26" height="195" fill="#CC3090" opacity="0.7"/>
+<rect x="1706" y="448" width="24" height="185" fill="#40A040" opacity="0.8"/>
+<rect x="1734" y="445" width="28" height="200" fill="#E03030" opacity="0.8"/>
+<rect x="1762" y="448" width="24" height="190" fill="#8030C0" opacity="0.8"/>
+<rect x="1790" y="445" width="28" height="200" fill="#E8A030" opacity="0.8"/>
+<!-- Items on counter - folded fabric -->
+<rect x="1510" y="640" width="90" height="25" fill="#C04080" rx="4"/>
+<rect x="1515" y="628" width="80" height="15" fill="#D05090" rx="3"/>
+<rect x="1610" y="638" width="95" height="28" fill="#3060C8" rx="4"/>
+<rect x="1615" y="625" width="85" height="16" fill="#4070D8" rx="3"/>
+<rect x="1715" y="640" width="88" height="25" fill="#E08020" rx="4"/>
+<rect x="1720" y="628" width="78" height="14" fill="#F09030" rx="3"/>
+
+<!-- === DECORATIVE ELEMENTS === -->
+<!-- Hanging lanterns between stalls -->
+<rect x="486" y="448" width="8" height="55" fill="#5A3820"/>
+<ellipse cx="490" cy="530" rx="18" ry="26" fill="#E05020"/>
+<rect x="488" y="556" width="4" height="14" fill="#C03010"/>
+<ellipse cx="490" cy="530" rx="10" ry="8" fill="#F07030" opacity="0.5"/>
+
+<rect x="845" y="448" width="8" height="55" fill="#5A3820"/>
+<ellipse cx="849" cy="530" rx="18" ry="26" fill="#E05020"/>
+<rect x="847" y="556" width="4" height="14" fill="#C03010"/>
+
+<rect x="1166" y="448" width="8" height="55" fill="#5A3820"/>
+<ellipse cx="1170" cy="530" rx="18" ry="26" fill="#E05020"/>
+<rect x="1168" y="556" width="4" fill="#C03010" height="14"/>
+
+<rect x="1504" y="448" width="8" height="55" fill="#5A3820"/>
+<ellipse cx="1508" cy="530" rx="18" ry="26" fill="#E05020"/>
+<rect x="1506" y="556" width="4" height="14" fill="#C03010"/>
+
+<!-- People silhouettes walking -->
+<ellipse cx="600" cy="830" rx="18" ry="40" fill="#2A1A0A" opacity="0.5"/>
+<circle cx="600" cy="782" r="16" fill="#2A1A0A" opacity="0.5"/>
+<ellipse cx="1080" cy="825" rx="18" ry="42" fill="#2A1A0A" opacity="0.45"/>
+<circle cx="1080" cy="776" r="16" fill="#2A1A0A" opacity="0.45"/>
+<ellipse cx="1380" cy="828" rx="16" ry="38" fill="#2A1A0A" opacity="0.4"/>
+<circle cx="1380" cy="783" r="15" fill="#2A1A0A" opacity="0.4"/>
+
+<!-- Title overlay hint -->
+<rect x="760" y="30" width="400" height="55" fill="#8B0000" rx="10" opacity="0.85"/>
+<text x="960" y="67" font-family="serif" font-size="32" fill="#FFD0A0" text-anchor="middle" font-weight="bold">전통 시장</text>
+</svg>
