@@ -83,13 +83,13 @@ export async function saveScore(params: { gameType: 'cards'; gridSize?: string; 
 }
 
 export async function fetchRanking(gridSize?: string) {
-  const params = new URLSearchParams()
-  if (gridSize) params.set('gridSize', gridSize)
-  try {
-    const res = await fetch(`/api/ranking?${params.toString()}`, { cache: 'no-store' })
-    if (!res.ok) return []
-    return res.json()
-  } catch {
-    return []
-  }
+  let q = supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', 'cards').order('time_ms', { ascending: true }).limit(20)
+  if (gridSize) q = q.eq('grid_size', gridSize)
+  const { data: scores } = await q
+  if (!scores?.length) return []
+  const ids = [...new Set(scores.map(s => s.user_id))]
+  // User JWT (if logged in) allows reading own profile; others return null
+  const { data: profiles } = await supabase.from('profiles').select('id, nickname').in('id', ids)
+  const nickMap = new Map((profiles ?? []).map(p => [p.id, p.nickname]))
+  return scores.map(s => ({ ...s, nickname: nickMap.get(s.user_id) ?? null }))
 }
