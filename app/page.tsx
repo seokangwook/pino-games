@@ -38,7 +38,7 @@ export default function Home() {
           </Link>
         )}
       </div>
-      <p className="mt-6 text-[#C0A88A] text-sm">© 우당탕탕 공방 · <a href="https://revely.company" className="underline">revely.company</a></p>
+      <p className="mt-6 text-[#C0A88A] text-sm">© Revely · <a href="https://revely.company" className="underline">revely.company</a></p>
     </main>
   )
 }
