@@ -24,7 +24,7 @@ export function RankingBoard({ gridSize }: { gridSize?: string }) {
       <tbody>{rows.map((r, i) => (
         <tr key={i} className={`border-b border-[#FFD4A8]/30 ${i < 3 ? 'font-bold' : ''}`}>
           <td className="py-2">{i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td>
-          <td className="py-2 text-[#6B4C2A] truncate max-w-[140px]">{r.nickname || r.user_id.slice(0,8)+'...'}</td>
+          <td className="py-2 text-[#6B4C2A] truncate max-w-[140px]">{r.nickname || '익명 플레이어'}</td>
           <td className="py-2 text-right text-[#6B4C2A]">{formatTime(r.time_ms)}</td>
           <td className="py-2 text-right text-[#A0785A]">{r.moves}번</td>
         </tr>
