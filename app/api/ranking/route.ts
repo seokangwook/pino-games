@@ -16,14 +16,15 @@ export async function POST(req: NextRequest) {
   const token = req.headers.get('authorization')?.replace('Bearer ', '')
   if (!token) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
 
-  // Use user JWT so RLS auth.uid() = user_id is satisfied without service role key
+  // Verify token and get user; global header ensures RLS auth.uid() = user_id
+  const authClient = createClient(SB_URL, SB_ANON, { auth: { persistSession: false } })
+  const { data: { user } } = await authClient.auth.getUser(token)
+  if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
+
   const supabase = createClient(SB_URL, SB_ANON, {
     auth: { persistSession: false },
     global: { headers: { Authorization: `Bearer ${token}` } },
   })
-
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
 
   const { error } = await supabase.from('game_scores').insert({
     user_id: user.id,
