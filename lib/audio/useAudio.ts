@@ -11,7 +11,7 @@ let audioStarted = false
 export function useAudio(bgmKey: BgmKey | null) {
   const [volume, setVolumeState] = useState<number>(() => typeof window==='undefined' ? 0.4 : parseFloat(localStorage.getItem(VOLUME_KEY) ?? '0.4'))
   const [muted, setMutedState] = useState<boolean>(() => typeof window==='undefined' ? false : localStorage.getItem(MUTED_KEY) === 'true')
-  const [started, setStarted] = useState(false)
+  const [started, setStarted] = useState(() => audioStarted)
 
   useEffect(() => {
     if (typeof window === 'undefined' || !bgmKey) return
@@ -54,8 +54,6 @@ export function useAudio(bgmKey: BgmKey | null) {
       localStorage.setItem(MUTED_KEY, 'false')
       if (globalAudio) {
         globalAudio.volume = volume
-        // iOS Safari belt-and-suspenders: if still not loaded, trigger load now
-        if (globalAudio.readyState === 0) globalAudio.load()
         globalAudio.play().catch(e => {
           console.error('[BGM] play failed:', e.name, e.message)
           audioStarted = false
