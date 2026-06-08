@@ -50,10 +50,15 @@ export const useAuthStore = create<AuthStore>((set) => ({
   },
 
   signInWithKakao: async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: 'kakao',
-      options: { redirectTo: window.location.origin + '/auth/callback', queryParams: { scope: 'profile_nickname profile_image' } },
+    const KAKAO_APP_KEY = '0075002a176bc8fbe8a53072fde6e82c'
+    const redirectUri = window.location.origin + '/auth/kakao-callback'
+    const params = new URLSearchParams({
+      response_type: 'code',
+      client_id: KAKAO_APP_KEY,
+      redirect_uri: redirectUri,
+      scope: 'openid profile_nickname profile_image',
     })
+    window.location.href = `https://kauth.kakao.com/oauth/authorize?${params}`
   },
 
   signOut: async () => {
