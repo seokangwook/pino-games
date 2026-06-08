@@ -13,7 +13,7 @@ let _authInitialized = false
 interface AuthStore {
   user: User | null; nickname: string | null; role: UserRole
   needsNickname: boolean; loading: boolean
-  init: () => Promise<void>; signInWithGoogle: () => Promise<void>; signOut: () => Promise<void>
+  init: () => Promise<void>; signInWithGoogle: () => Promise<void>; signInWithKakao: () => Promise<void>; signOut: () => Promise<void>
   saveNickname: (nick: string) => Promise<string | null>
 }
 
@@ -47,6 +47,13 @@ export const useAuthStore = create<AuthStore>((set) => ({
 
   signInWithGoogle: async () => {
     await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin + '/auth/callback' } })
+  },
+
+  signInWithKakao: async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: 'kakao',
+      options: { redirectTo: window.location.origin + '/auth/callback', queryParams: { scope: 'profile_nickname profile_image' } },
+    })
   },
 
   signOut: async () => {

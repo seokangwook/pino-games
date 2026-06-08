@@ -90,7 +90,7 @@ export type Messages = {
     rematch: string; home: string
   }
   auth: {
-    logout: string; login: string
+    logout: string; login: string; kakaoLogin: string
     nicknameTitle: string; nicknameSubtitle: string; nicknameHint: string
     nicknamePlaceholder: string; nicknameSave: string; nicknameSaving: string
     nicknameChecking: string; nicknameSharedHint: string; duplicate: string
