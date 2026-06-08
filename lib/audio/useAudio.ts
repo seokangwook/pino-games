@@ -4,37 +4,49 @@ import { BGM_URLS, BgmKey } from './bgm'
 
 const VOLUME_KEY = 'pino_bgm_volume'
 const MUTED_KEY = 'pino_bgm_muted'
-const BGM_STARTED_EVENT = 'pino-bgm-started'
+const BGM_STATE_EVENT = 'pino-bgm-state'
 
+// Module-level singletons — shared across ALL useAudio instances
 let globalAudio: HTMLAudioElement | null = null
 let currentKey: string | null = null
 let audioStarted = false
 let unlockListenerAdded = false
+let globalMuted = false
+let globalVolume = 0.4
 
-// Notify all mounted useAudio instances that BGM started (via DOM event)
-function notifyBgmStarted() {
+// Initialize global state from localStorage on first client load
+if (typeof window !== 'undefined') {
+  globalMuted = localStorage.getItem(MUTED_KEY) === 'true'
+  globalVolume = parseFloat(localStorage.getItem(VOLUME_KEY) ?? '0.4')
+}
+
+// Broadcast state to all mounted useAudio instances so React state stays in sync
+function notifyBgmState() {
   if (typeof document !== 'undefined') {
-    document.dispatchEvent(new CustomEvent(BGM_STARTED_EVENT))
+    document.dispatchEvent(new CustomEvent(BGM_STATE_EVENT, {
+      detail: { muted: globalMuted, volume: globalVolume, started: audioStarted }
+    }))
   }
 }
 
-// Register one-time first-interaction unlock listener (module-level, added once)
 function ensureUnlockListener() {
   if (unlockListenerAdded || typeof document === 'undefined') return
   unlockListenerAdded = true
   const unlock = () => {
     if (!audioStarted && globalAudio) {
-      const vol = parseFloat(localStorage.getItem(VOLUME_KEY) ?? '0.4')
       audioStarted = true
-      localStorage.setItem(MUTED_KEY, 'false')
-      globalAudio.volume = vol
-      globalAudio.play()
-        .then(() => notifyBgmStarted())
-        .catch(e => {
-          console.warn('[BGM] auto-unlock failed:', e.name)
-          audioStarted = false
-          unlockListenerAdded = false  // allow retry next mount
-        })
+      globalAudio.volume = globalMuted ? 0 : globalVolume
+      if (!globalMuted) {
+        globalAudio.play()
+          .then(() => notifyBgmState())
+          .catch(e => {
+            console.warn('[BGM] auto-unlock failed:', e.name)
+            audioStarted = false
+            unlockListenerAdded = false
+          })
+      } else {
+        notifyBgmState()
+      }
     }
   }
   document.addEventListener('click', unlock, { once: true })
@@ -42,17 +54,21 @@ function ensureUnlockListener() {
 }
 
 export function useAudio(bgmKey: BgmKey | null) {
-  const [volume, setVolumeState] = useState<number>(() =>
-    typeof window === 'undefined' ? 0.4 : parseFloat(localStorage.getItem(VOLUME_KEY) ?? '0.4'))
-  const [muted, setMutedState] = useState<boolean>(() =>
-    typeof window === 'undefined' ? false : localStorage.getItem(MUTED_KEY) === 'true')
+  // Initialize React state from global singletons (not from localStorage directly)
+  const [volume, setVolumeState] = useState(() => globalVolume)
+  const [muted, setMutedState] = useState(() => globalMuted)
   const [started, setStarted] = useState(() => audioStarted)
 
-  // Listen for bgm-started event (fired by auto-unlock or any hook instance)
+  // All instances stay in sync via DOM event (fixes multi-instance desync bug)
   useEffect(() => {
-    const handler = () => { setStarted(true); setMutedState(false) }
-    document.addEventListener(BGM_STARTED_EVENT, handler)
-    return () => document.removeEventListener(BGM_STARTED_EVENT, handler)
+    const handler = (e: Event) => {
+      const { muted: m, volume: v, started: s } = (e as CustomEvent).detail
+      setMutedState(m)
+      setVolumeState(v)
+      setStarted(s)
+    }
+    document.addEventListener(BGM_STATE_EVENT, handler)
+    return () => document.removeEventListener(BGM_STATE_EVENT, handler)
   }, [])
 
   useEffect(() => {
@@ -63,62 +79,68 @@ export function useAudio(bgmKey: BgmKey | null) {
       globalAudio.loop = true
       globalAudio.preload = 'auto'
     }
-    const wasPlaying = audioStarted && !muted
+    // Use globalMuted/globalVolume — not local React state — to avoid stale closure
+    const wasPlaying = audioStarted && !globalMuted
     if (currentKey !== bgmKey) {
       globalAudio.pause()
       globalAudio.src = url
       globalAudio.load()
       currentKey = bgmKey
     }
-    globalAudio.volume = muted ? 0 : volume
+    globalAudio.volume = globalMuted ? 0 : globalVolume
     if (wasPlaying) {
       globalAudio.play().catch(e => console.warn('[BGM] track-change play failed:', e.name))
     }
-    // Register first-interaction unlock (starts BGM on any tap/click)
     ensureUnlockListener()
   }, [bgmKey])
 
-  useEffect(() => {
-    if (globalAudio) globalAudio.volume = muted ? 0 : volume
-  }, [volume, muted])
-
   function setVolume(v: number) {
+    globalVolume = v
     setVolumeState(v)
     localStorage.setItem(VOLUME_KEY, String(v))
-    if (globalAudio) globalAudio.volume = muted ? 0 : v
+    if (globalAudio) globalAudio.volume = globalMuted ? 0 : v
+    notifyBgmState()
   }
 
   function toggleMute() {
     if (!audioStarted) {
+      // First interaction: start BGM
       audioStarted = true
-      setStarted(true)
-      setMutedState(false)
+      globalMuted = false
       localStorage.setItem(MUTED_KEY, 'false')
       if (globalAudio) {
-        globalAudio.volume = volume
+        globalAudio.volume = globalVolume
         globalAudio.play()
-          .then(() => notifyBgmStarted())
+          .then(() => notifyBgmState())
           .catch(e => {
             console.error('[BGM] play failed:', e.name, e.message)
             audioStarted = false
-            setStarted(false)
+            notifyBgmState()
           })
+      } else {
+        notifyBgmState()
       }
     } else {
-      const n = !muted
-      setMutedState(n)
-      localStorage.setItem(MUTED_KEY, String(n))
+      globalMuted = !globalMuted
+      localStorage.setItem(MUTED_KEY, String(globalMuted))
       if (globalAudio) {
-        globalAudio.volume = n ? 0 : volume
-        if (!n) globalAudio.play().catch(e => console.warn('[BGM] unmute play failed:', e.name))
+        if (globalMuted) {
+          // Truly pause — not just volume=0
+          globalAudio.volume = 0
+          globalAudio.pause()
+        } else {
+          globalAudio.volume = globalVolume
+          globalAudio.play().catch(e => console.warn('[BGM] unmute play failed:', e.name))
+        }
       }
+      notifyBgmState()
     }
   }
 
   function playOnce(key: BgmKey) {
-    if (!audioStarted) return
-    const url = BGM_URLS[key]; if (!url || muted) return
-    const s = new Audio(url); s.volume = volume * 0.8; s.play().catch(() => {})
+    if (!audioStarted || globalMuted) return
+    const url = BGM_URLS[key]; if (!url) return
+    const s = new Audio(url); s.volume = globalVolume * 0.8; s.play().catch(() => {})
   }
 
   return { volume, muted, started, setVolume, toggleMute, playOnce }
