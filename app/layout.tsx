@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import { AuthProvider } from '@/components/auth/AuthProvider'
+import { InAppBrowserGuard } from '@/components/auth/InAppBrowserGuard'
 
 const ADSENSE_PUB = 'ca-pub-4128588337803742'
 
@@ -24,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUB}`}
           crossOrigin="anonymous" strategy="lazyOnload" />
       </head>
-      <body className="antialiased"><AuthProvider>{children}</AuthProvider></body>
+      <body className="antialiased"><InAppBrowserGuard><AuthProvider>{children}</AuthProvider></InAppBrowserGuard></body>
     </html>
   )
 }
