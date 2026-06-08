@@ -20,11 +20,13 @@ function KakaoCallbackHandler() {
     })
       .then(r => r.json())
       .then(async ({ idToken, error: e }) => {
-        if (e || !idToken) { router.replace('/'); return }
-        await supabase.auth.signInWithIdToken({ provider: 'kakao', token: idToken })
-        router.replace('/')
+        console.log('[kakao-cb] token api:', { hasIdToken: !!idToken, error: e })
+        if (e || !idToken) { router.replace('/?kakao_err=no_token'); return }
+        const { error: sbError } = await supabase.auth.signInWithIdToken({ provider: 'kakao', token: idToken })
+        console.log('[kakao-cb] signInWithIdToken:', { sbError })
+        router.replace(sbError ? `/?kakao_err=${encodeURIComponent(JSON.stringify(sbError))}` : '/')
       })
-      .catch(() => router.replace('/'))
+      .catch((err) => { console.error('[kakao-cb] catch:', err); router.replace('/') })
   }, [router, searchParams])
 
   return null
