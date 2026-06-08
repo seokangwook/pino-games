@@ -68,7 +68,8 @@ export type Messages = {
     startGame: string; moves: string; matched: string; time: string; restart: string
     rankCheck: string; rankResult: string; loginToast: string; multiHeader: string
   }
-  result: { clear: string; stat: string; saved: string; loginPrompt: string; replay: string; viewRanking: string; menu: string }
+  result: { clear: string; stat: string; saved: string; guestSaved: string; loginPrompt: string; replay: string; viewRanking: string; menu: string }
+  guestNickname: { title: string; subtitle: string; hint: string; placeholder: string; save: string; skip: string; persist: string }
   ranking: {
     title: string; tab4x4: string; tab4x6: string; tab6x6: string
     loading: string; empty: string

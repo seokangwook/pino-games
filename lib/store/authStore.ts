@@ -64,17 +64,22 @@ export const useAuthStore = create<AuthStore>((set) => ({
   },
 }))
 
-export async function saveScore(params: { gameType: 'cards'; gridSize?: string; moves: number; timeMs: number }) {
+export async function saveScore(params: { gameType: 'cards'; gridSize?: string; moves: number; timeMs: number; guestNickname?: string }) {
   const { data: { session } } = await supabase.auth.getSession()
-  if (!session) return
   try {
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+    if (session) headers['Authorization'] = `Bearer ${session.access_token}`
+
     const res = await fetch('/api/ranking', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${session.access_token}`,
-      },
-      body: JSON.stringify({ gameType: params.gameType, gridSize: params.gridSize, moves: params.moves, timeMs: params.timeMs }),
+      headers,
+      body: JSON.stringify({
+        gameType: params.gameType,
+        gridSize: params.gridSize,
+        moves: params.moves,
+        timeMs: params.timeMs,
+        ...(params.guestNickname ? { guestNickname: params.guestNickname } : {}),
+      }),
     })
     if (!res.ok) {
       const d = await res.json().catch(() => ({}))
@@ -86,15 +91,29 @@ export async function saveScore(params: { gameType: 'cards'; gridSize?: string; 
 }
 
 export async function fetchRanking(gridSize?: string) {
-  let q = supabase.from('game_scores').select('user_id, moves, time_ms, created_at').eq('game_type', 'cards').order('time_ms', { ascending: true }).limit(20)
+  let q = supabase
+    .from('game_scores')
+    .select('user_id, moves, time_ms, created_at, guest_nickname')
+    .eq('game_type', 'cards')
+    .order('time_ms', { ascending: true })
+    .limit(20)
   if (gridSize) q = q.eq('grid_size', gridSize)
   const { data: scores } = await q
   if (!scores?.length) return []
-  const ids = [...new Set(scores.map(s => s.user_id))]
-  // User JWT (if logged in) allows reading own profile; others return null
-  const { data: profiles } = await supabase.from('profiles').select('id, nickname').in('id', ids)
+
+  // 로그인 유저 ID만 profiles 조회 (guest는 guest_nickname 직접 사용)
+  const authIds = [...new Set(
+    scores.filter(s => s.user_id && !s.guest_nickname).map(s => s.user_id)
+  )]
+  const { data: profiles } = authIds.length
+    ? await supabase.from('profiles').select('id, nickname').in('id', authIds)
+    : { data: [] }
+
   const nickMap = new Map((profiles ?? []).map(p => [p.id, p.nickname]))
   return scores
-    .map(s => ({ ...s, nickname: nickMap.get(s.user_id) ?? null }))
+    .map(s => ({
+      ...s,
+      nickname: s.guest_nickname || (s.user_id ? nickMap.get(s.user_id) ?? null : null),
+    }))
     .filter(s => s.nickname)
 }

@@ -8,6 +8,7 @@ import { saveScore, useAuthStore } from '@/lib/store/authStore'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 import { useAudio } from '@/lib/audio/useAudio'
 import { useT } from '@/lib/i18n-client'
+import { GuestNicknameModal } from './GuestNicknameModal'
 import Link from 'next/link'
 import { AdSlot } from '@/components/ads/AdSlot'
 
@@ -18,7 +19,8 @@ export function CardGame() {
   const [elapsed, setElapsed] = useState(0)
   const [scoreSaved, setScoreSaved] = useState(false)
   const [showRankCheck, setShowRankCheck] = useState(false)
-  const [showLoginToast, setShowLoginToast] = useState(false)
+  const [showGuestNicknameModal, setShowGuestNicknameModal] = useState(false)
+  const [savedGuestNick, setSavedGuestNick] = useState<string | null>(null)
   useAudio(status === 'playing' ? 'cards' : status === 'won' ? null : 'main')
 
   const GRID_OPTIONS: { value: GridSize; label: string; desc: string }[] = [
@@ -44,14 +46,19 @@ export function CardGame() {
       if (user) {
         saveScore({ gameType: 'cards', gridSize, moves, timeMs: endTime - startTime })
       } else {
-        setShowLoginToast(true)
-        setTimeout(() => setShowLoginToast(false), 4000)
+        const storedNick = typeof window !== 'undefined' ? localStorage.getItem('pino_guest_nickname') : null
+        if (storedNick) {
+          setSavedGuestNick(storedNick)
+          saveScore({ gameType: 'cards', gridSize, moves, timeMs: endTime - startTime, guestNickname: storedNick })
+        } else {
+          setShowGuestNicknameModal(true)
+        }
       }
     }
   }, [status, scoreSaved, startTime, endTime, gridSize, moves, user])
 
   useEffect(() => {
-    if (status === 'playing') setScoreSaved(false)
+    if (status === 'playing') { setScoreSaved(false); setSavedGuestNick(null) }
   }, [status])
 
   useEffect(() => {
@@ -69,10 +76,18 @@ export function CardGame() {
         <div className="ml-auto"><AudioToggle bgmKey={status === 'playing' ? 'cards' : 'main'} /></div>
       </div>
 
-      {showLoginToast && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#6B4C2A] text-white text-sm font-semibold px-5 py-3 rounded-2xl shadow-lg animate-fade-in">
-          {m.card.loginToast}
-        </div>
+      {showGuestNicknameModal && (
+        <GuestNicknameModal
+          onConfirm={(nick) => {
+            localStorage.setItem('pino_guest_nickname', nick)
+            setSavedGuestNick(nick)
+            setShowGuestNicknameModal(false)
+            if (startTime && endTime) {
+              saveScore({ gameType: 'cards', gridSize, moves, timeMs: endTime - startTime, guestNickname: nick })
+            }
+          }}
+          onSkip={() => setShowGuestNicknameModal(false)}
+        />
       )}
 
       {status === 'idle' ? (
@@ -92,11 +107,11 @@ export function CardGame() {
           </button>
         </div>
       ) : status === 'won' && !showRankCheck ? (
-        <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} isLoggedIn={!!user} />
+        <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} isLoggedIn={!!user} guestNick={savedGuestNick} />
       ) : status === 'won' && showRankCheck ? (
         <>
           <RankCheckModal onDone={() => setShowRankCheck(false)} rankCheck={m.card.rankCheck} rankResult={m.card.rankResult} />
-          <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} isLoggedIn={!!user} />
+          <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} isLoggedIn={!!user} guestNick={savedGuestNick} />
         </>
       ) : (
         <>
@@ -157,15 +172,15 @@ function RankCheckModal({ onDone, rankCheck, rankResult }: { onDone: () => void;
   )
 }
 
-function ResultScreen({ moves, elapsed, onReplay, onMenu, isLoggedIn }: { moves: number; elapsed: number; onReplay: () => void; onMenu: () => void; isLoggedIn: boolean }) {
+function ResultScreen({ moves, elapsed, onReplay, onMenu, isLoggedIn, guestNick }: { moves: number; elapsed: number; onReplay: () => void; onMenu: () => void; isLoggedIn: boolean; guestNick?: string | null }) {
   const { m, t } = useT()
   return (
     <div className="text-center mt-8 w-full max-w-xs mx-auto">
       <div className="text-8xl mb-4 bounce-soft">🎉</div>
       <h2 className="text-3xl font-black text-[#6B4C2A] mb-2">{m.result.clear}</h2>
       <p className="text-[#A0785A] mb-2">{t(m.result.stat, { moves, time: formatTime(elapsed) })}</p>
-      {isLoggedIn
-        ? <p className="text-xs text-green-600 mb-6">{m.result.saved}</p>
+      {isLoggedIn || guestNick
+        ? <p className="text-xs text-green-600 mb-6">{guestNick ? `🏆 ${guestNick}${m.result.guestSaved}` : m.result.saved}</p>
         : <p className="text-xs text-[#A0785A] mb-6">{m.result.loginPrompt}</p>
       }
       <div className="flex flex-col gap-3">

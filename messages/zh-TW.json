@@ -15,7 +15,8 @@
     "rankCheck": "正在確認排名...", "rankResult": "結果即將顯示",
     "loginToast": "🔒 登入後可進入排行榜！", "multiHeader": "翻牌配對 · 連線"
   },
-  "result": { "clear": "過關！", "stat": "{{moves}}步 · {{time}}", "saved": "✓ 成績已儲存至排行榜", "loginPrompt": "🔒 登入後以暱稱進入排行榜", "replay": "再玩一次", "viewRanking": "🏆 查看排行榜", "menu": "返回選單" },
+  "result": { "clear": "過關！", "stat": "{{moves}}步 · {{time}}", "saved": "✓ 成績已儲存至排行榜", "guestSaved": "已登上排行榜！ 🏆", "loginPrompt": "設置暱稱即可登上排行榜", "replay": "再玩一次", "viewRanking": "🏆 查看排行榜", "menu": "返回選單" },
+  "guestNickname": { "title": "立即登上排行榜！ 🏆", "subtitle": "有暱稱就能在榜單留名", "hint": "韓/英/數字 2~10字", "placeholder": "輸入暱稱", "save": "登上排行榜", "skip": "稍後再說", "persist": "下次遊戲自動使用" },
   "ranking": { "title": "排行榜 🏆", "tab4x4": "4×4", "tab4x6": "4×6", "tab6x6": "6×6", "loading": "載入中...", "empty": "成為第一個留下記錄的人！", "colRank": "排名", "colPlayer": "玩家", "colTime": "時間", "colMoves": "步數", "movesSuffix": "步", "loginHint": "Google登入後成績將自動儲存" },
   "room": { "tabCreate": "建立房間", "tabJoin": "加入房間", "grid": "棋盤", "mode": "模式", "modeConcurrent": "同時競爭", "modeTurn": "回合制", "createBtn": "建立房間 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "加入 →", "joining": "加入中...", "created": "房間已建立", "shareHint": "將代碼分享給朋友", "tapCopy": "點擊複製代碼", "sendInvite": "📤 傳送邀請", "copyCode": "🔗 複製代碼", "waiting": "等待對手...", "cancel": "取消", "shareTitle": "皮諾遊戲 翻牌配對", "shareText": "一起玩！點擊連結加入：\n{{url}}", "codeCopied": "代碼已複製", "linkCopied": "連結已複製" },
   "gameResult": { "victory": "勝利！", "defeat": "遊戲結束", "victoryMsg": "手速快的貓咪贏！ 🐾", "defeatMsg": "差一點...下次配對更快些！", "myMatched": "我的配對", "elapsed": "我的用時", "opMatched": "對手配對", "opClear": "對手用時", "rematch": "再來一局", "home": "返回主頁" },
