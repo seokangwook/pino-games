@@ -41,17 +41,17 @@ export function validateNickname(nick: string, role: UserRole = 'user'): string 
   const lower = t.toLowerCase()
   const norm = normalize(t)
 
-  // 욕설·시스템 = 모두 차단
+  // 욕설·시스템 = exact match만
   for (const b of BANNED_ALL) {
-    if (lower.includes(b.toLowerCase()) || norm.includes(normalize(b))) {
+    if (lower === b.toLowerCase() || norm === normalize(b)) {
       return '사용할 수 없는 닉네임입니다'
     }
   }
 
-  // 브랜드 단어 = user만 차단, owner 허용
+  // 브랜드 단어 = exact match만, owner 허용
   if (role !== 'owner') {
     for (const b of BANNED_BRAND) {
-      if (lower.includes(b.toLowerCase()) || norm.includes(normalize(b))) {
+      if (lower === b.toLowerCase() || norm === normalize(b)) {
         return '사용할 수 없는 닉네임입니다'
       }
     }
