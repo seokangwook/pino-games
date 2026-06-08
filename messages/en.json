@@ -1,5 +1,25 @@
 {
-  "meta": { "title": "Pino Games 🐱", "description": "Memory match with Pino the cat" },
-  "home": { "tagline": "Play with the cats 🐾", "cardGame": { "title": "Memory Match", "cta": "Play →" } },
-  "mode": { "single": "Single Player", "singleDesc": "Beat your own record", "multi": "1v1 Multiplayer", "multiDesc": "Compete with a friend live" }
+  "meta": { "title": "Pino Games 🐱", "description": "Memory card matching game with Pino the cat", "keywords": "pino,cat,game,card,memory" },
+  "home": {
+    "tagline": "Play with the cats 🐾",
+    "ranking": "🏆 Ranking",
+    "cardGame": { "title": "Memory Match", "desc": "Find 2 matching cat cards", "subDesc": "4×4 / 4×6 / 6×6 grid · 1v1 multiplayer", "cta": "Play →" },
+    "findGame": { "title": "Find Pino", "desc": "Spot 5 hidden cats in a Korean market", "subDesc": "Time attack · Share feature", "cta": "Play →" },
+    "footer": "© Revely · revely.company"
+  },
+  "mode": { "title": "Memory Match", "subtitle": "Choose your mode", "single": "Single Player", "singleDesc": "Beat your own record", "multi": "1v1 Multi", "multiDesc": "Compete with a friend live", "back": "← Back" },
+  "card": {
+    "title": "Memory Match 🃏", "difficulty": "Select difficulty",
+    "easy": "Easy · 16 cards", "medium": "Normal · 24 cards", "hard": "Hard · 36 cards",
+    "startGame": "Start Game 🐱", "moves": "Moves", "matched": "Matched", "time": "Time", "restart": "Restart",
+    "rankCheck": "Checking your rank...", "rankResult": "Result will appear shortly",
+    "loginToast": "🔒 Log in to appear on the leaderboard!", "multiHeader": "Memory Match · Multi"
+  },
+  "result": { "clear": "Clear!", "stat": "{{moves}} moves · {{time}}", "saved": "✓ Score saved to ranking", "loginPrompt": "🔒 Log in to appear on the leaderboard with your nickname", "replay": "Play Again", "viewRanking": "🏆 View Ranking", "menu": "Menu" },
+  "ranking": { "title": "Ranking 🏆", "tab4x4": "4×4 Grid", "tab4x6": "4×6 Grid", "tab6x6": "6×6 Grid", "loading": "Loading...", "empty": "Be the first to set a record!", "colRank": "Rank", "colPlayer": "Player", "colTime": "Time", "colMoves": "Moves", "movesSuffix": "", "loginHint": "Scores are saved automatically after Google login" },
+  "room": { "tabCreate": "Create Room", "tabJoin": "Join Room", "grid": "Grid", "mode": "Mode", "modeConcurrent": "Concurrent", "modeTurn": "Turn-based", "createBtn": "Create Room 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "Join →", "joining": "Joining...", "created": "Room Created", "shareHint": "Share the code with your friend", "tapCopy": "Tap to copy code", "sendInvite": "📤 Send Invite", "copyCode": "🔗 Copy Code", "waiting": "Waiting for opponent...", "cancel": "Cancel", "shareTitle": "Pino Games – Memory Match", "shareText": "Let's play! Click the link to join:\n{{url}}", "codeCopied": "Code copied", "linkCopied": "Link copied" },
+  "gameResult": { "victory": "Victory!", "defeat": "GAME OVER", "victoryMsg": "Quick paws win! 🐾", "defeatMsg": "So close... match faster next time!", "myMatched": "My matches", "elapsed": "My time", "opMatched": "Opponent matches", "opClear": "Opponent time", "rematch": "Rematch", "home": "Home" },
+  "auth": { "logout": "Log out", "login": "Sign in with Google", "nicknameTitle": "Set Nickname", "nicknameSubtitle": "Choose a name to display on the leaderboard", "nicknameHint": "2–10 letters, numbers, or Korean", "nicknamePlaceholder": "Enter nickname (2–10 chars)", "nicknameSave": "Save 🐾", "nicknameSaving": "Saving...", "nicknameChecking": "Checking...", "nicknameSharedHint": "Used across Unmyeong, Naeoottae & Pino Games", "duplicate": "This nickname is already taken" },
+  "inapp": { "title": "Google login is blocked in {{appName}}", "desc": "Google's policy blocks OAuth login in {{appName}}'s in-app browser. Please open in Safari or Chrome.", "openExternal": "🌐 Open in Browser", "copyUrl": "📋 Copy URL", "copied": "✅ Copied — paste in your browser address bar", "manualSteps": "Or open manually", "continueWithout": "Continue without login" },
+  "locale": { "label": "Language" }
 }

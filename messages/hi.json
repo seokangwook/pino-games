@@ -1,0 +1,25 @@
+{
+  "meta": { "title": "पिनो गेम्स 🐱", "description": "पिनो बिल्ली के साथ मेमोरी कार्ड गेम", "keywords": "पिनो,बिल्ली,गेम,मेमोरी,कार्ड" },
+  "home": {
+    "tagline": "बिल्लियों के साथ खेलें 🐾",
+    "ranking": "🏆 रैंकिंग",
+    "cardGame": { "title": "मेमोरी मैच", "desc": "2 एक जैसे बिल्ली कार्ड खोजें", "subDesc": "4×4 / 4×6 / 6×6 · 1v1 मल्टीप्लेयर", "cta": "खेलें →" },
+    "findGame": { "title": "पिनो खोजें", "desc": "कोरियाई बाज़ार में 5 छिपी बिल्लियाँ ढूंढें", "subDesc": "टाइम अटैक · शेयर", "cta": "खेलें →" },
+    "footer": "© Revely · revely.company"
+  },
+  "mode": { "title": "मेमोरी मैच", "subtitle": "मोड चुनें", "single": "सिंगल प्लेयर", "singleDesc": "अपना रिकॉर्ड तोड़ें", "multi": "1v1 मल्टी", "multiDesc": "दोस्त से लाइव मुकाबला", "back": "← वापस" },
+  "card": {
+    "title": "मेमोरी मैच 🃏", "difficulty": "कठिनाई चुनें",
+    "easy": "आसान · 16 कार्ड", "medium": "सामान्य · 24 कार्ड", "hard": "कठिन · 36 कार्ड",
+    "startGame": "शुरू करें 🐱", "moves": "चाल", "matched": "जोड़े", "time": "समय", "restart": "फिर से",
+    "rankCheck": "रैंक जाँची जा रही है...", "rankResult": "परिणाम जल्द दिखेगा",
+    "loginToast": "🔒 रैंकिंग में आने के लिए लॉगिन करें!", "multiHeader": "मेमोरी · मल्टी"
+  },
+  "result": { "clear": "क्लियर!", "stat": "{{moves}} चाल · {{time}}", "saved": "✓ स्कोर सहेजा गया", "loginPrompt": "🔒 रैंकिंग में नाम दिखाने के लिए लॉगिन करें", "replay": "फिर खेलें", "viewRanking": "🏆 रैंकिंग देखें", "menu": "मेनू" },
+  "ranking": { "title": "रैंकिंग 🏆", "tab4x4": "4×4", "tab4x6": "4×6", "tab6x6": "6×6", "loading": "लोड हो रहा है...", "empty": "पहले रिकॉर्ड वाले बनें!", "colRank": "रैंक", "colPlayer": "खिलाड़ी", "colTime": "समय", "colMoves": "चाल", "movesSuffix": "", "loginHint": "लॉगिन के बाद स्कोर स्वतः सहेजे जाते हैं" },
+  "room": { "tabCreate": "कमरा बनाएं", "tabJoin": "जुड़ें", "grid": "ग्रिड", "mode": "मोड", "modeConcurrent": "एक साथ", "modeTurn": "बारी-बारी", "createBtn": "कमरा बनाएं 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "जुड़ें →", "joining": "जुड़ रहे हैं...", "created": "कमरा बना", "shareHint": "दोस्त को कोड शेयर करें", "tapCopy": "कोड कॉपी करें", "sendInvite": "📤 आमंत्रण भेजें", "copyCode": "🔗 कोड कॉपी करें", "waiting": "प्रतिद्वंद्वी का इंतजार...", "cancel": "रद्द", "shareTitle": "पिनो गेम्स – मेमोरी", "shareText": "खेलते हैं! लिंक पर क्लिक करें:\n{{url}}", "codeCopied": "कोड कॉपी हुआ", "linkCopied": "लिंक कॉपी हुआ" },
+  "gameResult": { "victory": "जीत!", "defeat": "गेम ओवर", "victoryMsg": "तेज़ पंजे जीतते हैं! 🐾", "defeatMsg": "इतने करीब थे... अगली बार तेज़ी से जोड़ें!", "myMatched": "मेरे जोड़े", "elapsed": "मेरा समय", "opMatched": "प्रतिद्वंद्वी के जोड़े", "opClear": "प्रतिद्वंद्वी का समय", "rematch": "फिर से खेलें", "home": "होम" },
+  "auth": { "logout": "लॉगआउट", "login": "Google से लॉगिन", "nicknameTitle": "नाम सेट करें", "nicknameSubtitle": "रैंकिंग में दिखने के लिए नाम चुनें", "nicknameHint": "2–10 अक्षर", "nicknamePlaceholder": "नाम दर्ज करें (2–10 char)", "nicknameSave": "सहेजें 🐾", "nicknameSaving": "सहेज रहे हैं...", "nicknameChecking": "जाँच रहे हैं...", "nicknameSharedHint": "यह नाम सभी सेवाओं में उपयोग होता है", "duplicate": "यह नाम पहले से उपयोग में है" },
+  "inapp": { "title": "{{appName}} में Google लॉगिन ब्लॉक है", "desc": "Google की नीति के अनुसार {{appName}} के इन-ऐप ब्राउज़र में OAuth लॉगिन ब्लॉक है। Safari या Chrome में खोलें।", "openExternal": "🌐 ब्राउज़र में खोलें", "copyUrl": "📋 URL कॉपी करें", "copied": "✅ कॉपी हुआ — ब्राउज़र में पेस्ट करें", "manualSteps": "या मैन्युअल खोलें", "continueWithout": "लॉगिन के बिना जारी रखें" },
+  "locale": { "label": "भाषा" }
+}

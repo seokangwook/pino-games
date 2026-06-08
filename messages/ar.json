@@ -1,0 +1,25 @@
+{
+  "meta": { "title": "ألعاب بينو 🐱", "description": "لعبة الذاكرة مع القط بينو", "keywords": "بينو,قط,لعبة,ذاكرة,بطاقات" },
+  "home": {
+    "tagline": "العب مع القطط 🐾",
+    "ranking": "🏆 الترتيب",
+    "cardGame": { "title": "لعبة الذاكرة", "desc": "ابحث عن بطاقتين متطابقتين", "subDesc": "4×4 / 4×6 / 6×6 · متعدد اللاعبين 1v1", "cta": "العب →" },
+    "findGame": { "title": "ابحث عن بينو", "desc": "اكتشف 5 قطط مختبئة في سوق كوري", "subDesc": "ضد الوقت · مشاركة", "cta": "العب →" },
+    "footer": "© Revely · revely.company"
+  },
+  "mode": { "title": "لعبة الذاكرة", "subtitle": "اختر الوضع", "single": "لاعب واحد", "singleDesc": "تحدَّ رقمك القياسي", "multi": "1v1 متعدد", "multiDesc": "نافس صديقك مباشرة", "back": "← رجوع" },
+  "card": {
+    "title": "لعبة الذاكرة 🃏", "difficulty": "اختر الصعوبة",
+    "easy": "سهل · 16 بطاقة", "medium": "متوسط · 24 بطاقة", "hard": "صعب · 36 بطاقة",
+    "startGame": "ابدأ 🐱", "moves": "حركات", "matched": "أزواج", "time": "وقت", "restart": "إعادة",
+    "rankCheck": "جارٍ التحقق من الترتيب...", "rankResult": "ستظهر النتيجة قريبًا",
+    "loginToast": "🔒 سجّل دخولك للظهور في الترتيب!", "multiHeader": "الذاكرة · متعدد"
+  },
+  "result": { "clear": "اكتمل!", "stat": "{{moves}} حركة · {{time}}", "saved": "✓ تم حفظ النتيجة", "loginPrompt": "🔒 سجّل دخولك للظهور في الترتيب باسمك المستعار", "replay": "العب مجددًا", "viewRanking": "🏆 عرض الترتيب", "menu": "القائمة" },
+  "ranking": { "title": "الترتيب 🏆", "tab4x4": "4×4", "tab4x6": "4×6", "tab6x6": "6×6", "loading": "جارٍ التحميل...", "empty": "كن أول من يسجّل رقمًا قياسيًا!", "colRank": "المركز", "colPlayer": "اللاعب", "colTime": "الوقت", "colMoves": "الحركات", "movesSuffix": "", "loginHint": "تُحفظ النتائج تلقائيًا بعد تسجيل الدخول" },
+  "room": { "tabCreate": "إنشاء غرفة", "tabJoin": "الانضمام", "grid": "الشبكة", "mode": "الوضع", "modeConcurrent": "متزامن", "modeTurn": "بالأدوار", "createBtn": "إنشاء غرفة 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "انضم →", "joining": "جارٍ الانضمام...", "created": "تم إنشاء الغرفة", "shareHint": "شارك الرمز مع صديقك", "tapCopy": "اضغط لنسخ الرمز", "sendInvite": "📤 إرسال دعوة", "copyCode": "🔗 نسخ الرمز", "waiting": "بانتظار الخصم...", "cancel": "إلغاء", "shareTitle": "ألعاب بينو – الذاكرة", "shareText": "لنلعب! انقر للانضمام:\n{{url}}", "codeCopied": "تم نسخ الرمز", "linkCopied": "تم نسخ الرابط" },
+  "gameResult": { "victory": "فوز!", "defeat": "انتهت اللعبة", "victoryMsg": "الأسرع يفوز! 🐾", "defeatMsg": "كدت تفوز... كن أسرع في المرة القادمة!", "myMatched": "أزواجي", "elapsed": "وقتي", "opMatched": "أزواج الخصم", "opClear": "وقت الخصم", "rematch": "مباراة انتقامية", "home": "الرئيسية" },
+  "auth": { "logout": "تسجيل الخروج", "login": "تسجيل الدخول بـ Google", "nicknameTitle": "تعيين اسم مستعار", "nicknameSubtitle": "اختر اسمًا يظهر في الترتيب", "nicknameHint": "2–10 أحرف", "nicknamePlaceholder": "أدخل اسمًا مستعارًا (2–10)", "nicknameSave": "حفظ 🐾", "nicknameSaving": "جارٍ الحفظ...", "nicknameChecking": "جارٍ التحقق...", "nicknameSharedHint": "الاسم المستعار مشترك في جميع الخدمات", "duplicate": "هذا الاسم المستعار مستخدم بالفعل" },
+  "inapp": { "title": "تسجيل الدخول بـ Google محظور في {{appName}}", "desc": "تحظر سياسة Google تسجيل الدخول عبر OAuth في المتصفح المدمج لـ {{appName}}. يُرجى الفتح في Safari أو Chrome.", "openExternal": "🌐 فتح في المتصفح", "copyUrl": "📋 نسخ الرابط", "copied": "✅ تم النسخ — الصقه في شريط العناوين", "manualSteps": "أو الفتح يدويًا", "continueWithout": "المتابعة بدون تسجيل دخول" },
+  "locale": { "label": "اللغة" }
+}

@@ -1,0 +1,25 @@
+{
+  "meta": { "title": "Pino Games 🐱", "description": "Game memori dengan kucing Pino", "keywords": "pino,kucing,game,memori,kartu" },
+  "home": {
+    "tagline": "Bermain bersama para kucing 🐾",
+    "ranking": "🏆 Peringkat",
+    "cardGame": { "title": "Memori Kartu", "desc": "Temukan 2 kartu kucing yang sama", "subDesc": "4×4 / 4×6 / 6×6 · multi 1v1", "cta": "Main →" },
+    "findGame": { "title": "Cari Pino", "desc": "Temukan 5 kucing tersembunyi di pasar Korea", "subDesc": "Adu waktu · Berbagi", "cta": "Main →" },
+    "footer": "© Revely · revely.company"
+  },
+  "mode": { "title": "Memori Kartu", "subtitle": "Pilih mode", "single": "Pemain Tunggal", "singleDesc": "Kalahkan rekor sendiri", "multi": "1v1 Multi", "multiDesc": "Lawan teman secara langsung", "back": "← Kembali" },
+  "card": {
+    "title": "Memori Kartu 🃏", "difficulty": "Pilih kesulitan",
+    "easy": "Mudah · 16 kartu", "medium": "Sedang · 24 kartu", "hard": "Sulit · 36 kartu",
+    "startGame": "Mulai 🐱", "moves": "Langkah", "matched": "Pasangan", "time": "Waktu", "restart": "Mulai ulang",
+    "rankCheck": "Memeriksa peringkat...", "rankResult": "Hasil akan segera muncul",
+    "loginToast": "🔒 Masuk untuk masuk papan peringkat!", "multiHeader": "Memori · Multi"
+  },
+  "result": { "clear": "Selesai!", "stat": "{{moves}} langkah · {{time}}", "saved": "✓ Skor tersimpan", "loginPrompt": "🔒 Masuk untuk tampil di peringkat dengan nama", "replay": "Main lagi", "viewRanking": "🏆 Lihat Peringkat", "menu": "Menu" },
+  "ranking": { "title": "Peringkat 🏆", "tab4x4": "4×4", "tab4x6": "4×6", "tab6x6": "6×6", "loading": "Memuat...", "empty": "Jadilah yang pertama meraih rekor!", "colRank": "Peringkat", "colPlayer": "Pemain", "colTime": "Waktu", "colMoves": "Langkah", "movesSuffix": "", "loginHint": "Skor disimpan otomatis setelah login" },
+  "room": { "tabCreate": "Buat Ruangan", "tabJoin": "Bergabung", "grid": "Grid", "mode": "Mode", "modeConcurrent": "Bersamaan", "modeTurn": "Giliran", "createBtn": "Buat Ruangan 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "Bergabung →", "joining": "Bergabung...", "created": "Ruangan dibuat", "shareHint": "Bagikan kode ke temanmu", "tapCopy": "Ketuk untuk menyalin kode", "sendInvite": "📤 Kirim undangan", "copyCode": "🔗 Salin kode", "waiting": "Menunggu lawan...", "cancel": "Batal", "shareTitle": "Pino Games – Memori Kartu", "shareText": "Ayo main! Klik untuk bergabung:\n{{url}}", "codeCopied": "Kode disalin", "linkCopied": "Tautan disalin" },
+  "gameResult": { "victory": "Menang!", "defeat": "GAME OVER", "victoryMsg": "Cakar cepat menang! 🐾", "defeatMsg": "Hampir... cocokkan lebih cepat lain kali!", "myMatched": "Pasanganku", "elapsed": "Waktuku", "opMatched": "Pasangan lawan", "opClear": "Waktu lawan", "rematch": "Main lagi", "home": "Beranda" },
+  "auth": { "logout": "Keluar", "login": "Masuk dengan Google", "nicknameTitle": "Atur Nama Panggilan", "nicknameSubtitle": "Pilih nama untuk tampil di peringkat", "nicknameHint": "2–10 karakter", "nicknamePlaceholder": "Masukkan nama (2–10 char)", "nicknameSave": "Simpan 🐾", "nicknameSaving": "Menyimpan...", "nicknameChecking": "Memeriksa...", "nicknameSharedHint": "Nama digunakan di semua layanan", "duplicate": "Nama ini sudah digunakan" },
+  "inapp": { "title": "Login Google diblokir di {{appName}}", "desc": "Kebijakan Google memblokir login OAuth di browser bawaan {{appName}}. Buka di Safari atau Chrome.", "openExternal": "🌐 Buka di browser", "copyUrl": "📋 Salin URL", "copied": "✅ Disalin — tempel di bilah alamat", "manualSteps": "Atau buka manual", "continueWithout": "Lanjut tanpa login" },
+  "locale": { "label": "Bahasa" }
+}

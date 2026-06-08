@@ -1,5 +1,25 @@
 {
-  "meta": { "title": "ピノゲーム 🐱", "description": "ピノ猫の神経衰弱ゲーム" },
-  "home": { "tagline": "猫たちと遊ぼう 🐾", "cardGame": { "title": "神経衰弱", "cta": "スタート →" } },
-  "mode": { "single": "シングル", "singleDesc": "一人で記録に挑戦", "multi": "1:1マルチ", "multiDesc": "リアルタイム対戦" }
+  "meta": { "title": "ピノゲーム 🐱", "description": "ピノ猫と遊ぶ神経衰弱ゲーム", "keywords": "ピノ,猫,ゲーム,カード,神経衰弱" },
+  "home": {
+    "tagline": "猫たちと遊ぼう 🐾",
+    "ranking": "🏆 ランキング",
+    "cardGame": { "title": "神経衰弱", "desc": "同じ猫カードを2枚見つけよう", "subDesc": "4×4 / 4×6 / 6×6 グリッド · 1対1マルチ", "cta": "スタート →" },
+    "findGame": { "title": "ピノを探せ", "desc": "韓国の市場に隠れた猫を5匹見つけよう", "subDesc": "タイムアタック · シェア機能", "cta": "スタート →" },
+    "footer": "© Revely · revely.company"
+  },
+  "mode": { "title": "神経衰弱", "subtitle": "モードを選んでください", "single": "シングル", "singleDesc": "一人で記録に挑戦", "multi": "1対1マルチ", "multiDesc": "友達とリアルタイム対戦", "back": "← メインへ" },
+  "card": {
+    "title": "神経衰弱 🃏", "difficulty": "難易度を選択",
+    "easy": "かんたん · 16枚", "medium": "ふつう · 24枚", "hard": "むずかしい · 36枚",
+    "startGame": "ゲームスタート 🐱", "moves": "手数", "matched": "マッチ", "time": "タイム", "restart": "最初から",
+    "rankCheck": "ランクを確認中...", "rankResult": "まもなく結果が表示されます",
+    "loginToast": "🔒 ログインするとランキングに登録されます！", "multiHeader": "神経衰弱 · マルチ"
+  },
+  "result": { "clear": "クリア！", "stat": "{{moves}}手 · {{time}}", "saved": "✓ スコアがランキングに保存されました", "loginPrompt": "🔒 ログインしてニックネームでランキングに登録しよう", "replay": "もう一度", "viewRanking": "🏆 ランキングを見る", "menu": "メニューへ" },
+  "ranking": { "title": "ランキング 🏆", "tab4x4": "4×4", "tab4x6": "4×6", "tab6x6": "6×6", "loading": "読み込み中...", "empty": "最初の記録を残してみよう！", "colRank": "順位", "colPlayer": "プレイヤー", "colTime": "タイム", "colMoves": "手数", "movesSuffix": "手", "loginHint": "Googleログイン後に記録が自動保存されます" },
+  "room": { "tabCreate": "部屋を作る", "tabJoin": "参加する", "grid": "グリッド", "mode": "モード", "modeConcurrent": "同時競争", "modeTurn": "ターン制", "createBtn": "部屋を作る 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "参加 →", "joining": "参加中...", "created": "部屋が作成されました", "shareHint": "友達にコードを教えてください", "tapCopy": "タップでコードコピー", "sendInvite": "📤 招待状を送る", "copyCode": "🔗 コードをコピー", "waiting": "相手を待っています...", "cancel": "キャンセル", "shareTitle": "ピノゲーム 神経衰弱", "shareText": "一緒に遊ぼう！リンクをタップして参加！\n{{url}}", "codeCopied": "コードをコピーしました", "linkCopied": "リンクをコピーしました" },
+  "gameResult": { "victory": "勝利！", "defeat": "ゲームオーバー", "victoryMsg": "素早い手が勝つにゃ！ 🐾", "defeatMsg": "残念にゃ…次はもっと速くマッチしてね！", "myMatched": "自分のマッチ", "elapsed": "自分のタイム", "opMatched": "相手のマッチ", "opClear": "相手のタイム", "rematch": "もう一度挑戦", "home": "ホームへ" },
+  "auth": { "logout": "ログアウト", "login": "Googleでログイン", "nicknameTitle": "ニックネーム設定", "nicknameSubtitle": "ランキングに表示される名前を決めてください", "nicknameHint": "2〜10文字（日本語・英数字可）", "nicknamePlaceholder": "ニックネームを入力 (2〜10字)", "nicknameSave": "保存 🐾", "nicknameSaving": "保存中...", "nicknameChecking": "確認中...", "nicknameSharedHint": "全サービスで共通のニックネームです", "duplicate": "このニックネームはすでに使用されています" },
+  "inapp": { "title": "{{appName}}ではGoogleログインがブロックされます", "desc": "Googleのポリシーにより、{{appName}}の内蔵ブラウザではOAuthログインがブロックされます。SafariまたはChromeで開いてください。", "openExternal": "🌐 外部ブラウザで開く", "copyUrl": "📋 URLをコピー", "copied": "✅ コピーしました — ブラウザのアドレスバーに貼り付けてください", "manualSteps": "または手動で開く", "continueWithout": "ログインせずに続ける" },
+  "locale": { "label": "言語" }
 }

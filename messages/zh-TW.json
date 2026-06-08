@@ -1,0 +1,25 @@
+{
+  "meta": { "title": "皮諾遊戲 🐱", "description": "和皮諾貓一起玩翻牌配對遊戲", "keywords": "皮諾,貓,遊戲,翻牌,配對" },
+  "home": {
+    "tagline": "和貓咪們一起玩 🐾",
+    "ranking": "🏆 排行榜",
+    "cardGame": { "title": "翻牌配對", "desc": "找到兩張相同的貓咪卡牌", "subDesc": "4×4 / 4×6 / 6×6 · 支援1對1連線", "cta": "開始 →" },
+    "findGame": { "title": "找皮諾", "desc": "在韓國傳統市場中找到5隻藏貓", "subDesc": "限時挑戰 · 分享功能", "cta": "開始 →" },
+    "footer": "© Revely · revely.company"
+  },
+  "mode": { "title": "翻牌配對", "subtitle": "選擇模式", "single": "單人模式", "singleDesc": "挑戰個人記錄", "multi": "1對1連線", "multiDesc": "與朋友即時對戰", "back": "← 返回" },
+  "card": {
+    "title": "翻牌配對 🃏", "difficulty": "選擇難度",
+    "easy": "簡單 · 16張", "medium": "普通 · 24張", "hard": "困難 · 36張",
+    "startGame": "開始遊戲 🐱", "moves": "步數", "matched": "配對", "time": "時間", "restart": "重新開始",
+    "rankCheck": "正在確認排名...", "rankResult": "結果即將顯示",
+    "loginToast": "🔒 登入後可進入排行榜！", "multiHeader": "翻牌配對 · 連線"
+  },
+  "result": { "clear": "過關！", "stat": "{{moves}}步 · {{time}}", "saved": "✓ 成績已儲存至排行榜", "loginPrompt": "🔒 登入後以暱稱進入排行榜", "replay": "再玩一次", "viewRanking": "🏆 查看排行榜", "menu": "返回選單" },
+  "ranking": { "title": "排行榜 🏆", "tab4x4": "4×4", "tab4x6": "4×6", "tab6x6": "6×6", "loading": "載入中...", "empty": "成為第一個留下記錄的人！", "colRank": "排名", "colPlayer": "玩家", "colTime": "時間", "colMoves": "步數", "movesSuffix": "步", "loginHint": "Google登入後成績將自動儲存" },
+  "room": { "tabCreate": "建立房間", "tabJoin": "加入房間", "grid": "棋盤", "mode": "模式", "modeConcurrent": "同時競爭", "modeTurn": "回合制", "createBtn": "建立房間 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "加入 →", "joining": "加入中...", "created": "房間已建立", "shareHint": "將代碼分享給朋友", "tapCopy": "點擊複製代碼", "sendInvite": "📤 傳送邀請", "copyCode": "🔗 複製代碼", "waiting": "等待對手...", "cancel": "取消", "shareTitle": "皮諾遊戲 翻牌配對", "shareText": "一起玩！點擊連結加入：\n{{url}}", "codeCopied": "代碼已複製", "linkCopied": "連結已複製" },
+  "gameResult": { "victory": "勝利！", "defeat": "遊戲結束", "victoryMsg": "手速快的貓咪贏！ 🐾", "defeatMsg": "差一點...下次配對更快些！", "myMatched": "我的配對", "elapsed": "我的用時", "opMatched": "對手配對", "opClear": "對手用時", "rematch": "再來一局", "home": "返回主頁" },
+  "auth": { "logout": "登出", "login": "Google登入", "nicknameTitle": "設定暱稱", "nicknameSubtitle": "請設定在排行榜上顯示的名字", "nicknameHint": "2~10個字元", "nicknamePlaceholder": "輸入暱稱 (2~10字)", "nicknameSave": "儲存 🐾", "nicknameSaving": "儲存中...", "nicknameChecking": "確認中...", "nicknameSharedHint": "此暱稱在所有服務中通用", "duplicate": "此暱稱已被使用" },
+  "inapp": { "title": "{{appName}}中Google登入被禁止", "desc": "根據Google政策，{{appName}}內建瀏覽器中OAuth登入被禁止。請在Safari或Chrome中開啟。", "openExternal": "🌐 在瀏覽器中開啟", "copyUrl": "📋 複製URL", "copied": "✅ 已複製 — 請貼至瀏覽器網址列", "manualSteps": "或手動開啟", "continueWithout": "不登入繼續" },
+  "locale": { "label": "語言" }
+}

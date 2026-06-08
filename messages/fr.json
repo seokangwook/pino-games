@@ -1,0 +1,25 @@
+{
+  "meta": { "title": "Pino Games 🐱", "description": "Jeu de memory avec le chat Pino", "keywords": "pino,chat,jeu,memory,cartes" },
+  "home": {
+    "tagline": "Joue avec les chats 🐾",
+    "ranking": "🏆 Classement",
+    "cardGame": { "title": "Memory", "desc": "Trouve 2 cartes de chat identiques", "subDesc": "4×4 / 4×6 / 6×6 · multijoueur 1v1", "cta": "Jouer →" },
+    "findGame": { "title": "Trouve Pino", "desc": "Repère 5 chats cachés dans un marché coréen", "subDesc": "Contre la montre · Partage", "cta": "Jouer →" },
+    "footer": "© Revely · revely.company"
+  },
+  "mode": { "title": "Memory", "subtitle": "Choisis ton mode", "single": "Solo", "singleDesc": "Bats ton propre record", "multi": "1v1 Multi", "multiDesc": "Affronte un ami en direct", "back": "← Retour" },
+  "card": {
+    "title": "Memory 🃏", "difficulty": "Choisir la difficulté",
+    "easy": "Facile · 16 cartes", "medium": "Normal · 24 cartes", "hard": "Difficile · 36 cartes",
+    "startGame": "Lancer 🐱", "moves": "Coups", "matched": "Paires", "time": "Temps", "restart": "Recommencer",
+    "rankCheck": "Vérification du classement...", "rankResult": "Le résultat s'affichera bientôt",
+    "loginToast": "🔒 Connecte-toi pour apparaître au classement !", "multiHeader": "Memory · Multi"
+  },
+  "result": { "clear": "Réussi !", "stat": "{{moves}} coups · {{time}}", "saved": "✓ Score enregistré", "loginPrompt": "🔒 Connecte-toi pour figurer au classement avec ton pseudo", "replay": "Rejouer", "viewRanking": "🏆 Voir le classement", "menu": "Menu" },
+  "ranking": { "title": "Classement 🏆", "tab4x4": "4×4", "tab4x6": "4×6", "tab6x6": "6×6", "loading": "Chargement...", "empty": "Sois le premier à laisser un record !", "colRank": "Rang", "colPlayer": "Joueur", "colTime": "Temps", "colMoves": "Coups", "movesSuffix": "", "loginHint": "Les scores sont sauvegardés automatiquement après connexion" },
+  "room": { "tabCreate": "Créer salle", "tabJoin": "Rejoindre", "grid": "Grille", "mode": "Mode", "modeConcurrent": "Simultané", "modeTurn": "Tour par tour", "createBtn": "Créer salle 🐱", "codePlaceholder": "ABCDEF", "joinBtn": "Rejoindre →", "joining": "Connexion...", "created": "Salle créée", "shareHint": "Partage le code avec ton ami", "tapCopy": "Appuie pour copier le code", "sendInvite": "📤 Envoyer l'invitation", "copyCode": "🔗 Copier le code", "waiting": "En attente de l'adversaire...", "cancel": "Annuler", "shareTitle": "Pino Games – Memory", "shareText": "On joue ? Clique pour rejoindre :\n{{url}}", "codeCopied": "Code copié", "linkCopied": "Lien copié" },
+  "gameResult": { "victory": "Victoire !", "defeat": "GAME OVER", "victoryMsg": "Les pattes rapides gagnent ! 🐾", "defeatMsg": "Si proche... sois plus rapide la prochaine fois !", "myMatched": "Mes paires", "elapsed": "Mon temps", "opMatched": "Paires adversaire", "opClear": "Temps adversaire", "rematch": "Revanche", "home": "Accueil" },
+  "auth": { "logout": "Déconnexion", "login": "Se connecter avec Google", "nicknameTitle": "Choisir un pseudo", "nicknameSubtitle": "Choisis un nom à afficher dans le classement", "nicknameHint": "2–10 caractères", "nicknamePlaceholder": "Saisis un pseudo (2–10 car.)", "nicknameSave": "Enregistrer 🐾", "nicknameSaving": "Sauvegarde...", "nicknameChecking": "Vérification...", "nicknameSharedHint": "Pseudo partagé sur tous les services", "duplicate": "Ce pseudo est déjà utilisé" },
+  "inapp": { "title": "Le login Google est bloqué dans {{appName}}", "desc": "La politique de Google bloque le login OAuth dans le navigateur interne de {{appName}}. Ouvre dans Safari ou Chrome.", "openExternal": "🌐 Ouvrir dans le navigateur", "copyUrl": "📋 Copier l'URL", "copied": "✅ Copié — colle dans la barre d'adresse", "manualSteps": "Ou ouvrir manuellement", "continueWithout": "Continuer sans connexion" },
+  "locale": { "label": "Langue" }
+}
