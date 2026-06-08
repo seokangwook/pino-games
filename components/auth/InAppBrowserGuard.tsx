@@ -55,6 +55,8 @@ export function InAppBrowserGuard({ children }: { children: ReactNode }) {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
+    // /auth/ 경로에서는 OAuth 콜백 처리를 위해 가이드 스킵
+    if (window.location.pathname.startsWith('/auth/')) return;
     const detected = detectInApp();
     setState(detected);
     if (detected.isInApp) {
