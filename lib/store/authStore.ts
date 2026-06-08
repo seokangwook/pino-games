@@ -94,5 +94,7 @@ export async function fetchRanking(gridSize?: string) {
   // User JWT (if logged in) allows reading own profile; others return null
   const { data: profiles } = await supabase.from('profiles').select('id, nickname').in('id', ids)
   const nickMap = new Map((profiles ?? []).map(p => [p.id, p.nickname]))
-  return scores.map(s => ({ ...s, nickname: nickMap.get(s.user_id) ?? null }))
+  return scores
+    .map(s => ({ ...s, nickname: nickMap.get(s.user_id) ?? null }))
+    .filter(s => s.nickname)
 }

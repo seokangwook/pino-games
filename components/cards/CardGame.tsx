@@ -4,7 +4,7 @@ import { useCardStore } from '@/lib/store/cardStore'
 import { GridSize } from '@/lib/cardLogic'
 import { CardBoard } from './CardBoard'
 import { formatTime } from '@/lib/supabase'
-import { saveScore } from '@/lib/store/authStore'
+import { saveScore, useAuthStore } from '@/lib/store/authStore'
 import { AudioToggle } from '@/components/ui/AudioToggle'
 import { useAudio } from '@/lib/audio/useAudio'
 import Link from 'next/link'
@@ -18,9 +18,11 @@ const GRID_OPTIONS: { value: GridSize; label: string; desc: string }[] = [
 
 export function CardGame() {
   const { status, gridSize, moves, matchedCount, startTime, endTime, setGridSize, startGame, resetGame } = useCardStore()
+  const { user } = useAuthStore()
   const [elapsed, setElapsed] = useState(0)
   const [scoreSaved, setScoreSaved] = useState(false)
   const [showRankCheck, setShowRankCheck] = useState(false)
+  const [showLoginToast, setShowLoginToast] = useState(false)
   useAudio(status === 'playing' ? 'cards' : status === 'won' ? null : 'main')
 
   useEffect(() => {
@@ -37,9 +39,14 @@ export function CardGame() {
   useEffect(() => {
     if (status === 'won' && !scoreSaved && startTime && endTime) {
       setScoreSaved(true)
-      saveScore({ gameType: 'cards', gridSize, moves, timeMs: endTime - startTime })
+      if (user) {
+        saveScore({ gameType: 'cards', gridSize, moves, timeMs: endTime - startTime })
+      } else {
+        setShowLoginToast(true)
+        setTimeout(() => setShowLoginToast(false), 4000)
+      }
     }
-  }, [status, scoreSaved, startTime, endTime, gridSize, moves])
+  }, [status, scoreSaved, startTime, endTime, gridSize, moves, user])
 
   useEffect(() => {
     if (status === 'playing') setScoreSaved(false)
@@ -61,6 +68,11 @@ export function CardGame() {
         <div className="ml-auto"><AudioToggle bgmKey={status === 'playing' ? 'cards' : 'main'} /></div>
       </div>
 
+      {showLoginToast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#6B4C2A] text-white text-sm font-semibold px-5 py-3 rounded-2xl shadow-lg animate-fade-in">
+          🔒 로그인하면 랭킹에 등재돼요!
+        </div>
+      )}
       {status === 'idle' ? (
         <div className="w-full max-w-sm">
           <p className="text-[#A0785A] font-semibold mb-4 text-center">난이도 선택</p>
@@ -78,11 +90,11 @@ export function CardGame() {
           </button>
         </div>
       ) : status === 'won' && !showRankCheck ? (
-        <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} />
+        <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} isLoggedIn={!!user} />
       ) : status === 'won' && showRankCheck ? (
         <>
           <RankCheckModal onDone={() => setShowRankCheck(false)} />
-          <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} />
+          <ResultScreen moves={moves} elapsed={endTime && startTime ? endTime - startTime : 0} onReplay={startGame} onMenu={resetGame} isLoggedIn={!!user} />
         </>
       ) : (
         <>
@@ -146,13 +158,16 @@ function RankCheckModal({ onDone }: { onDone: () => void }) {
   )
 }
 
-function ResultScreen({ moves, elapsed, onReplay, onMenu }: { moves: number; elapsed: number; onReplay: () => void; onMenu: () => void }) {
+function ResultScreen({ moves, elapsed, onReplay, onMenu, isLoggedIn }: { moves: number; elapsed: number; onReplay: () => void; onMenu: () => void; isLoggedIn: boolean }) {
   return (
     <div className="text-center mt-8 w-full max-w-xs mx-auto">
       <div className="text-8xl mb-4 bounce-soft">🎉</div>
       <h2 className="text-3xl font-black text-[#6B4C2A] mb-2">클리어!</h2>
       <p className="text-[#A0785A] mb-2">{moves}번 만에 · {formatTime(elapsed)}</p>
-      <p className="text-xs text-green-600 mb-6">✓ 기록 저장됨 (로그인 시)</p>
+      {isLoggedIn
+        ? <p className="text-xs text-green-600 mb-6">✓ 기록이 랭킹에 저장됐어요</p>
+        : <p className="text-xs text-[#A0785A] mb-6">🔒 로그인하면 닉네임으로 랭킹에 등재돼요</p>
+      }
       <div className="flex flex-col gap-3">
         <button onClick={onReplay} className="bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white font-bold py-4 rounded-2xl transition-colors">다시 하기</button>
         <a href="/ranking" className="block bg-white/70 hover:bg-white border border-[#FFD4A8] text-[#6B4C2A] font-bold py-4 rounded-2xl transition-colors text-center">🏆 랭킹 보기</a>

@@ -67,9 +67,11 @@ export async function GET(req: NextRequest) {
   )
 
   return NextResponse.json(
-    scores.map((s: { user_id: string; moves: number; time_ms: number; created_at: string }) => ({
-      ...s,
-      nickname: nickMap.get(s.user_id) ?? null,
-    }))
+    scores
+      .map((s: { user_id: string; moves: number; time_ms: number; created_at: string }) => ({
+        ...s,
+        nickname: nickMap.get(s.user_id) ?? null,
+      }))
+      .filter((s: { nickname: string | null }) => s.nickname !== null)
   )
 }
