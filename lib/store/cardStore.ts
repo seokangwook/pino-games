@@ -67,17 +67,18 @@ export const useCardStore = create<CardStore>((set, get) => ({
     set({ cards: newCards, flippedIds: newFlipped, moves: get().moves + 1, isChecking: true })
 
     setTimeout(() => {
-      const { cards: latest } = get()
+      const { cards: latest, status: currentStatus } = get()
+      if (currentStatus !== 'playing') return
       const [id1, id2] = newFlipped
-      const c1 = latest.find(c => c.id === id1)!
-      const c2 = latest.find(c => c.id === id2)!
+      const c1 = latest.find(c => c.id === id1)
+      const c2 = latest.find(c => c.id === id2)
+      if (!c1 || !c2) return
 
       if (c1.catId === c2.catId) {
         const matched = latest.map(c =>
           c.id === id1 || c.id === id2 ? { ...c, isMatched: true, isFlipped: true } : c
         )
         const newMatchedCount = get().matchedCount + 1
-        const totalPairs = matched.filter(c => c.isMatched).length / 2
         const allDone = matched.every(c => c.isMatched)
         set({
           cards: matched,

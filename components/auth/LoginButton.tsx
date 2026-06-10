@@ -1,7 +1,6 @@
 'use client'
 import { useEffect } from 'react'
 import { useAuthStore } from '@/lib/store/authStore'
-import { NicknameModal } from './NicknameModal'
 import { useInAppBrowser } from './InAppBrowserGuard'
 import { useT } from '@/lib/i18n-client'
 
@@ -13,7 +12,6 @@ export function LoginButton() {
 
   return (
     <>
-      <NicknameModal />
       {!loading && (
         user ? (
           <div className="flex items-center gap-2">

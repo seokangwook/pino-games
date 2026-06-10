@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { fetchRanking } from '@/lib/store/authStore'
 import { formatTime } from '@/lib/supabase'
 import { useT } from '@/lib/i18n-client'
 
@@ -12,7 +11,11 @@ export function RankingBoard({ gridSize }: { gridSize?: string }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetchRanking(gridSize).then(d => { setRows(d as Row[]); setLoading(false) })
+    const url = gridSize ? `/api/ranking?gridSize=${gridSize}` : '/api/ranking'
+    fetch(url)
+      .then(r => r.json())
+      .then(d => { setRows(d as Row[]); setLoading(false) })
+      .catch(() => setLoading(false))
   }, [gridSize])
 
   if (loading) return <div className="text-center text-[#A0785A] py-8">{m.ranking.loading}</div>

@@ -82,7 +82,7 @@ export function GuestNicknameModal({ onConfirm, onSkip }: Props) {
           disabled={!canSave || saving}
           className={`w-full font-bold py-3 rounded-2xl transition-all shadow-md mb-2 ${canSave && !saving ? 'bg-[#FFB7C5] hover:bg-[#FF8FA8] text-white' : 'bg-gray-100 text-gray-400 cursor-not-allowed'}`}
         >
-          {saving ? '저장 중...' : m.guestNickname.save}
+          {saving ? m.auth.nicknameSaving : m.guestNickname.save}
         </button>
         <p className="text-xs text-[#C0A88A] mb-3">{m.guestNickname.persist}</p>
         <button onClick={onSkip} className="text-xs text-[#C0A88A] underline">
