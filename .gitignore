@@ -6,5 +6,7 @@ out/
 .env
 .env.local
 .env.*.local
+.env.production
+.env.development
 
 .vercel
