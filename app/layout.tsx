@@ -4,6 +4,7 @@ import './globals.css'
 import { AuthProvider } from '@/components/auth/AuthProvider'
 import { InAppBrowserGuard } from '@/components/auth/InAppBrowserGuard'
 import { I18nProvider } from '@/lib/i18n-client'
+import { AnalyticsProvider } from '@/lib/analytics/AnalyticsProvider'
 import koMessages from '@/messages/ko.json'
 
 const ADSENSE_PUB = 'ca-pub-4128588337803742'
@@ -75,11 +76,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        <I18nProvider initialMessages={koMessages as Parameters<typeof I18nProvider>[0]['initialMessages']}>
-          <InAppBrowserGuard>
-            <AuthProvider>{children}</AuthProvider>
-          </InAppBrowserGuard>
-        </I18nProvider>
+        <AnalyticsProvider app="pino-games">
+          <I18nProvider initialMessages={koMessages as Parameters<typeof I18nProvider>[0]['initialMessages']}>
+            <InAppBrowserGuard>
+              <AuthProvider>{children}</AuthProvider>
+            </InAppBrowserGuard>
+          </I18nProvider>
+        </AnalyticsProvider>
       </body>
     </html>
   )
