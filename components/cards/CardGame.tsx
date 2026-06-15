@@ -152,11 +152,7 @@ function RankCheckModal({ onDone, rankCheck, rankResult }: { onDone: () => void;
           <div className="w-4 h-4 border-2 border-[#FFB7C5] border-t-transparent rounded-full animate-spin" />
         </div>
         <div className="p-2 min-h-[280px] flex items-center justify-center">
-          {process.env.NODE_ENV === 'development' ? (
-            <div className="flex items-center justify-center w-full h-[280px] border border-dashed border-gray-200 rounded-xl text-sm text-gray-400">Ad</div>
-          ) : (
-            <AdSlot slot="6394256326" format="auto" className="w-full" />
-          )}
+          <AdSlot slot="6394256326" format="auto" className="w-full" />
         </div>
         <div className="px-4 py-3 border-t border-gray-100">
           <div className="flex items-center justify-between text-xs text-gray-400 mb-1.5">
