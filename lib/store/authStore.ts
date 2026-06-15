@@ -46,7 +46,8 @@ export const useAuthStore = create<AuthStore>((set) => ({
   },
 
   signInWithGoogle: async () => {
-    await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin + '/auth/callback' } })
+    const next = encodeURIComponent(window.location.pathname + window.location.search);
+    await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: `${window.location.origin}/auth/callback?next=${next}` } })
   },
 
   signInWithKakao: async () => {

@@ -9,9 +9,10 @@ function CallbackHandler() {
 
   useEffect(() => {
     const code = searchParams.get('code')
+    const next = searchParams.get('next') ?? '/'
     if (code) {
       supabase.auth.exchangeCodeForSession(code)
-        .then(() => router.replace('/'))
+        .then(() => router.replace(next))
         .catch(() => router.replace('/'))
     } else {
       router.replace('/')
