@@ -7,16 +7,16 @@ import { t as interpolate } from './i18n'
 type Ctx = { locale: Locale; messages: Messages; setLocale: (l: Locale) => void }
 const I18nContext = createContext<Ctx | null>(null)
 
-export function I18nProvider({ children, initialMessages }: { children: ReactNode; initialMessages: Messages }) {
-  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE)
+export function I18nProvider({ children, initialMessages, initialLocale }: { children: ReactNode; initialMessages: Messages; initialLocale?: Locale }) {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale ?? DEFAULT_LOCALE)
   const [messages, setMessages] = useState<Messages>(initialMessages)
 
   useEffect(() => {
     const detected = detectLocale()
-    if (detected !== DEFAULT_LOCALE) {
+    if (detected !== (initialLocale ?? DEFAULT_LOCALE)) {
       loadMessages(detected).then(m => { setMessages(m); setLocaleState(detected) })
     }
-  }, [])
+  }, [initialLocale])
 
   useEffect(() => {
     document.documentElement.lang = HTML_LANG[locale]

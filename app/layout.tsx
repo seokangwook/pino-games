@@ -5,7 +5,8 @@ import { AuthProvider } from '@/components/auth/AuthProvider'
 import { InAppBrowserGuard } from '@/components/auth/InAppBrowserGuard'
 import { I18nProvider } from '@/lib/i18n-client'
 import { AnalyticsProvider } from '@/lib/analytics/AnalyticsProvider'
-import koMessages from '@/messages/ko.json'
+import { getServerLocale, getServerMessages } from '@/lib/i18n-server'
+import { HTML_LANG } from '@/lib/i18n'
 
 const ADSENSE_PUB = 'ca-pub-4128588337803742'
 
@@ -46,9 +47,13 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getServerLocale()
+  const messages = await getServerMessages(locale)
+  const htmlLang = HTML_LANG[locale]
+
   return (
-    <html lang="ko">
+    <html lang={htmlLang}>
       <head>
         <script
           type="application/ld+json"
@@ -62,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               applicationCategory: "Game",
               genre: "Casual",
               operatingSystem: "Web",
-              inLanguage: "ko",
+              inLanguage: htmlLang,
               offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
               publisher: { "@type": "Organization", name: "REVELY", url: "https://revely.company" },
             }),
@@ -77,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <AnalyticsProvider app="pino-games">
-          <I18nProvider initialMessages={koMessages as Parameters<typeof I18nProvider>[0]['initialMessages']}>
+          <I18nProvider initialMessages={messages} initialLocale={locale}>
             <InAppBrowserGuard>
               <AuthProvider>{children}</AuthProvider>
             </InAppBrowserGuard>
