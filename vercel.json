@@ -1,5 +1,7 @@
 {
   "framework": "nextjs",
+  "ignoreCommand": "bash scripts/build-check.sh",
+  "installCommand": "npm install --no-audit --no-fund",
   "regions": ["icn1"],
   "headers": [
     {
